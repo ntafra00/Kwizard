@@ -16,12 +16,17 @@
   }
 }
 
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: black;
+}
+
+/* include border and padding in element width and height */
+* {
+  box-sizing: border-box;
 }
