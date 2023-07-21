@@ -1,15 +1,40 @@
-import { Box, Heading, Button, Container, Flex } from "@chakra-ui/react"
+import { Box, Text, Flex } from "@chakra-ui/react"
+
+import { FacebookIcon, GithubIcon, InstagramIcon } from "../icons"
+import WhiteLayout from "@/layouts/WhiteLayout"
 
 export default function Footer() {
     return (
-        <Box>
-            <Flex alignItems='center' justifyContent='center' direction='column' gap={4}>
-                <Container>
-                    <Heading w='md' color='white'>Join more than ten thousand people who use Qwizard</Heading>
-                </Container>
-                <Button colorScheme='purple' rounded='full' color='white' size={'md'}>Get started now!</Button>
-                <Box>hello</Box>
-            </Flex>
-        </Box >
+        <WhiteLayout>
+            <Box pt={"48px"} pb={"16px"}>
+                <Flex direction={"column"} justifyContent={"space-between"} gap={5}>
+                    <Flex direction={"column"} justifyContent={"center"} alignItems={"center"}>
+                        <Text color={"#2E3182"}>Made with magic, Next.js and</Text>
+                        <Text color={"#2E3182"}>a drop of love for knowledge</Text>
+                    </Flex>
+                    <Flex px={"100px"} justifyContent={"space-between"}>
+                        <Flex justifyContent={"flex-start"} alignItems={"center"}>
+                            <Box pr={4} borderRight={"1px solid"} borderColor={"black"}>
+                                <Text color={"black"}>Privacy Policy</Text>
+                            </Box>
+                            <Box pl={4}>
+                                <Text color={"black"}>Terms of Use</Text>
+                            </Box>
+                        </Flex>
+                        <Flex justifyContent={"flex-end"} >
+                            <Box pr={4}>
+                                <InstagramIcon />
+                            </Box>
+                            <Box pr={4}>
+                                <FacebookIcon />
+                            </Box>
+                            <Box>
+                                <GithubIcon />
+                            </Box>
+                        </Flex>
+                    </Flex>
+                </Flex>
+            </Box>
+        </WhiteLayout >
     )
 }

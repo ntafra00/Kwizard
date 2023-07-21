@@ -1,39 +1,74 @@
-import React from 'react';
-import {
-    onAuthStateChanged,
-    getAuth,
-    User
-} from 'firebase/auth';
-import firebase_app from '@/firebase/config';
+import React, { useContext, useState, useEffect, createContext, useMemo } from "react"
+import { signInWithEmailAndPassword, onAuthStateChanged, signOut, getAuth, User, UserCredential, createUserWithEmailAndPassword } from "firebase/auth"
+
+import firebase_app from "@/firebase/config";
+import { LoginCredentials } from "@/typings";
+
 
 const auth = getAuth(firebase_app);
 
-export const AuthContext = React.createContext({});
+interface Context {
+    currentUser: User | null,
+    isModalOpen: boolean,
+    toggleModal: () => void,
+    login(loginCredentials: LoginCredentials): Promise<UserCredential>,
+    logout(): Promise<void>,
+    register(loginCredentials: LoginCredentials): Promise<UserCredential>,
+}
 
-export const useAuthContext = () => React.useContext(AuthContext);
+const AuthContext = createContext<Context | undefined>(undefined)
 
-export const AuthContextProvider = ({
-    children
-}: { children: React.ReactNode }) => {
-    const [user, setUser] = React.useState<User | null>(null);
-    const [loading, setLoading] = React.useState(true);
+export function useAuth() {
+    const context = useContext(AuthContext);
+    if (context === undefined) {
+        throw new Error("useAuth context must be within AuthProvider");
+    }
+    return context;
+}
 
-    React.useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setUser(user);
-            } else {
-                setUser(null);
-            }
-            setLoading(false);
-        });
+export function AuthProvider({ children }: { children: React.ReactNode; }) {
+    const [currentUser, setCurrentUser] = useState<User | null>(null)
+    const [loading, setLoading] = useState(true)
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-        return () => unsubscribe();
-    }, []);
+
+    function login({ email, password }: LoginCredentials) {
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    function logout() {
+        return signOut(auth)
+    }
+
+    function register({ email, password }: LoginCredentials) {
+        return createUserWithEmailAndPassword(auth, email, password);
+    }
+
+    function toggleModal() {
+        setIsModalOpen((prevState) => !prevState);
+    }
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, user => {
+            setCurrentUser(user)
+            setLoading(false)
+        })
+
+        return unsubscribe
+    }, [])
+
+    const value = useMemo<Context>(() => ({
+        currentUser,
+        isModalOpen,
+        toggleModal,
+        login,
+        logout,
+        register,
+    }), [currentUser, isModalOpen, toggleModal, login, logout, register])
 
     return (
-        <AuthContext.Provider value={{ user }}>
-            {loading ? <div>Loading...</div> : children}
+        <AuthContext.Provider value={value}>
+            {!loading && children}
         </AuthContext.Provider>
-    );
-};
+    )
+}

@@ -12,27 +12,46 @@ import MobileNavbar from './MobileNav';
 
 import { useRouter } from 'next/navigation';
 import { NavigationLink } from '@/typings';
-
+import { LoginCard } from '@/components/auth';
+import { useAuth } from '@/contexts/AuthContext';
 
 export default function Navbar() {
     const [isLargerThanMediumScreen] = useMediaQuery('(min-width: 768px)');
     const router = useRouter();
+    const { currentUser, toggleModal, logout } = useAuth();
 
-    const handleButtonClick = (link: NavigationLink) => {
+    const handleButtonClick = async (link: NavigationLink) => {
+
+        if (link.text === 'Sign out') {
+            console.log('Hello')
+            try {
+                await logout();
+            } catch (error) {
+                console.log(error);
+            } finally {
+                return;
+            }
+        }
+
+        if (link.text === 'Login' || link.text === 'Register') {
+            toggleModal();
+        }
+
         if (!link.path) {
             return;
         }
+
         router.push(`/${link.path}`)
     }
 
     const renderNavigationLinks = () => {
-        return getNavigationLinks(true).map((navigationLink) => {
+        return getNavigationLinks(!!currentUser).map((navigationLink) => {
             if (navigationLink.text === 'Profile' || navigationLink.text === 'Login') {
-                return <Button bg={'white'} rounded='full' color='purple' onClick={() => handleButtonClick(navigationLink)}>{navigationLink.text}</Button>
+                return <Button rounded='full' variant={'outline'} colorScheme="blackAlpha" onClick={() => handleButtonClick(navigationLink)}>{navigationLink.text}</Button>
             }
 
             if (navigationLink.text === 'Sign out' || navigationLink.text === 'Register') {
-                return <Button colorScheme='purple' rounded='full' color='white' onClick={() => handleButtonClick(navigationLink)}>{navigationLink.text}</Button>
+                return <Button rounded='full' variant={'outline'} colorScheme="blackAlpha" onClick={() => handleButtonClick(navigationLink)}>{navigationLink.text}</Button>
             }
 
             return <Link
@@ -42,7 +61,8 @@ export default function Navbar() {
                 _hover={{
                     textDecoration: 'none',
                 }}
-                color={'white'}
+                color={'#000000'}
+                fontWeight={'bold'}
                 href={`/${navigationLink.path}`}>
                 {navigationLink.text}
             </Link>
@@ -51,9 +71,10 @@ export default function Navbar() {
 
     return (
         <>
-            <Box px={8}>
+            <Box pr={120} pl={90}>
                 {isLargerThanMediumScreen ? <DesktopNavbar navigationLinks={renderNavigationLinks()} /> : <MobileNavbar navigationLinks={renderNavigationLinks()} />}
             </Box>
+            <LoginCard />
         </>
     );
 }

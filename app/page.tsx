@@ -2,58 +2,67 @@
 
 import Navbar from "@/components/commons/navbar";
 import Footer from "@/components/commons/footer";
-import GradientLayout from "@/layouts/GradientLayout";
 
-import { Flex, Heading, Text, Image, Button, useDisclosure, IconButton, Box } from "@chakra-ui/react";
+import { Flex, Heading, Text, Image, Button, Box } from "@chakra-ui/react";
 
-import { RightArrow, DownArrow } from "@/components/commons/icons";
+import { DownArrow } from "@/components/commons/icons";
+import WhiteLayout from "@/layouts/WhiteLayout";
 
+const topics = [
+  "Create",
+  "Play",
+  "Collaborate",
+  "Compete",
+  "Learn"
+]
 
 export default function Home() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
       <Navbar />
-      <GradientLayout>
-        <Flex direction={{ base: 'column', md: 'row' }} p={20}>
-          <Flex direction='column' gap={4} w={{ base: '100%', md: '50%' }} justifyContent={{ base: 'end', md: 'center' }}>
-            <Heading color='white'>Enjoy and learn at the same time, what kind of a spell is that?</Heading>
-            <Text color='white'>Create a quiz without a wand or saying the magic words</Text>
-            <Button colorScheme='purple' rounded='full' color='white' width='sm'>Join the Quizzers now!</Button>
-          </Flex>
-          <Flex w={{ base: '100%', md: '50%' }} justifyContent='center' alignItems='center' pt={{ base: 20, md: 0 }}>
-            <Image src='mainSection-1.png' alt="Hero image one" />
-          </Flex>
-        </Flex >
-        <Flex direction={{ base: 'column', md: 'row' }} pt={0}>
-          <Flex w={{ base: '100%', md: '50%' }} h='80%' justifyContent='center' alignItems='center' pt={{ base: 20, md: 0 }}>
-            <Image src='mainSection-2.png' alt="Hero image one" />
-          </Flex>
-          <Flex direction='column' gap={4} w={{ base: '100%', md: '50%' }} justifyContent={{ base: 'end', md: 'center' }}>
-            <Flex>
-              <IconButton
-                size={'lg'}
-                icon={isOpen ? <RightArrow /> : <DownArrow />}
-                aria-label={'Open Menu'}
-                onClick={isOpen ? onClose : onOpen}
-                bgColor='transparent'
-                color='white'
-                _hover={{}}
-              />
-              <Heading color='white'>Create</Heading>
-            </Flex>
-            <Flex width='50%' visibility={isOpen ? 'visible' : 'hidden'} direction='column' gap={2}>
-              <Flex width='50%' direction='column' gap={2}>
-                <Text color='white'>Choose the quiz type and get started immediately</Text>
-                <Button bg={'white'} rounded='full' color='purple' w='75%'>Learn more</Button>
-              </Flex>
-              <Box borderTop={'1px solid white'}><Heading color='white'>Play</Heading></Box>
-              <Box borderTop={'1px solid white'}><Heading color='white'>Compete</Heading></Box>
-            </Flex>
+      <Flex direction={{ base: 'column', md: 'row' }} pl={100}>
+        <Flex direction='column' gap={4} w={{ base: '100%', md: '50%' }} justifyContent={{ base: 'end', md: 'center' }} alignItems={'flex-start'}>
+          <Heading color='black' as='h1' size='3xl'>Enjoy and learn at the same time, what kind of a spell is that?</Heading>
+          <Text color='black' as='h4' size='1xl' textAlign={'left'}>Create a magical quiz without a wand or saying the magic words.</Text>
+          <Button backgroundColor={'transparent'} rounded='full' color='black' variant='outline' colorScheme="blackAlpha">Join the Qwizards now!</Button>
+        </Flex>
+        <Flex w={{ base: '100%', md: '50%' }} justifyContent='center' alignItems='center' pt={{ base: 20, md: 0 }}>
+          <Image src='wizard.png' alt="Hero image one" />
+        </Flex>
+      </Flex >
+      <WhiteLayout>
+        <Box pt={'60px'}>
+          <Heading color='black' size='2xl' textAlign={"center"}>Wait, I thought real wizards didn't exist?</Heading>
+          <Heading color='black' size='2xl' textAlign={"center"}>What do you guys do?</Heading>
+          <Flex direction={{ base: 'column', md: 'row' }} px={'100px'}>
+            <Image src='videoWizardEditor.png' alt="Hero image one" />
+            <Flex direction='column' gap={4} w={{ base: '100%', md: '60%' }} justifyContent={'center'} alignItems={'flex-end'}>
+              {topics.map((topic) => {
+                return (
+                  <Flex borderBottom={'1px solid black'} w={'60%'} justifyContent={'space-between'}>
+                    <Heading>{topic}</Heading>
+                    <DownArrow />
+                  </Flex>
+                )
+              })}
+            </Flex >
           </Flex >
-        </Flex >
-      </GradientLayout>
+        </Box>
+      </WhiteLayout >
+      <Flex h={'fit-content'}>
+        <Image src='wandHandLeft.png' alt="Hero image one" w={'40%'} />
+        <Flex w={'20%'} justifyContent={"center"} alignItems={"center"}>
+          <Flex direction={"column"} justifyContent={"space-evenly"} alignItems={"center"} h={'80%'}>
+            <Box>
+              <Heading color={"black"} size={"2xl"}>Are you ready?</Heading>
+              <Heading color={"black"} size={"2xl"} textAlign={"center"}>We are!</Heading>
+            </Box>
+            <Button rounded='full' variant={'outline'} borderColor={'black'} color={'#2E3182'} _hover={{ backgroundColor: "none" }}>Get started now!</Button>
+          </Flex>
+        </Flex>
+        <Image src='wandHandRight.png' alt="Hero image one" w={'40%'} />
+      </Flex>
       <Footer />
     </>
   )

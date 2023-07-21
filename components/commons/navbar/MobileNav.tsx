@@ -26,7 +26,7 @@ export default function MobileNavbar({ navigationLinks }: Props) {
         <>
             <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
                 <IconButton
-                    size={'md'}
+                    size={'lg'}
                     icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
                     aria-label={'Open Menu'}
                     onClick={isOpen ? onClose : onOpen}
