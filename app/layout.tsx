@@ -8,12 +8,34 @@ const inter = Inter({ subsets: ['latin'] })
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
+  colors: {
+    yellow: "#E5E0AC",
+    white: "#EFEFEF",
+    blue: "#2E3182",
+    gray: "#3F3D3D",
+    transparent: "transparent"
+  },
+  fonts: {
+    body: "Poppins, sans-serif",
+    heading: "Poppins, sans-serif"
+  },
   styles: {
-    global: () => ({
+    global: {
       body: {
-        bg: ""
+        bg: "#E5E0AC",
       },
-    })
+    },
+  },
+  fontWeights: {
+    regular: 500,
+    semibold: 600,
+    bold: 700,
+  },
+  fontSizes: {
+    sm: "1rem",
+    m: "1.5rem",
+    l: "2rem",
+    xl: "3.5rem",
   }
 });
 
