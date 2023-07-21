@@ -1,21 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 html,
 body {
   margin: 0;
@@ -23,10 +5,19 @@ body {
 }
 
 html {
-  background-color: black;
+  background-color: var(--yellow-background);
+}
+
+body {
+  font-family: "Poppins";
 }
 
 /* include border and padding in element width and height */
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --yellow-background: #E5E0AC;
+  --white-background: #EFEFEF;
 }
