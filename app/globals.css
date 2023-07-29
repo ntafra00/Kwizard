@@ -12,6 +12,14 @@ body {
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url('../public/fonts/Poppins-Regular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
   font-weight: 500;
   font-display: auto;
   src: url('../public/fonts/Poppins-Medium.ttf') format('opentype');
@@ -23,6 +31,14 @@ body {
   font-weight: 600;
   font-display: auto;
   src: url('../public/fonts/Poppins-SemiBold.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: auto;
+  src: url('../public/fonts/Poppins-Bold.ttf') format('opentype');
 }
 
 

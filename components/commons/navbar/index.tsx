@@ -3,38 +3,45 @@
 import {
     Box,
     Link,
-    Button,
     useMediaQuery
 } from '@chakra-ui/react';
-import { getNavigationLinks } from '@/utils/navigation';
+
+import { getNavigationLinks } from '@/utils';
 import DesktopNavbar from './DesktopNav';
 import MobileNavbar from './MobileNav';
 
 import { useRouter } from 'next/navigation';
 import { NavigationLink } from '@/typings';
-import { LoginCard } from '@/components/auth';
 import { useAuth } from '@/contexts/AuthContext';
 
+import { Button } from '../buttons';
+import { Modal } from '../modals/Modal';
+import { ModalScene } from '@/enums';
+import { COMMON_PAGE_PADDING } from '@/constants';
+
 export default function Navbar() {
-    const [isLargerThanMediumScreen] = useMediaQuery('(min-width: 768px)');
+    const [isLargerThanLargeScreen] = useMediaQuery('(min-width: 1150px)');
     const router = useRouter();
-    const { currentUser, toggleModal, logout } = useAuth();
+    const { currentUser, toggleModal, logout, handleModalSceneChange } = useAuth();
 
     const handleButtonClick = async (link: NavigationLink) => {
 
         if (link.text === 'Sign out') {
-            console.log('Hello')
             try {
                 await logout();
             } catch (error) {
                 console.log(error);
-            } finally {
-                return;
             }
         }
 
-        if (link.text === 'Login' || link.text === 'Register') {
+        if (link.text === 'Login') {
             toggleModal();
+            handleModalSceneChange(ModalScene.LOGIN)
+        }
+
+        if (link.text === 'Register') {
+            toggleModal();
+            handleModalSceneChange(ModalScene.REGISTER)
         }
 
         if (!link.path) {
@@ -44,25 +51,27 @@ export default function Navbar() {
         router.push(`/${link.path}`)
     }
 
+    const redirectToHomePage = () => {
+        router.push("/");
+    }
+
     const renderNavigationLinks = () => {
         return getNavigationLinks(!!currentUser).map((navigationLink) => {
             if (navigationLink.text === 'Profile' || navigationLink.text === 'Login') {
-                return <Button rounded='full' variant={'outline'} colorScheme="blackAlpha" onClick={() => handleButtonClick(navigationLink)}>{navigationLink.text}</Button>
+                return <Button textColor="blue" text={navigationLink.text} buttonAction={() => handleButtonClick(navigationLink)} />
             }
 
             if (navigationLink.text === 'Sign out' || navigationLink.text === 'Register') {
-                return <Button rounded='full' variant={'outline'} colorScheme="blackAlpha" onClick={() => handleButtonClick(navigationLink)}>{navigationLink.text}</Button>
+                return <Button backgroundColor="blue" textColor="white" text={navigationLink.text} buttonAction={() => handleButtonClick(navigationLink)} />
             }
 
             return <Link
-                px={2}
-                py={1}
-                rounded={'md'}
                 _hover={{
-                    textDecoration: 'none',
+                    textDecoration: 'underline',
                 }}
-                color={'#000000'}
-                fontWeight={'bold'}
+                color="black"
+                fontWeight="medium"
+                fontSize="sm"
                 href={`/${navigationLink.path}`}>
                 {navigationLink.text}
             </Link>
@@ -71,10 +80,10 @@ export default function Navbar() {
 
     return (
         <>
-            <Box pr={120} pl={90}>
-                {isLargerThanMediumScreen ? <DesktopNavbar navigationLinks={renderNavigationLinks()} /> : <MobileNavbar navigationLinks={renderNavigationLinks()} />}
+            <Box px={COMMON_PAGE_PADDING}>
+                {isLargerThanLargeScreen ? <DesktopNavbar navigationLinks={renderNavigationLinks()} /> : <MobileNavbar navigationLinks={renderNavigationLinks()} />}
             </Box>
-            <LoginCard />
+            <Modal />
         </>
     );
 }

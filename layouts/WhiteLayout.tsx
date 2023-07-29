@@ -8,7 +8,7 @@ interface Props {
 
 export default function WhiteLayout({ children }: Props) {
     return (
-        <Box w='100%' h='fit-content' backgroundColor={'#EFEFEF'} overflow="hidden">
+        <Box w='100%' h='fit-content' background="white" overflow="hidden">
             {children}
         </Box>
     )

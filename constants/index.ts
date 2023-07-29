@@ -1,4 +1,4 @@
-import { FormErrorMessage, NavigationLink } from "@/typings";
+import { FeaturedPostData, FormErrorMessage, NavigationLink, PostData } from "@/typings";
 const COMMON_LINKS: NavigationLink[] = [{ text: "Quizzes", path: "quizzes" }, { text: "Stories", path: "stories" }, { text: "About us", path: "aboutUs" }]
 
 export const AUTHORIZED_LINKS: NavigationLink[] = [...COMMON_LINKS, { text: "Profile", path: "profile" }, { text: "Sign out", path: "" }];
@@ -8,4 +8,63 @@ export const FORM_ERROR_MESSAGES: FormErrorMessage = {
     invalidCredentials: "Invalid credentials",
     required: "Field is required",
     invalidEmail: "Invalid email address",
+    passwordsDoNotMatch: "Passwords do not match",
+}
+
+export const POSTS: PostData[] = [
+    {
+        imageUrl: "storyCat.png",
+        topic: "Quiz speak",
+        description: "stvarno nemas pojma"
+    },
+    {
+        imageUrl: "storyCat.png",
+        topic: "Quiz speak",
+        description: "stvarno nemas pojma"
+    },
+    {
+        imageUrl: "storyCat.png",
+        topic: "Quiz speak",
+        description: "stvarno nemas pojma"
+    },
+    {
+        imageUrl: "storyCat.png",
+        topic: "Quiz speak",
+        description: "stvarno nemas pojma"
+    },
+    {
+        imageUrl: "storyCat.png",
+        topic: "Quiz speak",
+        description: "stvarno nemas pojma"
+    },
+    {
+        imageUrl: "storyCat.png",
+        topic: "Quiz speak",
+        description: "stvarno nemas pojma"
+    },
+    {
+        imageUrl: "storyCat.png",
+        topic: "Quiz speak",
+        description: "stvarno nemas pojma"
+    },
+    {
+        imageUrl: "storyCat.png",
+        topic: "Quiz speak",
+        description: "stvarno nemas pojma"
+    },
+]
+
+export const FEATURED_POST: FeaturedPostData = {
+    author: "Nikola Tafra",
+    callToAction: "Check out the nearest Pub Quiz Locations Near You!",
+    date: "19/07/2023",
+    description: "Quizzes are back, and they don't intend to go away anytime soon!",
+    topic: "Quiz Speak",
+    imageUrl: "featuredPost.png"
+}
+
+export const COMMON_PAGE_PADDING = {
+    base: "20px",
+    md: "60px",
+    lg: "110px",
 }

@@ -8,7 +8,7 @@ export function GithubIcon() {
     return (
         <Icon
             as={FaGithub}
-            boxSize={10}
+            boxSize={{ base: "6", md: "8", lg: "10" }}
         />
     )
 }

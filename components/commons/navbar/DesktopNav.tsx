@@ -4,10 +4,12 @@ import {
     Box,
     Flex,
     HStack,
+    Spacer,
 } from '@chakra-ui/react';
 
 import Image from 'next/image';
 import logo from '@/public/logo.png'
+import Link from 'next/link';
 
 interface Props {
     navigationLinks: JSX.Element[];
@@ -15,18 +17,18 @@ interface Props {
 
 export default function DesktopNavbar({ navigationLinks }: Props) {
     return (
-        <Flex h={32} alignItems={'center'} justifyContent={'space-between'}>
-            <Box width={'20%'}>
+        <Flex alignItems="flex-end" justifyContent="space-between">
+            <Link href="/">
                 <Image src={logo} alt='Kwizard logo' />
-            </Box>
-            <Flex alignItems={'center'} justifyContent={'flex-end'} >
-                <HStack
-                    as={'nav'}
-                    spacing={16}
-                >
-                    {navigationLinks}
-                </HStack>
-            </Flex>
-        </Flex>
+            </Link>
+            <Spacer />
+            <HStack
+                as="nav"
+                spacing="28px"
+                pb="20px"
+            >
+                {navigationLinks}
+            </HStack>
+        </Flex >
     );
 }
