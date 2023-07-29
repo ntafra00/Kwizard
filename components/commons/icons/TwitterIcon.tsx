@@ -1,15 +1,15 @@
 "use client"
 
-import { TbBrandTwitterFilled } from "react-icons/tb"
+import { FiTwitter } from "react-icons/fi"
 import { Icon } from "@chakra-ui/react";
 
 
 export function TwitterIcon() {
     return (
         <Icon
-            as={TbBrandTwitterFilled}
+            as={FiTwitter}
             boxSize={10}
-            color='purple'
+            color='blue'
         />
     )
 }

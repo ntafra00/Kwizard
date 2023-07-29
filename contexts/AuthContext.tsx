@@ -1,8 +1,9 @@
-import React, { useContext, useState, useEffect, createContext, useMemo } from "react"
+import React, { useContext, useState, useEffect, createContext, useMemo, useCallback } from "react"
 import { signInWithEmailAndPassword, onAuthStateChanged, signOut, getAuth, User, UserCredential, createUserWithEmailAndPassword } from "firebase/auth"
 
 import firebase_app from "@/firebase/config";
 import { LoginCredentials } from "@/typings";
+import { ModalScene } from "@/enums";
 
 
 const auth = getAuth(firebase_app);
@@ -10,10 +11,12 @@ const auth = getAuth(firebase_app);
 interface Context {
     currentUser: User | null,
     isModalOpen: boolean,
+    modalScene: ModalScene | undefined
     toggleModal: () => void,
-    login(loginCredentials: LoginCredentials): Promise<UserCredential>,
+    handleModalSceneChange: (modalScene: ModalScene) => void,
+    loginUser(loginCredentials: LoginCredentials): Promise<UserCredential>,
     logout(): Promise<void>,
-    register(loginCredentials: LoginCredentials): Promise<UserCredential>,
+    registerUser(loginCredentials: LoginCredentials): Promise<UserCredential>,
 }
 
 const AuthContext = createContext<Context | undefined>(undefined)
@@ -30,23 +33,28 @@ export function AuthProvider({ children }: { children: React.ReactNode; }) {
     const [currentUser, setCurrentUser] = useState<User | null>(null)
     const [loading, setLoading] = useState(true)
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalScene, setModalScene] = useState<ModalScene>();
 
 
-    function login({ email, password }: LoginCredentials) {
+    const loginUser = useCallback(({ email, password }: LoginCredentials) => {
         return signInWithEmailAndPassword(auth, email, password)
-    }
+    }, [])
 
-    function logout() {
+    const logout = useCallback(() => {
         return signOut(auth)
-    }
+    }, [])
 
-    function register({ email, password }: LoginCredentials) {
+    const registerUser = useCallback(({ email, password }: LoginCredentials) => {
         return createUserWithEmailAndPassword(auth, email, password);
-    }
+    }, [])
 
-    function toggleModal() {
+    const toggleModal = useCallback(() => {
         setIsModalOpen((prevState) => !prevState);
-    }
+    }, [])
+
+    const handleModalSceneChange = useCallback((modalScene: ModalScene) => {
+        setModalScene(modalScene);
+    }, [])
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, user => {
@@ -60,11 +68,13 @@ export function AuthProvider({ children }: { children: React.ReactNode; }) {
     const value = useMemo<Context>(() => ({
         currentUser,
         isModalOpen,
+        modalScene,
+        handleModalSceneChange,
         toggleModal,
-        login,
+        loginUser,
         logout,
-        register,
-    }), [currentUser, isModalOpen, toggleModal, login, logout, register])
+        registerUser,
+    }), [currentUser, isModalOpen, modalScene, toggleModal, loginUser, logout, registerUser, handleModalSceneChange])
 
     return (
         <AuthContext.Provider value={value}>

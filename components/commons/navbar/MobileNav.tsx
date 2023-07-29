@@ -4,15 +4,13 @@ import {
     Box,
     Stack,
     Flex,
-    IconButton,
+    Image,
     useDisclosure,
+    Button,
 } from '@chakra-ui/react';
 
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
-
-import Image from 'next/image';
-import logo from '@/public/logo.png'
-
+import Link from 'next/link';
 
 interface Props {
     navigationLinks: JSX.Element[];
@@ -24,22 +22,25 @@ export default function MobileNavbar({ navigationLinks }: Props) {
 
     return (
         <>
-            <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-                <IconButton
-                    size={'lg'}
-                    icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-                    aria-label={'Open Menu'}
+            <Flex alignItems="flex-end" justifyContent="space-between" pb="10px">
+                <Link href="/">
+                    <Image src="logo.png" alt='Qwizard logo' width="40%" />
+                </Link>
+                <Button
+                    aria-label='Open Menu'
                     onClick={isOpen ? onClose : onOpen}
                     bgColor='transparent'
-                    color='white'
+                    color='black'
+                    pb="1"
+                    alignItems="flex-end"
                     _hover={{}}
-                />
-                <Box><Image src={logo} alt='Qwizard logo' width={150} height={150}></Image></Box>
-
+                >
+                    {isOpen ? <CloseIcon /> : <HamburgerIcon />}
+                </Button>
             </Flex >
             {isOpen && (
-                <Box pb={4}>
-                    <Stack as={'nav'} spacing={4}>
+                <Box pt="10px" pb="20px">
+                    <Stack as={'nav'} spacing={4} justify="center">
                         {navigationLinks}
                     </Stack>
                 </Box>

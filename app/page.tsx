@@ -1,12 +1,11 @@
 "use client"
 
-import Navbar from "@/components/commons/navbar";
-import Footer from "@/components/commons/footer";
-
-import { Flex, Heading, Text, Image, Button, Box } from "@chakra-ui/react";
+import { Flex, Heading, Text, Image, Box } from "@chakra-ui/react";
 
 import { DownArrow } from "@/components/commons/icons";
 import WhiteLayout from "@/layouts/WhiteLayout";
+import { Button } from "@/components/commons/buttons";
+import { useRouter } from "next/navigation";
 
 const topics = [
   "Create",
@@ -16,32 +15,42 @@ const topics = [
   "Learn"
 ]
 
+import { COMMON_PAGE_PADDING } from "@/constants";
+
 export default function Home() {
+  const router = useRouter();
+
+  const handleRedirectToQuizzes = () => {
+    router.push("/quizzes");
+  }
 
   return (
     <>
-      <Navbar />
-      <Flex direction={{ base: 'column', md: 'row' }} pl={100}>
+      <Flex direction={{ base: 'column', md: 'row' }} px={COMMON_PAGE_PADDING} pt={{ base: "20px" }}>
         <Flex direction='column' gap={4} w={{ base: '100%', md: '50%' }} justifyContent={{ base: 'end', md: 'center' }} alignItems={'flex-start'}>
-          <Heading color='black' as='h1' size='3xl'>Enjoy and learn at the same time, what kind of a spell is that?</Heading>
-          <Text color='black' as='h4' size='1xl' textAlign={'left'}>Create a magical quiz without a wand or saying the magic words.</Text>
-          <Button backgroundColor={'transparent'} rounded='full' color='black' variant='outline' colorScheme="blackAlpha">Join the Qwizards now!</Button>
+          <Heading color='black' fontSize={{ base: "md", md: "lg", lg: 'xl' }}>Enjoy and learn at the same time, what kind of a spell is that?</Heading>
+          <Text color='gray' fontSize={{ base: "sm", lg: "md" }} fontWeight='medium'>Create a magical quiz without a wand or saying the magic words.</Text>
+          <Button text="Join the Qwizards now" buttonAction={handleRedirectToQuizzes} textColor="blue" />
         </Flex>
-        <Flex w={{ base: '100%', md: '50%' }} justifyContent='center' alignItems='center' pt={{ base: 20, md: 0 }}>
-          <Image src='wizard.png' alt="Hero image one" />
+        <Flex justifyContent={{ base: "center", md: "flex-end" }} w={{ base: "100%", md: "50%" }}>
+          <Image src='wizard.png' alt="Hero image one" w={{ base: "50%", ld: "100%" }} />
         </Flex>
       </Flex >
       <WhiteLayout>
-        <Box pt={'60px'}>
-          <Heading color='black' size='2xl' textAlign={"center"}>Wait, I thought real wizards didn't exist?</Heading>
-          <Heading color='black' size='2xl' textAlign={"center"}>What do you guys do?</Heading>
-          <Flex direction={{ base: 'column', md: 'row' }} px={'100px'}>
-            <Image src='videoWizardEditor.png' alt="Hero image one" />
-            <Flex direction='column' gap={4} w={{ base: '100%', md: '60%' }} justifyContent={'center'} alignItems={'flex-end'}>
+        <Box pt='60px' px={COMMON_PAGE_PADDING}>
+          <Box pb={{ base: "30px", md: "70px", lg: "140px" }}>
+            <Heading color='black' fontSize={{ base: "md", md: "xl", lg: "xxl" }} textAlign="center">Wait, I thought real wizards didn't exist?</Heading>
+            <Heading color='black' fontSize={{ base: "md", md: "xl", lg: "xxl" }} textAlign="center">What do you guys do?</Heading>
+          </Box>
+          <Flex direction={{ base: 'column', md: 'row' }} pb='60px'>
+            <Flex w={{ base: '100%', md: '50%' }} pb={{ base: "40px", md: "none" }}>
+              <Image src='videoWizardEditor.png' alt="Hero image one" w='100%' />
+            </Flex>
+            <Flex direction='column' gap={4} w={{ base: '100%', md: '50%' }} justifyContent={'center'} alignItems={'flex-end'}>
               {topics.map((topic) => {
                 return (
-                  <Flex borderBottom={'1px solid black'} w={'60%'} justifyContent={'space-between'}>
-                    <Heading>{topic}</Heading>
+                  <Flex borderBottom={'1px solid black'} w={{ base: "100%", md: "80%" }} justifyContent={'space-between'}>
+                    <Heading color="black" fontSize="l" fontWeight="semibold">{topic}</Heading>
                     <DownArrow />
                   </Flex>
                 )
@@ -50,20 +59,19 @@ export default function Home() {
           </Flex >
         </Box>
       </WhiteLayout >
-      <Flex h={'fit-content'}>
-        <Image src='wandHandLeft.png' alt="Hero image one" w={'40%'} />
-        <Flex w={'20%'} justifyContent={"center"} alignItems={"center"}>
+      <Flex>
+        <Image src='wandHandLeft.png' alt="Hero image one" w={'33.3%'} />
+        <Flex w={'33.3%'} justifyContent={"center"} alignItems={"center"}>
           <Flex direction={"column"} justifyContent={"space-evenly"} alignItems={"center"} h={'80%'}>
             <Box>
-              <Heading color={"black"} size={"2xl"}>Are you ready?</Heading>
-              <Heading color={"black"} size={"2xl"} textAlign={"center"}>We are!</Heading>
+              <Heading color="black" size={{ s: "l", md: "xl", l: "xxl" }} textAlign="center">Are you ready?</Heading>
+              <Heading color="black" size={{ s: "l", md: "xl", l: "xxl" }} textAlign="center">We are!</Heading>
             </Box>
-            <Button rounded='full' variant={'outline'} borderColor={'black'} color={'#2E3182'} _hover={{ backgroundColor: "none" }}>Get started now!</Button>
+            <Button buttonAction={handleRedirectToQuizzes} text="Get started now!" textColor="blue" fontSize={{ base: "sm", md: "md" }} key="getStartedNowButton" />
           </Flex>
         </Flex>
-        <Image src='wandHandRight.png' alt="Hero image one" w={'40%'} />
+        <Image src='wandHandRight.png' alt="Hero image one" w={'33.3%'} />
       </Flex>
-      <Footer />
     </>
   )
 }
