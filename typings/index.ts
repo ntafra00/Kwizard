@@ -32,3 +32,9 @@ export interface QuizData {
     imageUrl: string,
     imageDescription?: string,
 }
+
+export interface QuizCategory {
+    name: string;
+    imageUrl: string;
+    subcategories: string[];
+}

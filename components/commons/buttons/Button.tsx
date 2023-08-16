@@ -10,10 +10,11 @@ interface Props {
     isLoading?: boolean;
     fullWidth?: boolean;
     fontSize?: string | object;
+    fontWeight?: string;
     buttonAction: () => void;
 }
 
-export function Button({ text, textColor, backgroundColor, variant = "outline", borderRadius = "full", type = "button", fontSize = "sm", isLoading = false, fullWidth = false, buttonAction }: Props) {
+export function Button({ text, textColor, backgroundColor, variant = "outline", borderRadius = "full", type = "button", fontSize = "sm", isLoading = false, fullWidth = false, buttonAction, fontWeight = "medium" }: Props) {
 
     return (
         <ChakraButton
@@ -25,7 +26,7 @@ export function Button({ text, textColor, backgroundColor, variant = "outline", 
             borderColor="black"
             onClick={buttonAction}
             fontSize={fontSize}
-            fontWeight="medium"
+            fontWeight={fontWeight}
             type={type}
             isLoading={isLoading}
             w={fullWidth ? "full" : "inherit"}

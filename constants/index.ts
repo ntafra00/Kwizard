@@ -1,4 +1,4 @@
-import { FeaturedPostData, FormErrorMessage, NavigationLink, PostData } from "@/typings";
+import { FeaturedPostData, FormErrorMessage, NavigationLink, PostData, QuizCategory } from "@/typings";
 const COMMON_LINKS: NavigationLink[] = [{ text: "Quizzes", path: "quizzes" }, { text: "Stories", path: "stories" }, { text: "About us", path: "aboutUs" }]
 
 export const AUTHORIZED_LINKS: NavigationLink[] = [...COMMON_LINKS, { text: "Profile", path: "profile" }, { text: "Sign out", path: "" }];
@@ -68,3 +68,30 @@ export const COMMON_PAGE_PADDING = {
     md: "60px",
     lg: "110px",
 }
+
+export const QUIZ_CATEGORIES: QuizCategory[] = [{
+    name: "General Knowledge",
+    imageUrl: "generalKnowledge.png",
+    subcategories: []
+},
+{
+    name: "Arts and Music",
+    imageUrl: "artsAndMusic.png",
+    subcategories: []
+},
+{
+    name: "PC and Technology",
+    imageUrl: "pcAndTechnology.png",
+    subcategories: []
+},
+{
+    name: "Biology and Chemistry",
+    imageUrl: "biologyAndChemistry.png",
+    subcategories: []
+},
+{
+    name: "Sports and Recreation",
+    imageUrl: "sportsAndRecreation.png",
+    subcategories: ["Basketball", "Football", "Tennis", "Swimming", "Chess", "Darts", "Hockey", "Volleyball", "Rugby", "Other"]
+}
+]

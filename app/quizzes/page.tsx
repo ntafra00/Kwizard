@@ -20,6 +20,10 @@ export default function Quizzes() {
         document.getElementById("quizzes")?.scrollIntoView();
     }
 
+    const handleRedirectToQuizCreation = () => {
+        router.push("/createQuiz")
+    }
+
     return (
         <>
             <Flex pb={{ base: "20px", lg: "72px" }} px={COMMON_PAGE_PADDING} pt={{ base: "30px", lg: "64px" }} direction={{ base: "column", lg: "row" }}>
@@ -41,7 +45,7 @@ export default function Quizzes() {
                     <Flex direction={{ base: "column", lg: "row" }} justifyContent="space-between">
                         <QuizInfo buttonText="Check out other quizzes" buttonAction={handleScrollToQuizzes} imageDescription="Spells book" imageUrl="spellsBook.png" />
                         <QuizInfo buttonText="Get inspired by our stories" buttonAction={handleRedirectToStories} imageDescription="Broken glasses" imageUrl="brokenGlasses.png" />
-                        <QuizInfo buttonText="Make your own quiz" buttonAction={() => { }} imageDescription="Potion" imageUrl="potion.png" />
+                        <QuizInfo buttonText="Make your own quiz" buttonAction={handleRedirectToQuizCreation} imageDescription="Potion" imageUrl="potion.png" />
                     </Flex>
                 </Box>
             </WhiteLayout>
@@ -54,7 +58,7 @@ export default function Quizzes() {
                 </Center>
                 <CategoryBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
                 <QuizzesGrid />
-                <Pagination numberOfPages="5" />
+                <Pagination numberOfPages={5} />
             </Box>
         </>
     )
