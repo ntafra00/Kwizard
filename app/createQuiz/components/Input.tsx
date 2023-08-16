@@ -9,6 +9,6 @@ interface Props {
 
 export function Input({ placeholder = "Placeholder", backgroundColor = "transparent", type = "text", isDisabled = false }: Props) {
     return (
-        <CustomInput w={{ base: "90%", lg: "50%" }} borderRadius="6px" border="1px solid #E2E8F0" placeholder={placeholder} fontSize="18px" fontWeight="normal" color="#A0AEC0" background={backgroundColor} h="48px" type={type} isDisabled={isDisabled} />
+        <CustomInput w="100%" borderRadius="6px" border="1px solid #E2E8F0" placeholder={placeholder} fontSize="18px" fontWeight="normal" color="#A0AEC0" background={backgroundColor} h="48px" type={type} isDisabled={isDisabled} />
     )
 }

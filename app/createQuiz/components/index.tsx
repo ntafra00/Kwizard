@@ -10,5 +10,4 @@ export { ThirdStep } from "./ThirdStep";
 export { Question } from "./Question";
 export { Input } from "./Input";
 export { Answer } from "./Answer";
-export { QuizPassword } from "./QuizPassword";
-export { PinInput } from "./PinInput";
+export { QuizPassword } from "./QuizPassword"; 

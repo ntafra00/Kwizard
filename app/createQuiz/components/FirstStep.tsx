@@ -1,4 +1,4 @@
-import { Center, Heading, Textarea, Text, Image } from "@chakra-ui/react";
+import { Center, Heading, Textarea, Text, Image, Box } from "@chakra-ui/react";
 import { QuizSection, Categories, Subcategories, Input } from "./index";
 import { Button } from "@/components/commons/buttons";
 import { QuizCategory } from "@/typings";
@@ -45,12 +45,14 @@ export function FirstStep({ selectedCategory, selectedImage, selectedSubcategory
             </QuizSection>
             <QuizSection imageDescription="Number three" imageUrl="numberThree.png" title="Quiz Title">
                 <Center>
-                    <Input />
+                    <Box w={{ base: "90%", lg: "80%" }}>
+                        <Input />
+                    </Box>
                 </Center>
             </QuizSection>
             <QuizSection imageDescription="Number four" imageUrl="numberFour.png" title="Quiz Description">
                 <Center>
-                    <Textarea w={{ base: "90%", lg: "65%" }} borderRadius="6px" border="1px solid #E2E8F0" placeholder="Placeholder" fontSize="18px" fontWeight="normal" color="#A0AEC0" />
+                    <Textarea w={{ base: "90%", lg: "80%" }} borderRadius="6px" border="1px solid #E2E8F0" placeholder="Placeholder" fontSize="18px" fontWeight="normal" color="#A0AEC0" />
                 </Center>
             </QuizSection>
             <QuizSection isLast={true} imageDescription="Number five" imageUrl="numberFive.png" title="Quiz Main Image">

@@ -52,13 +52,17 @@ export default function CreateQuiz() {
         scrollToProgressBar();
     }
 
+    const handleStepClick = (step: number) => {
+        setCurrentStep(step);
+    } 
+
     const scrollToProgressBar = () => {
         document.getElementById("progressBar")?.scrollIntoView();
     }
 
     return (
         <Box px={{ base: "32px", md: "258px" }} pt="40px">
-            <ProgressBar currentStep={currentStep} />
+            <ProgressBar currentStep={currentStep} handleStepClick={handleStepClick}/>
             {currentStep === 0 &&
                 <FirstStep
                     handleChangeSelectedCategory={handleChangeSelectedCategory}

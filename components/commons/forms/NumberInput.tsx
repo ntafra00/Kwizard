@@ -30,7 +30,7 @@ export function NumberInput({ format = (value) => value, parse = (value) => valu
             max={maximumValue}
             min={minimumValue}
             step={step}
-            w={{ base: "90%", lg: "50%" }}
+            w="100%"
             borderRadius="6px"
             border="1px solid #E2E8F0"
         >
