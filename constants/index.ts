@@ -1,4 +1,4 @@
-import { FeaturedPostData, FormErrorMessage, NavigationLink, PostData, QuizCategory } from "@/typings";
+import { FeaturedPostData, FormErrorMessage, FormErrorMessageFunction, NavigationLink, PostData, QuizCategory } from "@/typings";
 const COMMON_LINKS: NavigationLink[] = [{ text: "Quizzes", path: "quizzes" }, { text: "Stories", path: "stories" }, { text: "About us", path: "aboutUs" }]
 
 export const AUTHORIZED_LINKS: NavigationLink[] = [...COMMON_LINKS, { text: "Profile", path: "profile" }, { text: "Sign out", path: "" }];
@@ -9,6 +9,11 @@ export const FORM_ERROR_MESSAGES: FormErrorMessage = {
     required: "Field is required",
     invalidEmail: "Invalid email address",
     passwordsDoNotMatch: "Passwords do not match",
+    invalidPhoneNumber: "Invalid phone number",
+}
+
+export const FORM_ERROR_MESSAGE_FUNCTIONS: FormErrorMessageFunction = {
+    maxLength: (length: string) => `Field has to contain maximum ${length} characters`,
 }
 
 export const POSTS: PostData[] = [

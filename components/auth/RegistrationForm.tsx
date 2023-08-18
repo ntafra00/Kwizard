@@ -1,4 +1,4 @@
-import { Text, Center, Box } from "@chakra-ui/react"
+import { Text, Center, Box, FormLabel, Input } from "@chakra-ui/react"
 import { FormField } from "../commons/forms";
 
 import { useForm } from "react-hook-form";
@@ -10,6 +10,8 @@ import { Button } from "../commons/buttons";
 import { validatePassword } from "@/utils";
 import { registrationSchema } from "@/constants/schemas/loginSchema";
 import { ModalScene } from "@/enums";
+
+import { inputProps, labelProps } from "./constants";
 
 interface Props {
     handleModalSceneChange: (modalScene: ModalScene) => void;
@@ -57,12 +59,21 @@ export function RegistrationForm({ handleModalSceneChange }: Props) {
                     and a strong password!
                 </Text>
             </Center>
-            <FormField errorMessage={errors.email?.message} hasError={!!errors.email} id="email" label="Email" key="email" register={register("email")} />
+            <FormField errorMessage={errors.email?.message} hasError={!!errors.email} id="email" key="email">
+                <FormLabel {...labelProps}>Email</FormLabel>
+                <Input {...register("email")} {...inputProps} type="text" />
+            </FormField>
             <Box pt={4}>
-                <FormField errorMessage={errors.password?.message} hasError={!!errors.password} id="password" label="Password" key="password" register={register("password")} type="password" />
+                <FormField errorMessage={errors.password?.message} hasError={!!errors.password} id="password" key="password">
+                    <FormLabel {...labelProps}>Password</FormLabel>
+                    <Input {...register("password")} {...inputProps} type="password" />
+                </FormField>
             </Box>
             <Box pt={4} pb="70px">
-                <FormField errorMessage={errors.repeatedPassword?.message} hasError={!!errors.repeatedPassword} id="repeatedPassword" label="Confirm password" key="repeatedPassword" register={register("repeatedPassword")} type="password" />
+                <FormField errorMessage={errors.repeatedPassword?.message} hasError={!!errors.repeatedPassword} id="repeatedPassword" key="repeatedPassword">
+                    <FormLabel {...labelProps}>Confirm password</FormLabel>
+                    <Input {...register("repeatedPassword")} {...inputProps} type="password" />
+                </FormField>
             </Box>
             <Button
                 backgroundColor="blue"

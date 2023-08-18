@@ -4,7 +4,11 @@ export interface NavigationLink {
 }
 
 export interface FormErrorMessage {
-    [key: string]: string
+    [key: string]: string;
+}
+
+export interface FormErrorMessageFunction {
+    [key: string]: ((value: string) => string)
 }
 
 export interface LoginCredentials {

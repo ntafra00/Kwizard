@@ -1,4 +1,4 @@
-import { Text, Flex, Center, Box } from "@chakra-ui/react"
+import { Text, Flex, Center, Box, FormLabel, Input } from "@chakra-ui/react"
 import { FormField } from "../commons/forms";
 
 import { useForm } from "react-hook-form";
@@ -9,6 +9,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { FORM_ERROR_MESSAGES } from "@/constants";
 import { Button } from "../commons/buttons";
 import { ModalScene } from "@/enums";
+import { inputProps, labelProps } from "./constants";
 
 interface Props {
     handleModalSceneChange: (modalScene: ModalScene) => void;
@@ -44,9 +45,15 @@ export function LoginForm({ handleModalSceneChange }: Props) {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <FormField errorMessage={errors.email?.message} hasError={!!errors.email} id="email" label="Email" key="email" register={register("email")} />
+            <FormField errorMessage={errors.email?.message} hasError={!!errors.email} id="email" key="email">
+                <FormLabel {...labelProps}>Email</FormLabel>
+                <Input {...register("email")} {...inputProps} type="text" />
+            </FormField>
             <Box pt={4}>
-                <FormField errorMessage={errors.password?.message} hasError={!!errors.password} id="password" label="Password" key="password" register={register("password")} type="password" />
+                <FormField errorMessage={errors.password?.message} hasError={!!errors.password} id="password" key="password">
+                    <FormLabel {...labelProps}>Password</FormLabel>
+                    <Input {...register("password")} {...inputProps} type="password" />
+                </FormField>
             </Box>
             <Flex justifyContent={"flex-end"} py="16px">
                 <Button buttonAction={() => { }} text="Forgot password?" textColor="blue" variant="link" key="Forgot password" />
