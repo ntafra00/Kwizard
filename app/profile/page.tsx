@@ -2,11 +2,12 @@
 
 import { Flex, Center, Avatar, AvatarBadge, Heading, Stack, Image, Text, FormLabel, Input } from "@chakra-ui/react";
 import { COMMON_PAGE_PADDING } from "@/constants";
+import { AuthorizedRoute } from "@/components/auth";
 import { PersonalInfoForm } from "./components";
 
 export default function Profile() {
     return (
-        <>
+        <AuthorizedRoute>
             <Flex direction={{ base: 'column', lg: 'row' }} px={COMMON_PAGE_PADDING} pt={{ base: "20px" }} pb="80px" gap="24px">
                 <Stack w={{ base: "100%", lg: "35%" }} pt="20px" pb="46px" backgroundColor="white" borderRadius="8px">
                     <Center pb="20px">
@@ -40,6 +41,6 @@ export default function Profile() {
                     <PersonalInfoForm />
                 </Flex>
             </Flex>
-        </>
+        </AuthorizedRoute>
     )
 }
