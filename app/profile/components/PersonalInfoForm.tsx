@@ -34,9 +34,6 @@ export function PersonalInfoForm() {
         shouldFocusError: true,
     });
 
-    // test@gmail.com
-    // test1234
-
     const onSubmit = async (formData: {}) => {
         try {
             console.log("I am in onSubmit")
