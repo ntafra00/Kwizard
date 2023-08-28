@@ -10,7 +10,7 @@ import { getNavigationLinks } from '@/utils';
 import DesktopNavbar from './DesktopNav';
 import MobileNavbar from './MobileNav';
 
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { NavigationLink } from '@/typings';
 import { useAuth } from '@/contexts/AuthContext';
 
@@ -22,6 +22,7 @@ import { COMMON_PAGE_PADDING } from '@/constants';
 export default function Navbar() {
     const [isLargerThanLargeScreen] = useMediaQuery('(min-width: 1150px)');
     const router = useRouter();
+    const selectedRoute = usePathname().slice(1);
     const { currentUser, toggleModal, logout, handleModalSceneChange } = useAuth();
 
     const handleButtonClick = async (link: NavigationLink) => {
@@ -65,13 +66,16 @@ export default function Navbar() {
                 return <Button backgroundColor="blue" textColor="white" text={navigationLink.text} buttonAction={() => handleButtonClick(navigationLink)} />
             }
 
+            const isSelected = selectedRoute === navigationLink.path;
+
             return <Link
-                _hover={{
+                _hover={isSelected ? {} : {
                     textDecoration: 'underline',
                 }}
                 color="black"
-                fontWeight="medium"
+                fontWeight={isSelected ? 'bold' : 'medium'}
                 fontSize="sm"
+                textDecoration={isSelected ? 'underline' : 'none'}
                 href={`/${navigationLink.path}`}>
                 {navigationLink.text}
             </Link>
