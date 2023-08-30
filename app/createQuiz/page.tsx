@@ -12,7 +12,7 @@ import { ThirdStep } from "./components/ThirdStep";
 export type QuizType = "private" | "public";
 
 export default function CreateQuiz() {
-    const [currentStep, setCurrentStep] = useState(2);
+    const [currentStep, setCurrentStep] = useState(1);
     const [selectedCategory, setSelectedCategory] = useState<QuizCategory>();
     const [selectedSubcategory, setSelectedSubcategory] = useState<string>();
     const [selectedQuizType, setSelectedQuizType] = useState<QuizType>("public");
@@ -43,6 +43,10 @@ export default function CreateQuiz() {
         }
     };
 
+    const handleSelectedQuizTypeChange = (quizType: QuizType) => {
+        setSelectedQuizType(quizType);
+    }
+
     const removeUploadedImage = () => {
         setSelectedImage(undefined);
     }
@@ -54,7 +58,7 @@ export default function CreateQuiz() {
 
     const handleStepClick = (step: number) => {
         setCurrentStep(step);
-    } 
+    }
 
     const scrollToProgressBar = () => {
         document.getElementById("progressBar")?.scrollIntoView();
@@ -62,7 +66,7 @@ export default function CreateQuiz() {
 
     return (
         <Box px={{ base: "32px", md: "258px" }} pt="40px">
-            <ProgressBar currentStep={currentStep} handleStepClick={handleStepClick}/>
+            <ProgressBar currentStep={currentStep} handleStepClick={handleStepClick} />
             {currentStep === 0 &&
                 <FirstStep
                     handleChangeSelectedCategory={handleChangeSelectedCategory}
@@ -75,6 +79,7 @@ export default function CreateQuiz() {
                     selectedSubcategory={selectedSubcategory}
                     handleUploadFileClick={handleUploadFileClick}
                     handleFileInputChange={handleFileInputChange}
+                    handleSelectedQuizTypeChange={handleSelectedQuizTypeChange}
                 />}
             {currentStep === 1 &&
                 <SecondStep />

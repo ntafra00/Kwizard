@@ -13,7 +13,7 @@ export function Categories({ selectedCategory, handleChangeSelectedCategory }: P
         <Flex gap="64px" justify="center" wrap="wrap">
             {QUIZ_CATEGORIES.map((quizCategory) => {
                 return (
-                    <Category category={quizCategory} isSelected={selectedCategory?.name === quizCategory.name ? true : false} handleChangeSelectedCategory={handleChangeSelectedCategory} />
+                    <Category category={quizCategory} isSelected={selectedCategory?.name === quizCategory.name ? true : false} handleChangeSelectedCategory={handleChangeSelectedCategory} key={quizCategory.id} />
                 )
             })}
         </Flex>

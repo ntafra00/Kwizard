@@ -3,12 +3,12 @@ import WhiteLayout from "@/layouts/WhiteLayout";
 import { Box, Flex, Center, Image, Heading, Text } from "@chakra-ui/react";
 import { QuizInfo, CategoryBar, QuizzesGrid, Pagination } from "./components";
 import { useRouter } from "next/navigation";
-import { COMMON_PAGE_PADDING } from "@/constants";
+import { COMMON_PAGE_PADDING, QUIZ_CATEGORIES } from "@/constants";
 import { useState } from "react";
 
 export default function Quizzes() {
 
-    const [selectedCategory, setSelectedCategory] = useState("Sport");
+    const [selectedCategory, setSelectedCategory] = useState(QUIZ_CATEGORIES[0]);
 
     const router = useRouter()
 

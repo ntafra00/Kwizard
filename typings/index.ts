@@ -1,6 +1,7 @@
 export interface NavigationLink {
     text: string,
     path: string,
+    id: string,
 }
 
 export interface FormErrorMessage {
@@ -17,6 +18,7 @@ export interface LoginCredentials {
 }
 
 export interface PostData {
+    id: string,
     imageUrl: string,
     topic: string,
     description: string,
@@ -29,16 +31,34 @@ export interface FeaturedPostData extends PostData {
 }
 
 export interface QuizData {
-    title: string,
-    subtitle: string,
-    category: string,
-    author: string,
-    imageUrl: string,
-    imageDescription?: string,
+    id: string;
+    title: string;
+    subtitle: string;
+    category: string;
+    author: string;
+    imageUrl: string;
+    imageDescription?: string;
 }
 
 export interface QuizCategory {
+    id: string;
     name: string;
     imageUrl: string;
     subcategories: string[];
+}
+
+export interface Answer {
+    id: string;
+    text: string;
+    isCorrect: boolean;
+}
+
+export interface QuizCreationStep {
+    id: string;
+    name: string;
+}
+
+export interface Topic {
+    id: string;
+    name: string;
 }

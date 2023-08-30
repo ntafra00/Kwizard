@@ -8,7 +8,7 @@ export const inputProps = {
 }
 
 export const labelProps = {
-    color: "gray",
+    color: "black",
     fontSize: "sm",
     fontWeight: "medium"
 }

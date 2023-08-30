@@ -1,9 +1,7 @@
 "use client"
 import './globals.css'
-import { Inter } from 'next/font/google'
 import { AuthProvider } from '@/contexts/AuthContext'
 
-const inter = Inter({ subsets: ['latin'] })
 
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import Navbar from '@/components/commons/navbar'
@@ -60,7 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           "browserIcon.png"
           type="image/png"></link>
       </head>
-      <body className={inter.className}>
+      <body>
         <AuthProvider>
           <ChakraProvider theme={theme}>
             <Navbar />

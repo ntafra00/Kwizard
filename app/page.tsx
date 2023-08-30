@@ -1,21 +1,13 @@
 "use client"
 
 import { Flex, Heading, Text, Image, Box } from "@chakra-ui/react";
-
 import { DownArrow } from "@/components/commons/icons";
 import WhiteLayout from "@/layouts/WhiteLayout";
 import { Button } from "@/components/commons/buttons";
 import { useRouter } from "next/navigation";
+import Head from "next/head";
 
-const topics = [
-  "Create",
-  "Play",
-  "Collaborate",
-  "Compete",
-  "Learn"
-]
-
-import { COMMON_PAGE_PADDING } from "@/constants";
+import { COMMON_PAGE_PADDING, HOME_PAGE_TOPICS } from "@/constants";
 
 export default function Home() {
   const router = useRouter();
@@ -26,6 +18,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Qwizard | Home</title>
+      </Head>
       <Flex direction={{ base: 'column', md: 'row' }} px={COMMON_PAGE_PADDING} pt={{ base: "20px" }}>
         <Flex direction='column' gap={4} w={{ base: '100%', md: '50%' }} justifyContent={{ base: 'end', md: 'center' }} alignItems={'flex-start'}>
           <Heading color='black' fontSize={{ base: "md", md: "lg", lg: 'xl' }}>Enjoy and learn at the same time, what kind of a spell is that?</Heading>
@@ -47,10 +42,10 @@ export default function Home() {
               <Image src='videoWizardEditor.png' alt="Hero image one" w='100%' />
             </Flex>
             <Flex direction='column' gap={4} w={{ base: '100%', md: '50%' }} justifyContent={'center'} alignItems={'flex-end'}>
-              {topics.map((topic) => {
+              {HOME_PAGE_TOPICS.map((topic) => {
                 return (
-                  <Flex borderBottom={'1px solid black'} w={{ base: "100%", md: "80%" }} justifyContent={'space-between'}>
-                    <Heading color="black" fontSize="l" fontWeight="semibold">{topic}</Heading>
+                  <Flex borderBottom={'1px solid black'} w={{ base: "100%", md: "80%" }} justifyContent={'space-between'} key={topic.id}>
+                    <Heading color="black" fontSize="l" fontWeight="semibold">{topic.name}</Heading>
                     <DownArrow />
                   </Flex>
                 )

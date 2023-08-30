@@ -78,10 +78,8 @@ export function ThirdStep() {
                     <Center width={{ base: "80%", lg: "30%" }}>
                         <Text color="blue" fontWeight="medium" fontSize="18px" textAlign="center">Quiz Access Password</Text>
                     </Center>
-                    <Flex width={{ base: "80%", lg: "70%" }} gap="20px" justifyContent={{ base: "flex-start", lg: "center" }} alignItems="center" direction={{ base: "column", lg: "row" }}>
-                        <Box>
-                            <QuizPassword />
-                        </Box>
+                    <Flex width={{ base: "80%", lg: "70%" }} gap="40px" justifyContent="flex-start" alignItems="center" direction={{ base: "column", lg: "row" }}>
+                        <QuizPassword />
                         <Switch size="lg" colorScheme="blackAlpha" isChecked />
                     </Flex>
                 </Flex>

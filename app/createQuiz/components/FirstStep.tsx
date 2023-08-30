@@ -16,10 +16,11 @@ interface Props {
     removeUploadedImage: () => void;
     handleUploadFileClick: () => void;
     handleFileInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+    handleSelectedQuizTypeChange: (quizType: QuizType) => void
 
 }
 
-export function FirstStep({ selectedCategory, selectedImage, selectedSubcategory, selectedQuizType, handleChangeSelectedCategory, removeUploadedImage, handleChangeSelectedSubcategory, handleFileInputChange, handleUploadFileClick, imageRef }: Props) {
+export function FirstStep({ selectedCategory, selectedImage, selectedSubcategory, selectedQuizType, imageRef, handleChangeSelectedCategory, removeUploadedImage, handleChangeSelectedSubcategory, handleFileInputChange, handleUploadFileClick, handleSelectedQuizTypeChange }: Props) {
     return (
         <>
             <QuizSection imageDescription="Number one" imageUrl="numberOne.png" title="What's your Quiz's topic?">
@@ -35,11 +36,11 @@ export function FirstStep({ selectedCategory, selectedImage, selectedSubcategory
             </QuizSection>
             <QuizSection imageDescription="Number two" imageUrl="numberTwo.png" title="Is this a Private or Public Quiz?">
                 <Center>
-                    <Center borderRadius="50px 0px 0px 50px" w="145px" h="37px" background="rgba(239, 157, 89, 0.50)" _hover={selectedQuizType === "private" ? {} : { background: "rgba(239, 157, 89, 0.50)", cursor: "pointer" }}>
-                        <Text textAlign="center" color="black" fontSize="sm" fontWeight="medium">Private</Text>
+                    <Center borderRadius="50px 0px 0px 50px" w="145px" h="37px" background={selectedQuizType === "private" ? "orange" : "rgba(239, 157, 89, 0.50)"} _hover={selectedQuizType === "private" ? {} : { background: "rgba(239, 157, 89, 0.50)", cursor: "pointer" }} onClick={selectedQuizType === "private" ? undefined : () => handleSelectedQuizTypeChange("private")}>
+                        <Text textAlign="center" color={selectedQuizType === "private" ? "white" : "black"} fontSize="sm" fontWeight="medium">Private</Text>
                     </Center>
-                    <Center borderRadius="0px 50px 50px 0px" w="145px" h="37px" background="orange" _hover={selectedQuizType === "public" ? {} : { background: "rgba(239, 157, 89, 0.50)", cursor: "pointer" }}>
-                        <Text textAlign="center" color="white" fontSize="sm" fontWeight="medium">Public</Text>
+                    <Center borderRadius="0px 50px 50px 0px" w="145px" h="37px" background={selectedQuizType === "public" ? "orange" : "rgba(239, 157, 89, 0.50)"} _hover={selectedQuizType === "public" ? {} : { background: "rgba(239, 157, 89, 0.50)", cursor: "pointer" }} onClick={selectedQuizType === "public" ? undefined : () => handleSelectedQuizTypeChange("public")}>
+                        <Text textAlign="center" color={selectedQuizType === "public" ? "white" : "black"} fontSize="sm" fontWeight="medium">Public</Text>
                     </Center>
                 </Center>
             </QuizSection>

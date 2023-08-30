@@ -59,11 +59,11 @@ export default function Navbar() {
     const renderNavigationLinks = () => {
         return getNavigationLinks(!!currentUser).map((navigationLink) => {
             if (navigationLink.text === 'Profile' || navigationLink.text === 'Login') {
-                return <Button textColor="blue" text={navigationLink.text} buttonAction={() => handleButtonClick(navigationLink)} />
+                return <Button textColor="blue" text={navigationLink.text} buttonAction={() => handleButtonClick(navigationLink)} key={navigationLink.id} />
             }
 
             if (navigationLink.text === 'Sign out' || navigationLink.text === 'Register') {
-                return <Button backgroundColor="blue" textColor="white" text={navigationLink.text} buttonAction={() => handleButtonClick(navigationLink)} />
+                return <Button backgroundColor="blue" textColor="white" text={navigationLink.text} buttonAction={() => handleButtonClick(navigationLink)} key={navigationLink.id} />
             }
 
             const isSelected = selectedRoute === navigationLink.path;
@@ -76,7 +76,9 @@ export default function Navbar() {
                 fontWeight={isSelected ? 'bold' : 'medium'}
                 fontSize="sm"
                 textDecoration={isSelected ? 'underline' : 'none'}
-                href={`/${navigationLink.path}`}>
+                href={`/${navigationLink.path}`}
+                key={navigationLink.id}
+            >
                 {navigationLink.text}
             </Link>
         })

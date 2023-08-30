@@ -1,15 +1,14 @@
 "use client"
 
 import {
-    Box,
     Flex,
     HStack,
     Spacer,
 } from '@chakra-ui/react';
-
 import Image from 'next/image';
 import logo from '@/public/logo.png'
 import Link from 'next/link';
+import { v4 as uuid } from 'uuid';
 
 interface Props {
     navigationLinks: JSX.Element[];
@@ -17,7 +16,7 @@ interface Props {
 
 export default function DesktopNavbar({ navigationLinks }: Props) {
     return (
-        <Flex alignItems="flex-end" justifyContent="space-between">
+        <Flex alignItems="flex-end" justifyContent="space-between" key={uuid()}>
             <Link href="/">
                 <Image src={logo} alt='Kwizard logo' />
             </Link>

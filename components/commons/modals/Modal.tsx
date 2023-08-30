@@ -27,7 +27,7 @@ export function Modal() {
     return (
         <ChakraModal blockScrollOnMount={false} isOpen={isModalOpen} onClose={toggleModal}>
             <ModalOverlay backdropFilter='blur(1px)' />
-            <ModalContent border="1px solid black" borderRadius="20px">
+            <ModalContent border="1px solid black" borderRadius="20px" width="57%">
                 <ModalHeader>
                     <Center>
                         <Box w="150px" h="150px">
@@ -35,8 +35,8 @@ export function Modal() {
                         </Box>
                     </Center>
                     {!!modalScene && <Flex direction="column">
-                        <Center>
-                            <Heading color="black" fontSize="l" fontWeight="bold" textAlign="center">{modalScene === ModalScene.LOGIN ? "Welcome back!" : "Ah, so you want to be a wizard?"}</Heading>
+                        <Center pb="8px">
+                            <Heading color="black" fontSize="md" fontWeight="bold" textAlign="center">{modalScene === ModalScene.LOGIN ? "Welcome back!" : "Ah, so you want to be a wizard?"}</Heading>
                         </Center>
                         <Center pb={"30px"}>
                             <Text color="gray" fontSize="sm" fontWeight="medium">{modalScene === ModalScene.LOGIN ? "Please enter your details to sign in." : "Use magic and apps below to get started!"}</Text>
