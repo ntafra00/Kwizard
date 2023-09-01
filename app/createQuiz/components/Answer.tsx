@@ -1,7 +1,6 @@
-import { Flex, Image, Center } from "@chakra-ui/react";
+import { Flex, Image, Center } from "@/components/chakra";
 import { Input } from "./Input";
 import { Answer as IAnswer } from "@/typings";
-import { Dispatch, SetStateAction } from "react";
 
 interface Props {
     answer: IAnswer;

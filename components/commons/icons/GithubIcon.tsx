@@ -1,7 +1,7 @@
 "use client"
 
 import { FaGithub } from "react-icons/fa"
-import { Icon } from "@chakra-ui/react";
+import { Icon } from "@/components/chakra";
 
 
 export function GithubIcon() {

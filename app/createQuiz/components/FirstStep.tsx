@@ -1,26 +1,30 @@
-import { Center, Heading, Textarea, Text, Image, Box } from "@chakra-ui/react";
+"use client"
+
+import { Center, Heading, Textarea, Text, Image, Box } from "@/components/chakra";
 import { QuizSection, Categories, Subcategories, Input } from "./index";
 import { Button } from "@/components/commons/buttons";
-import { QuizCategory } from "@/typings";
-import { QuizType } from "../page";
-import { RefObject } from "react";
+import { useQuizCreation } from "@/contexts";
+import { useRef } from "react";
 
-interface Props {
-    selectedCategory: QuizCategory | undefined;
-    selectedSubcategory: string | undefined;
-    selectedImage: string | undefined;
-    selectedQuizType: QuizType;
-    imageRef: RefObject<HTMLInputElement>
-    handleChangeSelectedCategory: (category: QuizCategory) => void;
-    handleChangeSelectedSubcategory: (subcategory: string) => void;
-    removeUploadedImage: () => void;
-    handleUploadFileClick: () => void;
-    handleFileInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-    handleSelectedQuizTypeChange: (quizType: QuizType) => void
+export function FirstStep() {
+    const { selectedCategory, handleChangeSelectedCategory, selectedQuizType, selectedSubcategory, handleChangeSelectedSubcategory, selectedImage, handleRemoveUploadedImage, handleSetUploadedImage, handleSelectedQuizTypeChange } = useQuizCreation();
+    const imageRef = useRef<HTMLInputElement>(null);
 
-}
+    const handleFileInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const files = event.target.files;
 
-export function FirstStep({ selectedCategory, selectedImage, selectedSubcategory, selectedQuizType, imageRef, handleChangeSelectedCategory, removeUploadedImage, handleChangeSelectedSubcategory, handleFileInputChange, handleUploadFileClick, handleSelectedQuizTypeChange }: Props) {
+        if (files && files.length > 0) {
+            handleSetUploadedImage(URL.createObjectURL(files[0]));
+        }
+    };
+
+    const handleUploadFileClick = () => {
+        if (!imageRef) {
+            return;
+        }
+        imageRef.current?.click();
+    }
+
     return (
         <>
             <QuizSection imageDescription="Number one" imageUrl="numberOne.png" title="What's your Quiz's topic?">
@@ -62,7 +66,7 @@ export function FirstStep({ selectedCategory, selectedImage, selectedSubcategory
                 </Center>
                 <Center pt="40px" gap="10px">
                     {!selectedImage && <Button buttonAction={handleUploadFileClick} text="Select Image to Upload" textColor="white" backgroundColor="blue" borderRadius="10px" />}
-                    {selectedImage && <Button buttonAction={removeUploadedImage} text="Remove uploaded image" textColor="white" backgroundColor="orange" borderRadius="10px" />}
+                    {selectedImage && <Button buttonAction={handleRemoveUploadedImage} text="Remove uploaded image" textColor="white" backgroundColor="orange" borderRadius="10px" />}
                 </Center>
                 <input
                     style={{ display: 'none' }}

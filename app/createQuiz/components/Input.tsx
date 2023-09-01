@@ -1,4 +1,4 @@
-import { Input as CustomInput } from "@chakra-ui/react"
+import { Input as CustomInput } from "@/components/chakra"
 
 interface Props {
     placeholder?: string;

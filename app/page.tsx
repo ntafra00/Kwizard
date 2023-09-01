@@ -1,11 +1,10 @@
 "use client"
 
-import { Flex, Heading, Text, Image, Box } from "@chakra-ui/react";
+import { Flex, Heading, Text, Image, Box } from "@/components/chakra";
 import { DownArrow } from "@/components/commons/icons";
 import WhiteLayout from "@/layouts/WhiteLayout";
 import { Button } from "@/components/commons/buttons";
 import { useRouter } from "next/navigation";
-import Head from "next/head";
 
 import { COMMON_PAGE_PADDING, HOME_PAGE_TOPICS } from "@/constants";
 
@@ -18,9 +17,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Qwizard | Home</title>
-      </Head>
       <Flex direction={{ base: 'column', md: 'row' }} px={COMMON_PAGE_PADDING} pt={{ base: "20px" }}>
         <Flex direction='column' gap={4} w={{ base: '100%', md: '50%' }} justifyContent={{ base: 'end', md: 'center' }} alignItems={'flex-start'}>
           <Heading color='black' fontSize={{ base: "md", md: "lg", lg: 'xl' }}>Enjoy and learn at the same time, what kind of a spell is that?</Heading>

@@ -1,12 +1,9 @@
-"use client"
-
-import { Center, HStack, Heading, Stack, Text } from "@chakra-ui/react"
+import { Center, HStack, Heading, Stack, Text } from "@/components/chakra"
 import { Button } from "@/components/commons/buttons";
 import WhiteLayout from "@/layouts/WhiteLayout";
 import { FacebookIcon, TwitterIcon, MailIcon } from "@/components/commons/icons";
-import { PostCardsGrid } from "./components";
+import { PostCardsGrid, FeaturedPost } from "./components";
 import { FEATURED_POST, POSTS } from "@/constants";
-import { FeaturedPost } from "./components/FeaturedPost";
 
 export default function Stories() {
     return (

@@ -1,4 +1,4 @@
-import { PinInput, PinInputField, HStack } from "@chakra-ui/react"
+import { PinInput, PinInputField, HStack } from "@/components/chakra"
 
 export function QuizPassword() {
     return (

@@ -1,8 +1,6 @@
-"use client"
-
 import { BsFacebook } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
-import { Icon } from "@chakra-ui/react";
+import { Icon } from "@/components/chakra";
 
 interface Props {
     type: string,

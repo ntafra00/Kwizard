@@ -1,11 +1,13 @@
-import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
+"use client"
+
+import { ChevronDownIcon, ChevronUpIcon } from '@/components/chakra-icons';
 import {
     NumberInput as ChakraNumberInput,
     NumberInputField,
     NumberInputStepper,
     NumberIncrementStepper,
     NumberDecrementStepper,
-} from '@chakra-ui/react'
+} from "@/components/chakra"
 
 import { useState } from 'react';
 

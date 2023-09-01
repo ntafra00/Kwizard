@@ -1,5 +1,5 @@
 import { QuizData } from "@/typings"
-import { Flex, Text, Heading, Image, HStack, Stack } from "@chakra-ui/react"
+import { Flex, Text, Heading, Image, HStack, Stack } from "@/components/chakra"
 
 interface Props {
     quizData: QuizData

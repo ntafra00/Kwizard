@@ -1,6 +1,4 @@
-"use client"
-
-import { Box } from "@chakra-ui/react"
+import { Box } from "@/components/chakra"
 
 interface Props {
     children: React.ReactNode;

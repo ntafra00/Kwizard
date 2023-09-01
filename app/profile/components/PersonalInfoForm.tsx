@@ -1,4 +1,4 @@
-import { Flex, Input, FormLabel, Textarea, Box, Center } from "@chakra-ui/react"
+import { Flex, Input, FormLabel, Textarea, Box, Center } from "@/components/chakra"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 

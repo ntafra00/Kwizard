@@ -62,3 +62,5 @@ export interface Topic {
     id: string;
     name: string;
 }
+
+export type QuizType = "private" | "public";

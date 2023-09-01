@@ -1,4 +1,4 @@
-import { Box, Center, Image, Heading } from "@chakra-ui/react";
+import { Box, Center, Image, Heading } from "@/components/chakra";
 
 interface Props {
     children: React.ReactNode;

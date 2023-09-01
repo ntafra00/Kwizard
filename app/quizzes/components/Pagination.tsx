@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Text, Flex, HStack, NumberInput, NumberInputField, Center, Box } from "@chakra-ui/react";
+import { Text, Flex, HStack, Center, } from "@/components/chakra";
 
 import { PaginationButton } from "@/components/commons/buttons";
 import { LeftArrow, RightArrow } from "@/components/commons/icons";

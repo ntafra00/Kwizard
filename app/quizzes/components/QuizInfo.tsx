@@ -1,4 +1,4 @@
-import { Stack, Image, Center } from "@chakra-ui/react";
+import { Stack, Image, Center } from "@/components/chakra";
 
 import { Button } from "@/components/commons/buttons";
 

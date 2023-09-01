@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react"
+import { Box, Flex, Image, Text } from "@/components/chakra"
 import { PostData } from "@/typings"
 
 interface Props {

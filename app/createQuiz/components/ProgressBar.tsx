@@ -1,15 +1,11 @@
 "use client"
 
-import { QuizCreationStep } from "@/typings";
-import { Flex, Box, Center } from "@chakra-ui/react";
+import { Flex, Box, Center } from "@/components/chakra";
 import { QUIZ_CREATION_STEPS } from "@/constants";
+import { useQuizCreation } from "@/contexts";
 
-interface Props {
-    currentStep: number;
-    handleStepClick: (step: number) => void;
-}
-
-export function ProgressBar({ currentStep, handleStepClick }: Props) {
+export function ProgressBar() {
+    const { currentStep, handleStepClick } = useQuizCreation()
     return (
         <Flex align="center" pb="78px" direction={{ base: "column", lg: "row" }} id="progressBar">
             {QUIZ_CREATION_STEPS.map((step, index) => {

@@ -4,7 +4,7 @@ import {
     Box,
     Link,
     useMediaQuery
-} from '@chakra-ui/react';
+} from "@/components/chakra";
 
 import { getNavigationLinks } from '@/utils';
 import DesktopNavbar from './DesktopNav';

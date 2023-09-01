@@ -1,5 +1,5 @@
+import { Flex, Center, Text, Heading, Divider, Stack, Image, Spacer } from "@/components/chakra";
 import { FeaturedPostData } from "@/typings"
-import { Flex, Center, Text, Heading, Divider, Stack, Image, Spacer, Box } from "@chakra-ui/react"
 
 interface Props {
     featuredPost: FeaturedPostData;

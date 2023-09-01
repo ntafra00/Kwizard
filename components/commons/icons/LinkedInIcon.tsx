@@ -1,7 +1,7 @@
 "use client"
 
 import { TfiLinkedin } from "react-icons/tfi"
-import { Icon } from "@chakra-ui/react";
+import { Icon } from "@/components/chakra";
 
 
 export function LinkedInIcon() {

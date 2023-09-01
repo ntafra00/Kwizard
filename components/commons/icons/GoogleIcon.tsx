@@ -1,6 +1,6 @@
 import { FcGoogle } from 'react-icons/fc';
 
-import { Icon } from "@chakra-ui/react";
+import { Icon } from "@/components/chakra";
 
 export function GoogleIcon() {
     return (

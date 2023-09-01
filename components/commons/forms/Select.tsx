@@ -1,5 +1,7 @@
+"use client"
+
 import Select, { GroupBase, OptionProps, SingleValueProps, StylesConfig, components } from "react-select";
-import { Box } from "@chakra-ui/react";
+import { Box } from "@/components/chakra";
 import { useState } from "react";
 import { QuestionType } from "@/enums";
 

@@ -1,3 +1,5 @@
+"use client"
+
 export { DownArrow } from "./DownArrow";
 export { FacebookIcon } from "./FacebookIcon";
 export { TwitterIcon } from "./TwitterIcon";

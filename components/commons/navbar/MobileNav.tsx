@@ -7,9 +7,9 @@ import {
     Image,
     useDisclosure,
     Button,
-} from '@chakra-ui/react';
+} from "@/components/chakra";
 
-import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { CloseIcon, HamburgerIcon } from '@/components/chakra-icons';
 import Link from 'next/link';
 
 interface Props {

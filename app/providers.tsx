@@ -1,7 +1,7 @@
 "use client"
 
 import { AuthProvider } from '@/contexts/AuthContext'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from "@/components/chakra"
 import { CacheProvider } from '@chakra-ui/next-js'
 
 const theme = extendTheme({

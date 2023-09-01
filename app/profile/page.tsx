@@ -1,6 +1,4 @@
-"use client"
-
-import { Flex, Center, Avatar, AvatarBadge, Heading, Stack, Image, Text, FormLabel, Input } from "@chakra-ui/react";
+import { Flex, Center, Avatar, AvatarBadge, Heading, Stack, Image, Text } from "@/components/chakra";
 import { COMMON_PAGE_PADDING } from "@/constants";
 import { AuthorizedRoute } from "@/components/auth";
 import { PersonalInfoForm } from "./components";

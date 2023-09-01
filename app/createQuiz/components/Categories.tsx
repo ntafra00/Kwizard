@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex } from "@/components/chakra";
 import { QUIZ_CATEGORIES } from "@/constants";
 import { Category } from "./Category";
 import { QuizCategory } from "@/typings";

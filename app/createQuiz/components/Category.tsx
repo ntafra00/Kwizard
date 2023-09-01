@@ -1,5 +1,5 @@
 import { QuizCategory } from "@/typings";
-import { Flex, Image, Text, Center } from "@chakra-ui/react";
+import { Flex, Image, Text, Center } from "@/components/chakra";
 
 interface Props {
     category: QuizCategory;

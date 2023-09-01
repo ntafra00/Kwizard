@@ -1,10 +1,13 @@
-"use client"
-
 import WhiteLayout from "@/layouts/WhiteLayout"
 
-import { Box, Flex, Heading, Center, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Center, Image, Stack, Text } from "@/components/chakra";
 import { Section } from "./components";
 import { COMMON_PAGE_PADDING } from "@/constants";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Qwizard | About us"
+}
 
 export default function AboutUs() {
     return (

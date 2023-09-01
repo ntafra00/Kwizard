@@ -1,4 +1,4 @@
-import { Flex, Text, Center, Switch, Box } from "@chakra-ui/react";
+import { Flex, Text, Center, Switch, Box } from "@/components/chakra";
 import { QuizSection } from "./QuizSection"
 import { Input } from "./Input";
 import { NumberInput } from "@/components/commons/forms";

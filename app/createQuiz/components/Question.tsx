@@ -1,4 +1,6 @@
-import { Box, Image, Flex, Stack } from "@chakra-ui/react";
+"use client"
+
+import { Box, Image, Flex, Stack } from "@/components/chakra";
 import { Input, MultipleChoice, Checkboxes } from "./";
 import { CustomSelect as Select } from "@/components/commons/forms";
 

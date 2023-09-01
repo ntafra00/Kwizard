@@ -1,4 +1,4 @@
-import { Button, Flex, Text } from '@chakra-ui/react';
+import { Button, Text } from "@/components/chakra";
 
 interface Props {
     icon: JSX.Element;

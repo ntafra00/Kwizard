@@ -1,7 +1,7 @@
 "use client"
 
 import { IoEyeOffOutline } from "react-icons/io5"
-import { Icon } from "@chakra-ui/react";
+import { Icon } from "@/components/chakra";
 
 
 export function ClosedEyeIcon() {

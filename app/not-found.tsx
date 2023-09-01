@@ -1,8 +1,5 @@
-"use client"
-
-import { Flex, Heading, Text, Stack, Box } from "@chakra-ui/react";
+import { Flex, Heading, Text, Stack, Box, Link } from "@/components/chakra";
 import { COMMON_PAGE_PADDING } from "@/constants";
-import Link from "next/link";
 
 export default function NotFound() {
     return (

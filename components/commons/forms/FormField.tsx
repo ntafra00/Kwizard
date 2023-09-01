@@ -1,4 +1,4 @@
-import { FormControl, FormLabel, Input, FormErrorMessage } from "@chakra-ui/react";
+import { FormControl, FormLabel, Input, FormErrorMessage } from "@/components/chakra";
 import { UseFormRegisterReturn } from "react-hook-form";
 
 interface Props {

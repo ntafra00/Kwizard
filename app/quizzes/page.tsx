@@ -1,6 +1,6 @@
 "use client"
 import WhiteLayout from "@/layouts/WhiteLayout";
-import { Box, Flex, Center, Image, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Center, Image, Heading, Text } from "@/components/chakra";
 import { QuizInfo, CategoryBar, QuizzesGrid, Pagination } from "./components";
 import { useRouter } from "next/navigation";
 import { COMMON_PAGE_PADDING, QUIZ_CATEGORIES } from "@/constants";

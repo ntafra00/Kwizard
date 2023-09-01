@@ -1,7 +1,7 @@
 "use client"
 
 import { BsInstagram } from "react-icons/bs"
-import { Icon } from "@chakra-ui/react";
+import { Icon } from "@/components/chakra";
 
 
 export function InstagramIcon() {

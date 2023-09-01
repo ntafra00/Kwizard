@@ -1,4 +1,4 @@
-import { SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid } from "@/components/chakra";
 import { QuizCard } from "./QuizCard";
 import { COMMON_PAGE_PADDING, QUIZZES } from "@/constants";
 

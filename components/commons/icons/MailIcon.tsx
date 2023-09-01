@@ -1,7 +1,7 @@
 "use client"
 
 import { FiMail } from "react-icons/fi"
-import { Icon } from "@chakra-ui/react";
+import { Icon } from "@/components/chakra";
 
 
 export function MailIcon() {

@@ -1,4 +1,4 @@
-import { Box, Text, Flex, Spacer } from "@chakra-ui/react"
+import { Box, Text, Flex, Spacer } from "@/components/chakra"
 
 import { FacebookIcon, GithubIcon, InstagramIcon } from "../icons"
 import WhiteLayout from "@/layouts/WhiteLayout"

@@ -1,4 +1,4 @@
-import { Button as ChakraButton } from "@chakra-ui/react";
+import { Button as ChakraButton } from "@/components/chakra";
 
 interface Props {
     text: string;

@@ -1,4 +1,6 @@
-import { Text, Flex, Center, Box, FormLabel, Input } from "@chakra-ui/react"
+"use client"
+
+import { Text, Flex, Center, Box, FormLabel, Input } from "@/components/chakra"
 import { FormField } from "../commons/forms";
 
 import { useForm } from "react-hook-form";

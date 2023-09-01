@@ -1,7 +1,7 @@
 "use client"
 
 import { IoEyeOutline } from "react-icons/io5"
-import { Icon } from "@chakra-ui/react";
+import { Icon } from "@/components/chakra";
 
 
 export function OpenEyeIcon() {

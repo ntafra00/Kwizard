@@ -12,7 +12,7 @@ import {
     Center,
     Divider,
     AbsoluteCenter
-} from '@chakra-ui/react';
+} from "@/components/chakra";
 
 import { useAuth } from '@/contexts/AuthContext';
 import { CompanyButton } from '@/components/commons/buttons/CompanyButton'

@@ -1,4 +1,4 @@
-import { Flex, Center } from "@chakra-ui/react";
+import { Flex, Center } from "@/components/chakra";
 import { Subcategory } from "./Subcategory";
 
 interface Props {

@@ -1,5 +1,5 @@
 import { PostData } from "@/typings";
-import { SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid } from "@/components/chakra";
 import { PostCard } from "./PostCard";
 import { COMMON_PAGE_PADDING } from "@/constants";
 

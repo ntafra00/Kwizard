@@ -1,6 +1,6 @@
 import { useAuth } from "@/contexts/AuthContext";
 import { ModalScene } from "@/enums";
-import { Center, Image, Heading, Text, Stack, Link } from "@chakra-ui/react";
+import { Center, Image, Heading, Text, Stack, Link } from "@/components/chakra";
 
 export function NotAuthorized() {
 
