@@ -17,7 +17,7 @@ export function ThirdStep() {
                         <Box width="90%">
                             <Input type="date" placeholder="Choose start date" />
                         </Box>
-                        <Switch size="lg" colorScheme="blackAlpha" isChecked />
+                        <Switch size="lg" colorScheme="blue" />
                     </Center>
                 </Flex>
                 <Flex alignItems="center" justifyContent="space-between" gap={{ base: "20px", lg: "58px" }} pb="28px" direction={{ base: "column", lg: "row" }}>
@@ -28,7 +28,7 @@ export function ThirdStep() {
                         <Box width="90%">
                             <Input type="date" placeholder="Choose end date" />
                         </Box>
-                        <Switch size="lg" colorScheme="blackAlpha" isChecked />
+                        <Switch size="lg" colorScheme="blue" />
                     </Center>
                 </Flex>
                 <Flex alignItems="center" justifyContent="space-between" gap={{ base: "20px", lg: "58px" }} direction={{ base: "column", lg: "row" }}>
@@ -39,7 +39,7 @@ export function ThirdStep() {
                         <Box width="90%">
                             <NumberInput minimumValue={10} maximumValue={60} format={(value) => `${value} minutes`} parse={(value) => value.replace(/^ minutes$/, '')} step={5} />
                         </Box>
-                        <Switch size="lg" colorScheme="blackAlpha" isChecked />
+                        <Switch size="lg" colorScheme="blue" />
                     </Center>
                 </Flex>
             </QuizSection >
@@ -52,7 +52,7 @@ export function ThirdStep() {
                         <Box width="90%">
                             <NumberInput maximumValue={200} minimumValue={10} step={10} />
                         </Box>
-                        <Switch size="lg" colorScheme="blackAlpha" isChecked />
+                        <Switch size="lg" colorScheme="blue" />
                     </Center>
                 </Flex>
                 <Flex alignItems="center" justifyContent="space-between" gap={{ base: "20px", lg: "58px" }} pb="28px" direction={{ base: "column", lg: "row" }}>
@@ -63,14 +63,14 @@ export function ThirdStep() {
                         <Box width="90%">
                             <NumberInput maximumValue={0} minimumValue={-50} step={10} defaultValue={0} />
                         </Box>
-                        <Switch size="lg" colorScheme="blackAlpha" isChecked />
+                        <Switch size="lg" colorScheme="blue" />
                     </Center>
                 </Flex>
                 <Flex alignItems="center" gap={{ base: "20px", lg: "58px" }} direction={{ base: "column", lg: "row" }}>
                     <Center width={{ base: "80%", lg: "30%" }}>
                         <Text color="blue" fontWeight="medium" fontSize="18px" textAlign="center">Allow Multiple Attempts?</Text>
                     </Center>
-                    <Switch size="lg" colorScheme="facebook" isChecked />
+                    <Switch size="lg" colorScheme="blue" />
                 </Flex>
             </QuizSection >
             <QuizSection imageDescription="Number nine" imageUrl="numberNine.png" title="Change Your Quiz Visibility Settings">
@@ -80,20 +80,20 @@ export function ThirdStep() {
                     </Center>
                     <Flex width={{ base: "80%", lg: "70%" }} gap="40px" justifyContent="flex-start" alignItems="center" direction={{ base: "column", lg: "row" }}>
                         <QuizPassword />
-                        <Switch size="lg" colorScheme="blackAlpha" isChecked />
+                        <Switch size="lg" colorScheme="blue" />
                     </Flex>
                 </Flex>
                 <Flex alignItems="center" gap={{ base: "20px", lg: "58px" }} pb="28px" direction={{ base: "column", lg: "row" }}>
                     <Center width={{ base: "80%", lg: "30%" }}>
                         <Text color="blue" fontWeight="medium" fontSize="18px" textAlign="center">Show Correct Answer Immediately?</Text>
                     </Center>
-                    <Switch size="lg" colorScheme="facebook" isChecked />
+                    <Switch size="lg" colorScheme="blue" />
                 </Flex>
                 <Flex alignItems="center" gap={{ base: "20px", lg: "58px" }} direction={{ base: "column", lg: "row" }}>
                     <Center width={{ base: "80%", lg: "30%" }}>
                         <Text color="blue" fontWeight="medium" fontSize="18px" textAlign="center">Randomize Questions?</Text>
                     </Center>
-                    <Switch size="lg" colorScheme="facebook" isChecked />
+                    <Switch size="lg" colorScheme="blue" />
                 </Flex>
             </QuizSection>
             <QuizSection imageDescription="Number ten" imageUrl="numberTen.png" title="Ready to cast the finishing spell?" isLast>

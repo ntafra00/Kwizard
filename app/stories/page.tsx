@@ -1,9 +1,13 @@
 import { Center, HStack, Heading, Stack, Text } from "@/components/chakra"
-import { Button } from "@/components/commons/buttons";
 import WhiteLayout from "@/layouts/WhiteLayout";
 import { FacebookIcon, TwitterIcon, MailIcon } from "@/components/commons/icons";
 import { PostCardsGrid, FeaturedPost } from "./components";
 import { FEATURED_POST, POSTS } from "@/constants";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Qwizard | Stories",
+}
 
 export default function Stories() {
     return (
@@ -37,9 +41,6 @@ export default function Stories() {
                 </Stack>
             </WhiteLayout>
             <PostCardsGrid posts={POSTS} />
-            <Center pb="64px" pt="32px">
-                <Button textColor="blue" text="Load more posts" buttonAction={() => { }} />
-            </Center>
         </>
     )
 }

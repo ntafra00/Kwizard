@@ -1,31 +1,18 @@
-"use client"
 import WhiteLayout from "@/layouts/WhiteLayout";
 import { Box, Flex, Center, Image, Heading, Text } from "@/components/chakra";
-import { QuizInfo, CategoryBar, QuizzesGrid, Pagination } from "./components";
-import { useRouter } from "next/navigation";
-import { COMMON_PAGE_PADDING, QUIZ_CATEGORIES } from "@/constants";
-import { useState } from "react";
+import { CategoryBar, QuizzesGrid, Pagination } from "./components";
+import { COMMON_PAGE_PADDING } from "@/constants";
+import { QuizzesProvider } from "@/contexts";
+import { StoriesAndQuizCTA } from "./components";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Qwizard | Quizzes",
+}
 
 export default function Quizzes() {
-
-    const [selectedCategory, setSelectedCategory] = useState(QUIZ_CATEGORIES[0]);
-
-    const router = useRouter()
-
-    const handleRedirectToStories = () => {
-        router.push("/stories");
-    }
-
-    const handleScrollToQuizzes = () => {
-        document.getElementById("quizzes")?.scrollIntoView();
-    }
-
-    const handleRedirectToQuizCreation = () => {
-        router.push("/createQuiz")
-    }
-
     return (
-        <>
+        <QuizzesProvider>
             <Flex pb={{ base: "20px", lg: "72px" }} px={COMMON_PAGE_PADDING} pt={{ base: "30px", lg: "64px" }} direction={{ base: "column", lg: "row" }}>
                 <Flex w={{ base: "100%", lg: "50%" }} justify={{ base: "center", lg: "flex-start" }}>
                     <Image src="owl.png" alt="Owl" />
@@ -38,16 +25,7 @@ export default function Quizzes() {
                 </Flex>
             </Flex>
             <WhiteLayout>
-                <Box pt="16px" px={COMMON_PAGE_PADDING} pb="68px">
-                    <Center pb="56px">
-                        <Heading color="black" fontSize="l" fontWeight="semibold">Neki tekst</Heading>
-                    </Center>
-                    <Flex direction={{ base: "column", lg: "row" }} justifyContent="space-between">
-                        <QuizInfo buttonText="Check out other quizzes" buttonAction={handleScrollToQuizzes} imageDescription="Spells book" imageUrl="spellsBook.png" />
-                        <QuizInfo buttonText="Get inspired by our stories" buttonAction={handleRedirectToStories} imageDescription="Broken glasses" imageUrl="brokenGlasses.png" />
-                        <QuizInfo buttonText="Make your own quiz" buttonAction={handleRedirectToQuizCreation} imageDescription="Potion" imageUrl="potion.png" />
-                    </Flex>
-                </Box>
+                <StoriesAndQuizCTA />
             </WhiteLayout>
             <Box pt="56px">
                 <Center>
@@ -56,10 +34,10 @@ export default function Quizzes() {
                 <Center>
                     <Heading color="black" fontSize="l" fontWeight="semibold">u dva reda</Heading>
                 </Center>
-                <CategoryBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+                <CategoryBar />
                 <QuizzesGrid />
                 <Pagination numberOfPages={5} />
             </Box>
-        </>
+        </QuizzesProvider>
     )
 }

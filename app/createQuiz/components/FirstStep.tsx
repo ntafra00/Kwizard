@@ -29,7 +29,7 @@ export function FirstStep() {
         <>
             <QuizSection imageDescription="Number one" imageUrl="numberOne.png" title="What's your Quiz's topic?">
                 <Categories selectedCategory={selectedCategory} handleChangeSelectedCategory={handleChangeSelectedCategory} />
-                {selectedCategory &&
+                {selectedCategory && selectedCategory.subcategories.length > 0 &&
                     <>
                         <Center pt="32px" pb="32px">
                             <Heading textAlign="center" color="black" fontSize="md" fontWeight="medium">Select your subcategory</Heading>

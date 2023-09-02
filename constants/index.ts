@@ -122,11 +122,25 @@ export const DEFAULT_ANSWERS: Answer[] = [
         id: uuid(),
         text: "",
         isCorrect: true,
+        imageUrl: ""
     },
     {
         id: uuid(),
         text: "",
         isCorrect: false,
+        imageUrl: ""
+    },
+    {
+        id: uuid(),
+        text: "",
+        isCorrect: false,
+        imageUrl: ""
+    },
+    {
+        id: uuid(),
+        text: "",
+        isCorrect: false,
+        imageUrl: ""
     }
 ]
 

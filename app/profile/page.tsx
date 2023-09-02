@@ -2,6 +2,11 @@ import { Flex, Center, Avatar, AvatarBadge, Heading, Stack, Image, Text } from "
 import { COMMON_PAGE_PADDING } from "@/constants";
 import { AuthorizedRoute } from "@/components/auth";
 import { PersonalInfoForm } from "./components";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: 'Qwizard | Profile'
+}
 
 export default function Profile() {
     return (

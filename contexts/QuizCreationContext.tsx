@@ -1,9 +1,13 @@
 "use client"
 
-import React, { useContext, useState, createContext, useMemo, useCallback, useRef } from "react"
-import { QuizCategory, QuizType } from "@/typings"
+import React, { useContext, useState, createContext, useMemo, useCallback } from "react";
+import { v4 as uuid } from "uuid";
+import { CreatedQuestion, QuizCategory, QuizType } from "@/typings";
+import { DEFAULT_ANSWERS } from "@/constants";
+import { QuestionType } from "@/enums";
 
 interface Context {
+    questions: CreatedQuestion[];
     currentStep: number;
     selectedCategory: QuizCategory | undefined;
     selectedSubcategory: string | undefined;
@@ -17,6 +21,8 @@ interface Context {
     handleStepClick: (step: number) => void;
     scrollToProgressBar: () => void;
     handleSetUploadedImage: (imageUrl: string) => void;
+    handleQuestionsChange: (editedQuestion: CreatedQuestion) => void;
+    handleAddQuestion: () => void;
 }
 
 const QuizCreationContext = createContext<Context | undefined>(undefined)
@@ -29,7 +35,16 @@ export function useQuizCreation() {
     return context;
 }
 
+const DEFAULT_QUESTION_DATA: CreatedQuestion = {
+    id: uuid(),
+    title: "",
+    answers: DEFAULT_ANSWERS,
+    imageUrl: "",
+    type: QuestionType.MULTIPLE_CHOICE,
+}
+
 export function QuizCreationProvider({ children }: { children: React.ReactNode; }) {
+    const [questions, setQuestions] = useState([DEFAULT_QUESTION_DATA])
     const [currentStep, setCurrentStep] = useState(1);
     const [selectedCategory, setSelectedCategory] = useState<QuizCategory>();
     const [selectedSubcategory, setSelectedSubcategory] = useState<string>();
@@ -71,9 +86,22 @@ export function QuizCreationProvider({ children }: { children: React.ReactNode; 
         document.getElementById("progressBar")?.scrollIntoView();
     }, [])
 
+    const handleQuestionsChange = useCallback((editedQuestion: CreatedQuestion) => {
+        setQuestions((prevQuestions) => prevQuestions.map((question) => {
+            if (question.id === editedQuestion.id) {
+                return editedQuestion;
+            }
+            return question;
+        }))
+    }, [])
+
+    const handleAddQuestion = useCallback(() => {
+        setQuestions((prevQuestions) => [...prevQuestions, DEFAULT_QUESTION_DATA]);
+    }, [])
+
     const value = useMemo<Context>(() => ({
-        currentStep, selectedCategory, selectedSubcategory, selectedImage, selectedQuizType, handleChangeSelectedCategory, handleChangeSelectedSubcategory, handleIncreaseCurrentStep, handleRemoveUploadedImage, handleStepClick, handleSelectedQuizTypeChange, handleSetUploadedImage, scrollToProgressBar
-    }), [currentStep, selectedCategory, selectedSubcategory, selectedImage, selectedQuizType, handleChangeSelectedCategory, handleChangeSelectedSubcategory, handleIncreaseCurrentStep, handleRemoveUploadedImage, handleStepClick, handleSelectedQuizTypeChange, handleSetUploadedImage, scrollToProgressBar])
+        currentStep, selectedCategory, questions, selectedSubcategory, selectedImage, selectedQuizType, handleChangeSelectedCategory, handleChangeSelectedSubcategory, handleIncreaseCurrentStep, handleRemoveUploadedImage, handleStepClick, handleSelectedQuizTypeChange, handleSetUploadedImage, handleQuestionsChange, handleAddQuestion, scrollToProgressBar
+    }), [currentStep, selectedCategory, questions, selectedSubcategory, selectedImage, selectedQuizType, handleChangeSelectedCategory, handleChangeSelectedSubcategory, handleIncreaseCurrentStep, handleRemoveUploadedImage, handleStepClick, handleSelectedQuizTypeChange, handleSetUploadedImage, handleQuestionsChange, handleAddQuestion, scrollToProgressBar])
 
     return (
         <QuizCreationContext.Provider value={value}>

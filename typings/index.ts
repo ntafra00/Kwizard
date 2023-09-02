@@ -1,3 +1,6 @@
+import { QuestionType } from "@/enums";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
+
 export interface NavigationLink {
     text: string,
     path: string,
@@ -51,6 +54,7 @@ export interface Answer {
     id: string;
     text: string;
     isCorrect: boolean;
+    imageUrl: string;
 }
 
 export interface QuizCreationStep {
@@ -64,3 +68,11 @@ export interface Topic {
 }
 
 export type QuizType = "private" | "public";
+
+export interface CreatedQuestion {
+    id: string;
+    title: string;
+    imageUrl: string;
+    type: QuestionType;
+    answers: Answer[]
+}

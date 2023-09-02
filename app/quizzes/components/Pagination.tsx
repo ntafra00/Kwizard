@@ -1,7 +1,7 @@
+"use client"
+
 import { useState } from "react";
-
 import { Text, Flex, HStack, Center, } from "@/components/chakra";
-
 import { PaginationButton } from "@/components/commons/buttons";
 import { LeftArrow, RightArrow } from "@/components/commons/icons";
 import { COMMON_PAGE_PADDING } from "@/constants";

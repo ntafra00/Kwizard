@@ -1,4 +1,6 @@
-import React, { PropsWithChildren } from 'react';
+"use client"
+
+import { PropsWithChildren } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { NotAuthorized } from './NotAuthorized';
 

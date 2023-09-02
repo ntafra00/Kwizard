@@ -15,3 +15,4 @@ export { MultipleChoice } from "./MultipleChoice";
 export { Checkboxes } from "./Checkboxes";
 export { Steps } from "./Steps";
 export { Buttons } from "./Buttons";
+export { TrueFalse } from "./TrueFalse";

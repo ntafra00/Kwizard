@@ -8,10 +8,12 @@ import { DEFAULT_ANSWERS } from "@/constants";
 
 export function Checkboxes() {
     const [answers, setAnswers] = useState(DEFAULT_ANSWERS);
-    const [lastAnswerText, setLastAnswerText] = useState("");
-    const previousText = usePrevious(lastAnswerText);
 
     const handleAnswerToggle = (answerId: string) => {
+        const wrongAnswers = answers.filter((answer) => !answer.isCorrect)
+        if (wrongAnswers.length === 3 && !wrongAnswers.find((answer) => answer.id === answerId)) {
+            return;
+        }
         setAnswers((prevAnswers) => prevAnswers.map((answer) => {
             if (answer.id === answerId) {
                 return {
@@ -23,24 +25,9 @@ export function Checkboxes() {
         }))
     }
 
-    const handleLastAnswerChange = (value: string) => {
-        setLastAnswerText(value);
-    }
-
-    useEffect(function handleLastAnswerTextChange() {
-        if (answers.length > 2 && !lastAnswerText) {
-            setAnswers((prevAnswers) => prevAnswers.slice(0, -1));
-            return;
-        }
-
-        if (!previousText && lastAnswerText) {
-            setAnswers((prevAnswers) => [...prevAnswers, { id: uuidv4(), isCorrect: false, text: "" }])
-        }
-    }, [lastAnswerText, previousText, answers])
-
     return (
         <>
-            {answers.map((answer, index) => (<Answer handleAnswerToggle={handleAnswerToggle} answer={answer} key={answer.id} onInputChange={index === answers.length - 1 ? handleLastAnswerChange : undefined} />))}
+            {answers.map((answer, index) => (<Answer handleAnswerToggle={handleAnswerToggle} answer={answer} key={answer.id} />))}
         </>
     )
 }

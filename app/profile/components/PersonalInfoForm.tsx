@@ -1,9 +1,10 @@
+"use client"
+
 import { Flex, Input, FormLabel, Textarea, Box, Center } from "@/components/chakra"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { personalInfoSchema } from "@/constants/schemas";
-import { FORM_ERROR_MESSAGES } from "@/constants";
 import { Button } from "@/components/commons/buttons/Button";
 import { FormField } from "@/components/commons/forms";
 
