@@ -45,7 +45,7 @@ const DEFAULT_QUESTION_DATA: CreatedQuestion = {
 
 export function QuizCreationProvider({ children }: { children: React.ReactNode; }) {
     const [questions, setQuestions] = useState([DEFAULT_QUESTION_DATA])
-    const [currentStep, setCurrentStep] = useState(1);
+    const [currentStep, setCurrentStep] = useState(0);
     const [selectedCategory, setSelectedCategory] = useState<QuizCategory>();
     const [selectedSubcategory, setSelectedSubcategory] = useState<string>();
     const [selectedQuizType, setSelectedQuizType] = useState<QuizType>("public");

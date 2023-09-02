@@ -88,7 +88,7 @@ export function CustomSelect({ onChangeValue, value }: Props) {
     }
 
     return (
-        <Box position="relative" backgroundColor="white" minW="311px">
+        <Box position="relative" backgroundColor="white">
             <Select options={SELECT_OPTIONS} name="quiz-variant" components={{ SingleValue: IconValue, Option: IconOption }} styles={customStyles} isSearchable={false} defaultValue={SELECT_OPTIONS[0]} onChange={(newValue) => handleInputChange(newValue as SelectOption)} isMulti={false} />
         </Box>
     )

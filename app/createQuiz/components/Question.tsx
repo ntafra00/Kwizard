@@ -1,6 +1,6 @@
 "use client"
 
-import { Box, Image, Flex, Stack } from "@/components/chakra";
+import { Box, Image, Flex, Stack, Center } from "@/components/chakra";
 import { Input, MultipleChoice, Checkboxes, TrueFalse } from "./";
 import { CustomSelect as Select } from "@/components/commons/forms";
 
@@ -38,10 +38,14 @@ export function Question() {
     return (
         <>
             <Box w="100%" px="15px" py="30px" background="rgba(46, 49, 130, 0.05)" mb="60px">
-                <Flex justifyContent="space-between" pb="45px" gap="28px" alignItems="center">
-                    <Input placeholder="Question Title" backgroundColor="white" />
-                    <Image src={selectedImage ? selectedImage : "uploadImageGray.png"} alt="Upload image" w="36px" h="36px" onClick={selectedImage ? handleRemoveUploadedImage : handleUploadImageClick} _hover={{ cursor: "pointer" }} />
-                    <Select onChangeValue={handleQuestionTypeChange} value={questionType} />
+                <Flex direction={{ base: "column", md: "row" }} justifyContent="space-between" pb="45px" gap="28px" alignItems="center">
+                    <Center w={{ base: "100%", lg: "60%" }} gap="28px" >
+                        <Input placeholder="Question Title" backgroundColor="white" />
+                        <Image src={selectedImage ? selectedImage : "uploadImageGray.png"} alt="Upload image" w="36px" h="36px" onClick={selectedImage ? handleRemoveUploadedImage : handleUploadImageClick} _hover={{ cursor: "pointer" }} />
+                    </Center>
+                    <Box w={{ base: "100%", lg: "40%" }}>
+                        <Select onChangeValue={handleQuestionTypeChange} value={questionType} />
+                    </Box>
                     <input
                         style={{ display: 'none' }}
                         ref={questionImageRef}
