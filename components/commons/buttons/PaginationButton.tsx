@@ -9,8 +9,10 @@ interface Props {
 }
 
 export function PaginationButton({ text, icon, iconPosition, isButtonVisible, buttonAction }: Props) {
+    console.log(iconPosition);
+    console.log(iconPosition === 'right');
     return (
-        <Button background="blue" textColor="white" fontSize="md" leftIcon={iconPosition === "left" ? icon : undefined} rightIcon={iconPosition === "right" ? icon : undefined} fontWeight="medium" onClick={buttonAction} visibility={isButtonVisible ? "visible" : "hidden"}>
+        <Button background="blue" textColor="white" fontSize={{ base: "sm", md: "md" }} leftIcon={iconPosition === "left" ? icon : undefined} rightIcon={iconPosition === "right" ? icon : undefined} fontWeight="medium" onClick={buttonAction} visibility={isButtonVisible ? "visible" : "hidden"}>
             {text}
         </Button>
     )
