@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "Qwizard | Not Found",
+    description: "Nothing can be found on this page."
 }
 
 export default function NotFound() {

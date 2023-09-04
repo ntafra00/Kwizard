@@ -6,7 +6,8 @@ import { COMMON_PAGE_PADDING } from "@/constants";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Qwizard | About us"
+    title: "Qwizard | About us",
+    description: "Learn more about those that are responsible for Qwizard",
 }
 
 export default function AboutUs() {

@@ -8,6 +8,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Qwizard | Quizzes",
+    description: "Safe place for all the quizzes"
 }
 
 export default function Quizzes() {

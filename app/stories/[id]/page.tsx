@@ -7,7 +7,8 @@ import { POSTS } from "@/constants";
 import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
-    title: "Qwizard | Selected Story"
+    title: "Qwizard | Selected Story",
+    description: "All the additional info about story you selected",
 }
 
 export default function SelectedStory({

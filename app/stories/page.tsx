@@ -7,6 +7,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Qwizard | Stories",
+    description: "Find all the quiz related stories on one place",
 }
 
 export default function Stories() {

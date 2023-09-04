@@ -57,12 +57,12 @@ export function FirstStep() {
             </QuizSection>
             <QuizSection imageDescription="Number four" imageUrl="numberFour.png" title="Quiz Description">
                 <Center>
-                    <Textarea w={{ base: "90%", lg: "80%" }} borderRadius="6px" border="1px solid #E2E8F0" placeholder="Placeholder" fontSize="18px" fontWeight="normal" color="#A0AEC0" />
+                    <Textarea w={{ base: "90%", lg: "80%" }} borderRadius="6px" border="1px solid #E2E8F0" placeholder="Placeholder" fontSize="18px" fontWeight="normal" _placeholder={{ color: "#A0AEC0" }} color="black" />
                 </Center>
             </QuizSection>
             <QuizSection isLast={true} imageDescription="Number five" imageUrl="numberFive.png" title="Quiz Main Image">
                 <Center>
-                    <Image src={selectedImage ?? "uploadImage.png"} w="150px" h="150px" />
+                    <Image src={selectedImage ?? "uploadImage.png"} w="150px" h="150px" alt={selectedImage ? "User uploaded image" : "Upload image placeholder"} />
                 </Center>
                 <Center pt="40px" gap="10px">
                     {!selectedImage && <Button buttonAction={handleUploadFileClick} text="Select Image to Upload" textColor="white" backgroundColor="blue" backgroundColorOnClick="blueOnClick" />}

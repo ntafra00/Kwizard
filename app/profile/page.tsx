@@ -5,7 +5,8 @@ import { PersonalInfoForm } from "./components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: 'Qwizard | Profile'
+    title: 'Qwizard | Profile',
+    description: "Qwizard's profile page"
 }
 
 export default function Profile() {
