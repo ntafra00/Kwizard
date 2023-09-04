@@ -13,7 +13,7 @@ export function SecondStep() {
                 <Question />
             ))}
             <Center>
-                <Button buttonAction={handleAddQuestion} text="Add New Question" textColor="white" backgroundColor="blue" />
+                <Button buttonAction={handleAddQuestion} text="Add New Question" textColor="white" backgroundColor="blue" backgroundColorOnClick="blueOnClick" />
             </Center>
         </QuizSection>
     )

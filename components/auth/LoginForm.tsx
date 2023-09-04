@@ -57,23 +57,21 @@ export function LoginForm({ handleModalSceneChange }: Props) {
                     <Input {...register("password")} {...inputProps} type="password" />
                 </FormField>
             </Box>
-            <Flex justifyContent={"flex-end"} py="16px">
-                <Button buttonAction={() => { }} text="Forgot password?" textColor="blue" variant="link" key="Forgot password" />
-            </Flex>
+            {/* <Flex justifyContent={"flex-end"} py="16px">
+                <Button buttonAction={() => { }} text="Forgot password?" textColor="blue" key="Forgot password" />
+            </Flex> */}
             <Button
                 backgroundColor="blue"
+                backgroundColorOnClick="blueOnClick"
                 text="Login"
                 buttonAction={() => { }}
                 textColor="white"
-                borderRadius="10px"
                 type="submit"
-                isLoading={isSubmitting}
-                fullWidth={true}
             />
-            <Flex gap={2} pt="40px" justifyContent="center" alignItems="center" direction={{ base: "column", md: "row" }}>
+            {/* <Flex gap={2} pt="40px" justifyContent="center" alignItems="center" direction={{ base: "column", md: "row" }}>
                 <Text color="gray" fontWeight="medium" fontSize="sm">Not a wizard yet?</Text>
                 <Button buttonAction={() => handleModalSceneChange(ModalScene.REGISTER)} text="Create account" textColor="blue" variant="link" key="Create account" />
-            </Flex>
+            </Flex> */}
         </form>
     )
 }

@@ -72,7 +72,7 @@ export function TrueFalse() {
 
     return (
         <Box backgroundColor="white" w="100%">
-            <Select options={SELECT_OPTIONS} name="quiz-variant" components={{ SingleValue: IconValue, Option: IconOption }} styles={customStyles} isSearchable={false} defaultValue={SELECT_OPTIONS[0]} onChange={(newValue) => handleInputChange(newValue as SelectOption)} isMulti={false} />
+            <Select options={SELECT_OPTIONS} name="quiz-variant" components={{ SingleValue: IconValue as any, Option: IconOption as any }} styles={customStyles} isSearchable={false} defaultValue={SELECT_OPTIONS[0]} onChange={(newValue) => handleInputChange(newValue as unknown as SelectOption)} isMulti={false} />
         </Box>
     )
 }

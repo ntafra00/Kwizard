@@ -98,7 +98,7 @@ export function ThirdStep() {
             </QuizSection>
             <QuizSection imageDescription="Number ten" imageUrl="numberTen.png" title="Ready to cast the finishing spell?" isLast>
                 <Center backgroundImage="">
-                    <Button text="Finissimo!" textColor="white" backgroundColor="blue" fontSize="md" buttonAction={() => { }} borderRadius="50px" />
+                    <Button text="Finissimo!" textColor="white" backgroundColor="blue" buttonAction={() => { }} backgroundColorOnClick="blueOnClick" />
                 </Center>
             </QuizSection>
         </>

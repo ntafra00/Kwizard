@@ -74,18 +74,16 @@ export function RegistrationForm({ handleModalSceneChange }: Props) {
             </Box>
             <Button
                 backgroundColor="blue"
+                backgroundColorOnClick="blueOnClick"
                 text="Register"
                 buttonAction={() => { }}
                 textColor="white"
-                borderRadius="10px"
                 type="submit"
-                isLoading={isSubmitting}
-                fullWidth={true}
             />
-            <Center gap={2} pt="10px">
+            {/* <Center gap={2} pt="10px">
                 <Text color="gray" fontWeight="medium" fontSize="sm">Already a wizard?</Text>
                 <Button buttonAction={() => handleModalSceneChange(ModalScene.LOGIN)} text="Log in" textColor="blue" variant="link" key="Create account" />
-            </Center>
+            </Center> */}
         </form >
     )
 }

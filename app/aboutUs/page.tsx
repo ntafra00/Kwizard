@@ -32,7 +32,7 @@ export default function AboutUs() {
                 </Center>
                 <Flex pt={{ sm: "50px", md: "130px" }} direction={{ base: "column", lg: "row" }}>
                     <Flex w={{ base: "100%", lg: "33%" }} align={{ lg: "flex-end" }} pb={{ base: "40px", md: "none" }}>
-                        <Section heading="Endless potential" imageDescription="Wizard hat with light bulb" imageUrl="wizardHat.png" text="Choose your potion - plenty of ways to challenge yourself (and others!). Don't be afraid to surprise everyone when you pull a rabbit out of the hat!" textAlignment={{ base: "center", lg: "left" }} imageAlignment={{ base: "center", lg: "flex-start" }}
+                        <Section heading="Endless potential" imageDescription="Wizard hat with light bulb" imageUrl="wizardHat.png" text="Choose your potion - plenty of ways to challenge yourself (and others!). Don't be afraid to surprise everyone when you pull a rabbit out of the hat!" textAlignment="left" imageAlignment={{ base: "center", lg: "flex-start" }}
                         />
                     </Flex>
                     <Flex w={{ base: "100%", lg: "33%" }} pb={{ base: "40px", md: "none" }}>
@@ -41,7 +41,7 @@ export default function AboutUs() {
                         />
                     </Flex>
                     <Flex w={{ base: "100%", lg: "33%" }}>
-                        <Section heading="Great adaptability" imageDescription="Tablet with magic ball" imageUrl="tablet.png" text="Ever heard of incompatibility? Yeah, me neither - wizards support your phone, PC and tablets. Coming soon to your wands!" textAlignment={{ base: "center", lg: "right" }} imageAlignment={{ base: "center", lg: "flex-end" }}
+                        <Section heading="Great adaptability" imageDescription="Tablet with magic ball" imageUrl="tablet.png" text="Ever heard of incompatibility? Yeah, me neither - wizards support your phone, PC and tablets. Coming soon to your wands!" textAlignment="right" imageAlignment={{ base: "center", lg: "flex-end" }}
                         />
                     </Flex>
                 </Flex>

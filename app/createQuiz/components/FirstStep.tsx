@@ -65,8 +65,8 @@ export function FirstStep() {
                     <Image src={selectedImage ?? "uploadImage.png"} w="150px" h="150px" />
                 </Center>
                 <Center pt="40px" gap="10px">
-                    {!selectedImage && <Button buttonAction={handleUploadFileClick} text="Select Image to Upload" textColor="white" backgroundColor="blue" borderRadius="10px" />}
-                    {selectedImage && <Button buttonAction={handleRemoveUploadedImage} text="Remove uploaded image" textColor="white" backgroundColor="orange" borderRadius="10px" />}
+                    {!selectedImage && <Button buttonAction={handleUploadFileClick} text="Select Image to Upload" textColor="white" backgroundColor="blue" backgroundColorOnClick="blueOnClick" />}
+                    {selectedImage && <Button buttonAction={handleRemoveUploadedImage} text="Remove uploaded image" textColor="white" backgroundColor="orange" backgroundColorOnClick="orangeOnClick" />}
                 </Center>
                 <input
                     style={{ display: 'none' }}

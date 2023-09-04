@@ -82,7 +82,7 @@ export function PersonalInfoForm() {
                 </FormField>
             </Box>
             <Center pt="24px">
-                <Button buttonAction={() => { }} type="submit" text="Save" textColor="white" backgroundColor="blue" />
+                <Button buttonAction={() => { }} type="submit" text="Save" textColor="white" backgroundColor="blue" backgroundColorOnClick="blueOnClick" />
             </Center>
         </form>
     )
