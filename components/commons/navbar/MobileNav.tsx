@@ -4,13 +4,15 @@ import {
     Box,
     Stack,
     Flex,
-    Image,
     useDisclosure,
     Button,
+    useMediaQuery,
 } from "@/components/chakra";
 
 import { CloseIcon, HamburgerIcon } from '@/components/chakra-icons';
 import Link from 'next/link';
+import Image from 'next/image';
+import logo from '@/public/logo.png'
 
 interface Props {
     navigationLinks: JSX.Element[];
@@ -19,12 +21,13 @@ interface Props {
 export default function MobileNavbar({ navigationLinks }: Props) {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const [isSmallerThanMediumScreen] = useMediaQuery('(max-width: 768px)');
 
     return (
         <>
-            <Flex alignItems="flex-end" justifyContent="space-between" pb="10px">
+            <Flex alignItems="center" justifyContent="space-between" pb="10px">
                 <Link href="/">
-                    <Image src="logo.png" alt='Qwizard logo' width="40%" />
+                    <Image src={logo} alt='Qwizard logo' width={0} height={0} style={{ width: isSmallerThanMediumScreen ? '60%' : '100%' }} />
                 </Link>
                 <Button
                     aria-label='Open Menu'

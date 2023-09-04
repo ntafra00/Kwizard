@@ -3,7 +3,8 @@
 import {
     Box,
     Link,
-    useMediaQuery
+    Button,
+    useMediaQuery,
 } from "@/components/chakra";
 
 import { getNavigationLinks } from '@/utils';
@@ -14,7 +15,6 @@ import { useRouter, usePathname } from 'next/navigation';
 import { NavigationLink } from '@/typings';
 import { useAuth } from '@/contexts/AuthContext';
 
-import { Button } from '../buttons';
 import { Modal } from '../modals/Modal';
 import { ModalScene } from '@/enums';
 import { COMMON_PAGE_PADDING } from '@/constants';
@@ -52,21 +52,16 @@ export default function Navbar() {
         router.push(`/${link.path}`)
     }
 
-    const redirectToHomePage = () => {
-        router.push("/");
-    }
-
     const renderNavigationLinks = () => {
         return getNavigationLinks(!!currentUser).map((navigationLink) => {
             if (navigationLink.text === 'Profile' || navigationLink.text === 'Login') {
-                return <Button textColor="blue" text={navigationLink.text} buttonAction={() => handleButtonClick(navigationLink)} key={navigationLink.id} />
+                return <Button borderColor="black" fontSize="sm" fontWeight="medium" backgroundColor="transparent" textColor="blue" onClick={() => handleButtonClick(navigationLink)} key={navigationLink.id} rounded="full" variant="outline" _active={{ backgroundColor: "transparentOnClick" }}>{navigationLink.text}</Button>
             }
 
             if (navigationLink.text === 'Sign out' || navigationLink.text === 'Register') {
-                return <Button backgroundColor="blue" textColor="white" text={navigationLink.text} buttonAction={() => handleButtonClick(navigationLink)} key={navigationLink.id} />
+                return <Button borderColor="black" fontSize="sm" fontWeight="medium" backgroundColor="blue" textColor="white" onClick={() => handleButtonClick(navigationLink)} key={navigationLink.id} rounded="full" variant="outline" _active={{ backgroundColor: "blueOnClick" }}>{navigationLink.text}</Button>
             }
-
-            const isSelected = selectedRoute === navigationLink.path;
+            const isSelected = selectedRoute.startsWith(navigationLink.path);
 
             return <Link
                 _hover={isSelected ? {} : {

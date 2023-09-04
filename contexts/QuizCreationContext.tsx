@@ -17,6 +17,7 @@ interface Context {
     handleChangeSelectedSubcategory: (subcategory: string) => void;
     handleRemoveUploadedImage: () => void;
     handleIncreaseCurrentStep: () => void;
+    handleDecreaseCurrentStep: () => void
     handleSelectedQuizTypeChange: (quizType: QuizType) => void;
     handleStepClick: (step: number) => void;
     scrollToProgressBar: () => void;
@@ -78,6 +79,11 @@ export function QuizCreationProvider({ children }: { children: React.ReactNode; 
         scrollToProgressBar();
     }, [])
 
+    const handleDecreaseCurrentStep = useCallback(() => {
+        setCurrentStep((prevState) => prevState - 1);
+        scrollToProgressBar();
+    }, [])
+
     const handleStepClick = useCallback((step: number) => {
         setCurrentStep(step);
     }, [])
@@ -100,8 +106,8 @@ export function QuizCreationProvider({ children }: { children: React.ReactNode; 
     }, [])
 
     const value = useMemo<Context>(() => ({
-        currentStep, selectedCategory, questions, selectedSubcategory, selectedImage, selectedQuizType, handleChangeSelectedCategory, handleChangeSelectedSubcategory, handleIncreaseCurrentStep, handleRemoveUploadedImage, handleStepClick, handleSelectedQuizTypeChange, handleSetUploadedImage, handleQuestionsChange, handleAddQuestion, scrollToProgressBar
-    }), [currentStep, selectedCategory, questions, selectedSubcategory, selectedImage, selectedQuizType, handleChangeSelectedCategory, handleChangeSelectedSubcategory, handleIncreaseCurrentStep, handleRemoveUploadedImage, handleStepClick, handleSelectedQuizTypeChange, handleSetUploadedImage, handleQuestionsChange, handleAddQuestion, scrollToProgressBar])
+        currentStep, selectedCategory, questions, selectedSubcategory, selectedImage, selectedQuizType, handleChangeSelectedCategory, handleChangeSelectedSubcategory, handleIncreaseCurrentStep, handleDecreaseCurrentStep, handleRemoveUploadedImage, handleStepClick, handleSelectedQuizTypeChange, handleSetUploadedImage, handleQuestionsChange, handleAddQuestion, scrollToProgressBar
+    }), [currentStep, selectedCategory, questions, selectedSubcategory, selectedImage, selectedQuizType, handleChangeSelectedCategory, handleChangeSelectedSubcategory, handleIncreaseCurrentStep, handleDecreaseCurrentStep, handleRemoveUploadedImage, handleStepClick, handleSelectedQuizTypeChange, handleSetUploadedImage, handleQuestionsChange, handleAddQuestion, scrollToProgressBar])
 
     return (
         <QuizCreationContext.Provider value={value}>

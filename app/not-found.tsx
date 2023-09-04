@@ -1,6 +1,7 @@
-import { Flex, Heading, Text, Stack, Link, Image } from "@/components/chakra";
+import { Flex, Heading, Text, Stack, Link } from "@/components/chakra";
 import { COMMON_PAGE_PADDING } from "@/constants";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "Qwizard | Not Found",
@@ -14,7 +15,7 @@ export default function NotFound() {
                 <Heading color="black" fontSize={{ base: "md", md: "xl" }} fontWeight="semibold" textAlign={{ base: "center", lg: "start" }}>Unfortunately, no magic spells can help you now, but you could try teleporting to our <Link color="blue" href="/">front page</Link>.</Heading>
             </Stack>
             <Flex alignItems="center" justifyContent={{ base: "center", lg: "flex-end" }} w={{ base: "100", lg: "50%" }}>
-                <Image src="notFound.png" alt="Wizard in the woods" />
+                <Image src="/notFound.png" alt="Wizard in the woods" width={450} height={600} />
             </Flex>
         </Flex >
     )

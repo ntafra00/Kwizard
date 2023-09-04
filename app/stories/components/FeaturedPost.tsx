@@ -1,14 +1,23 @@
+"use client"
+
 import { Flex, Center, Text, Heading, Divider, Stack, Image, Spacer } from "@/components/chakra";
 import { FeaturedPostData } from "@/typings"
+import { useRouter } from "next/navigation";
 
 interface Props {
     featuredPost: FeaturedPostData;
 }
 
-export function FeaturedPost({ featuredPost: { author, callToAction, date, description, imageUrl, topic } }: Props) {
+export function FeaturedPost({ featuredPost: { id, author, callToAction, date, description, imageUrl, topic } }: Props) {
+
+    const router = useRouter();
+    const handleRedirectToSelectedStory = () => {
+        router.push(`/stories/${id}`);
+    }
+
     return (
         <Center pt="32px" pb="56px">
-            <Flex background="white" w={{ base: "80%", lg: "66%" }} direction={{ base: "column", md: "row" }} px="36px">
+            <Flex background="white" w={{ base: "80%", lg: "66%" }} direction={{ base: "column", md: "row" }} px="36px" _hover={{ cursor: "pointer" }} onClick={handleRedirectToSelectedStory}>
                 <Flex direction="column" w={{ base: "100%", lg: "40%" }} pt="32px" pb="16px">
                     <Stack gap="8px">
                         <Text color="smoke" fontSize="sm" fontWeight="regular">{topic}</Text>

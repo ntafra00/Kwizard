@@ -29,10 +29,10 @@ export default function Quizzes() {
             </WhiteLayout>
             <Box pt="56px">
                 <Center>
-                    <Heading color="black" fontSize="l" fontWeight="semibold">Neki tekst</Heading>
+                    <Heading color="black" fontSize={{ base: "md", lg: "l" }} fontWeight="semibold">Looking for something in particular? </Heading>
                 </Center>
                 <Center>
-                    <Heading color="black" fontSize="l" fontWeight="semibold">u dva reda</Heading>
+                    <Heading color="black" fontSize={{ base: "md", lg: "l" }} fontWeight="semibold">Choose one of the categories listed below!</Heading>
                 </Center>
                 <CategoryBar />
                 <QuizzesGrid />

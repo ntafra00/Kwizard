@@ -6,12 +6,24 @@ import { useQuizCreation } from "@/contexts";
 
 export function Buttons() {
 
-    const { currentStep, handleIncreaseCurrentStep } = useQuizCreation()
+    const { currentStep, handleIncreaseCurrentStep, handleDecreaseCurrentStep } = useQuizCreation()
 
     return (
-        <Center pt="40px" pb="64px">
-            {currentStep !== 2 &&
-                <Button buttonAction={handleIncreaseCurrentStep} text="Next Page" textColor="white" backgroundColor="orange" fontSize="md" />
+        <Center pt="40px" pb="64px" gap="48px">
+            {currentStep === 0 &&
+                <>
+                    <Button buttonAction={handleIncreaseCurrentStep} text="Next Page" textColor="white" backgroundColor="orange" backgroundColorOnClick="orangeOnClick" />
+                </>}
+            {currentStep === 1 &&
+                <>
+                    <Button buttonAction={handleDecreaseCurrentStep} text="Previous Page" textColor="orange" backgroundColor="white" backgroundColorOnClick="whiteOnClick" />
+                    <Button buttonAction={handleIncreaseCurrentStep} text="Next Page" textColor="white" backgroundColor="orange" backgroundColorOnClick="orangeOnClick" />
+                </>
+            }
+            {currentStep === 2 &&
+                <>
+                    <Button buttonAction={handleDecreaseCurrentStep} text="Previous Page" textColor="orange" backgroundColor="white" backgroundColorOnClick="whiteOnClick" />
+                </>
             }
         </Center>
     )

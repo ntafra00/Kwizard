@@ -9,11 +9,13 @@ const theme = extendTheme({
         yellow: "#E5E0AC",
         white: "#EFEFEF",
         blue: "#2E3182",
+        blueOnClick: "#454782",
         gray: "#3F3D3D",
         black: "#000000",
         orange: "#EF9D59",
         smoke: "rgba(63, 61, 61, 0.54)",
-        transparent: "transparent"
+        transparent: "transparent",
+        transparentOnClick: "#ebe7bb",
     },
     fonts: {
         body: "Poppins, sans-serif",

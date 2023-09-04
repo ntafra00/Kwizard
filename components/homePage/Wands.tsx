@@ -14,17 +14,17 @@ export function Wands() {
 
     return (
         <Flex>
-            <Image src='wandHandLeft.png' alt="Left hand with wand" w={'33.3%'} />
-            <Flex w={'33.3%'} justifyContent={"center"} alignItems={"center"}>
-                <Flex direction={"column"} justifyContent={"space-evenly"} alignItems={"center"} h={'80%'}>
-                    <Box>
-                        <Heading color="black" size={{ s: "md", md: "xl", l: "xxl" }} textAlign="center">Are you ready?</Heading>
-                        <Heading color="black" size={{ s: "md", md: "xl", l: "xxl" }} textAlign="center">We are!</Heading>
+            <Image src='wandHandLeft.png' alt="Left hand with wand" w={{ base: "20%", md: '33.3%' }} />
+            <Flex w={{ base: "60%", md: '33.3%' }} justifyContent={"center"} alignItems={"center"}>
+                <Flex direction={"column"} justifyContent={"space-evenly"} alignItems={"center"} h={'80%'} py="10px">
+                    <Box pb={{ base: "10px", md: "0px" }}>
+                        <Heading color="black" size={{ base: "xs", md: "md", l: "xxl" }} textAlign="center">Are you ready?</Heading>
+                        <Heading color="black" size={{ base: "xs", md: "md", l: "xxl" }} textAlign="center">We are!</Heading>
                     </Box>
-                    <Button buttonAction={handleRedirectToQuizzes} text="Get started now!" textColor="blue" fontSize={{ base: "sm", md: "md" }} key="getStartedNowButton" />
+                    <Button buttonAction={handleRedirectToQuizzes} text="Get started now!" textColor="blue" key="getStartedNowButton" backgroundColorOnClick="transparentOnClick" />
                 </Flex>
             </Flex>
-            <Image src='wandHandRight.png' alt="Right hand with wand" w={'33.3%'} />
+            <Image src='wandHandRight.png' alt="Right hand with wand" w={{ base: "20%", md: '33.3%' }} />
         </Flex>
     )
 }

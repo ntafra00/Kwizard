@@ -1,21 +1,21 @@
-import { Stack, Image, Center } from "@/components/chakra";
-
-import { Button } from "@/components/commons/buttons";
+import { Stack, Image, Center, Text } from "@/components/chakra";
 
 interface Props {
     imageUrl: string;
     imageDescription: string;
-    buttonText: string;
-    buttonAction: () => void;
+    text: string;
+    handleOnClick: () => void;
 }
 
-export function QuizInfo({ imageUrl, buttonText, imageDescription, buttonAction }: Props) {
+export function QuizInfo({ imageUrl, text, imageDescription, handleOnClick }: Props) {
     return (
-        <Stack spacing="56px">
-            <Center>
+        <Stack spacing="56px" _hover={{ cursor: "pointer", backgroundColor: "#e7e7e7" }} _active={{ backgroundColor: "#eff1f2" }} onClick={handleOnClick} pb={{ base: "10px", lg: "0px" }}>
+            <Center >
                 <Image src={imageUrl} alt={imageDescription} />
             </Center>
-            <Button buttonAction={buttonAction} text={buttonText} textColor="black" key={buttonText} fontSize="md" />
-        </Stack>
+            <Center>
+                <Text color="blue" fontSize="md" fontWeight="medium">{text}</Text>
+            </Center>
+        </ Stack>
     )
 }

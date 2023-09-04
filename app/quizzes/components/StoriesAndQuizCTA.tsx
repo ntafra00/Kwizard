@@ -23,12 +23,12 @@ export function StoriesAndQuizCTA() {
     return (
         <Box pt="16px" px={COMMON_PAGE_PADDING} pb="68px">
             <Center pb="56px">
-                <Heading color="black" fontSize="l" fontWeight="semibold">Neki tekst</Heading>
+                <Heading color="black" fontSize={{ base: "md", lg: "l" }} fontWeight="semibold" textAlign="center">Choose visely - each path offers something important of value!</Heading>
             </Center>
             <Flex direction={{ base: "column", lg: "row" }} justifyContent="space-between">
-                <QuizInfo buttonText="Check out other quizzes" buttonAction={handleScrollToQuizzes} imageDescription="Spells book" imageUrl="spellsBook.png" />
-                <QuizInfo buttonText="Get inspired by our stories" buttonAction={handleRedirectToStories} imageDescription="Broken glasses" imageUrl="brokenGlasses.png" />
-                <QuizInfo buttonText="Make your own quiz" buttonAction={handleRedirectToQuizCreation} imageDescription="Potion" imageUrl="potion.png" />
+                <QuizInfo text="Check out other quizzes" handleOnClick={handleScrollToQuizzes} imageDescription="Spells book" imageUrl="spellsBook.png" />
+                <QuizInfo text="Get inspired by our stories" handleOnClick={handleRedirectToStories} imageDescription="Broken glasses" imageUrl="brokenGlasses.png" />
+                <QuizInfo text="Make your own quiz" handleOnClick={handleRedirectToQuizCreation} imageDescription="Potion" imageUrl="potion.png" />
             </Flex>
         </Box>
     )

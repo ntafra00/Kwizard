@@ -27,13 +27,11 @@ const { SingleValue, Option } = components;
 
 const IconValue = (props: SingleValueProps) => (
     <SingleValue {...props}>
-        <img src={(props.data as SelectOption).imageUrl} style={{ height: '30px', width: '30px', marginRight: '10px' }} />
         {(props.data as SelectOption).label}
     </SingleValue>)
 
 const IconOption = (props: OptionProps) => (
     <Option {...props}>
-        <img src={(props.data as SelectOption).imageUrl} style={{ height: '30px', width: '30px', marginRight: '10px', display: "inline" }} />
         {(props.data as SelectOption).label}
     </Option>
 );

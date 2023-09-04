@@ -25,6 +25,10 @@ export interface PostData {
     imageUrl: string,
     topic: string,
     description: string,
+    content?: {
+        headings: string[];
+        texts: string[];
+    },
 }
 
 export interface FeaturedPostData extends PostData {
@@ -65,6 +69,7 @@ export interface QuizCreationStep {
 export interface Topic {
     id: string;
     name: string;
+    text: string;
 }
 
 export type QuizType = "private" | "public";

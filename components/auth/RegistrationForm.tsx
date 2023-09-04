@@ -51,16 +51,11 @@ export function RegistrationForm({ handleModalSceneChange }: Props) {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <Center>
-                <Text fontSize="sm" fontWeight="medium" color="gray">
-                    Alternatively, enter your email
+            {/* <Center pb="10px">
+                <Text fontSize="sm" fontWeight="medium" color="gray" textAlign="center">
+                    Enter your email and a strong password!
                 </Text>
-            </Center>
-            <Center>
-                <Text fontSize="sm" fontWeight="medium" color="gray">
-                    and a strong password!
-                </Text>
-            </Center>
+            </Center> */}
             <FormField errorMessage={errors.email?.message} hasError={!!errors.email} id="email" key="email">
                 <FormLabel {...labelProps}>Email</FormLabel>
                 <Input {...register("email")} {...inputProps} type="text" />
@@ -71,7 +66,7 @@ export function RegistrationForm({ handleModalSceneChange }: Props) {
                     <Input {...register("password")} {...inputProps} type="password" />
                 </FormField>
             </Box>
-            <Box pt={4} pb="70px">
+            <Box pt={4} pb="30px">
                 <FormField errorMessage={errors.repeatedPassword?.message} hasError={!!errors.repeatedPassword} id="repeatedPassword" key="repeatedPassword">
                     <FormLabel {...labelProps}>Confirm password</FormLabel>
                     <Input {...register("repeatedPassword")} {...inputProps} type="password" />
@@ -87,7 +82,7 @@ export function RegistrationForm({ handleModalSceneChange }: Props) {
                 isLoading={isSubmitting}
                 fullWidth={true}
             />
-            <Center gap={2} pt="40px">
+            <Center gap={2} pt="10px">
                 <Text color="gray" fontWeight="medium" fontSize="sm">Already a wizard?</Text>
                 <Button buttonAction={() => handleModalSceneChange(ModalScene.LOGIN)} text="Log in" textColor="blue" variant="link" key="Create account" />
             </Center>

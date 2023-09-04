@@ -55,7 +55,7 @@ const customStyles: StylesConfig<SelectOption, true, GroupBase<SelectOption>> = 
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        color: "#A0AEC0",
+        color: "#000",
         fontSize: "18px",
     }),
     singleValue: (provided) => ({
@@ -63,7 +63,7 @@ const customStyles: StylesConfig<SelectOption, true, GroupBase<SelectOption>> = 
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        color: "#A0AEC0",
+        color: "#000",
         fontSize: "18px",
     }),
     control: (provided) => ({

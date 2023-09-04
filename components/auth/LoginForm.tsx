@@ -70,10 +70,10 @@ export function LoginForm({ handleModalSceneChange }: Props) {
                 isLoading={isSubmitting}
                 fullWidth={true}
             />
-            <Center gap={2} pt="40px">
+            <Flex gap={2} pt="40px" justifyContent="center" alignItems="center" direction={{ base: "column", md: "row" }}>
                 <Text color="gray" fontWeight="medium" fontSize="sm">Not a wizard yet?</Text>
                 <Button buttonAction={() => handleModalSceneChange(ModalScene.REGISTER)} text="Create account" textColor="blue" variant="link" key="Create account" />
-            </Center>
+            </Flex>
         </form>
     )
 }

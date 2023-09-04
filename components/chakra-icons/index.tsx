@@ -1,3 +1,3 @@
 "use client"
 
-export { ChevronDownIcon, ChevronUpIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
+export { ChevronDownIcon, ChevronUpIcon, ChevronLeftIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons'

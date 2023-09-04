@@ -12,7 +12,7 @@ export default function Footer() {
                         <Text color="blue" fontSize={{ base: "sm", md: "md" }} fontWeight="medium">Made with magic, Next.js and</Text>
                         <Text color="blue" fontSize={{ base: "sm", md: "md" }} fontWeight="medium">a drop of love for knowledge</Text>
                     </Flex>
-                    <Flex px={{ base: "20px", md: "60px", lg: "110px" }} pb={{ base: "10px" }}>
+                    <Flex px={{ base: "10px", md: "60px", lg: "110px" }} pb={{ base: "10px" }}>
                         <Flex justifyContent={"flex-start"} alignItems={"center"}>
                             <Box pr={{ base: "8px", md: "16px" }} borderRight={"1px solid"} borderColor={"black"}>
                                 <Text color="black" fontSize="sm" fontWeight="medium">Privacy Policy</Text>

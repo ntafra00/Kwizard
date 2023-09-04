@@ -1,37 +1,83 @@
-import { Button as ChakraButton } from "@/components/chakra";
+import { useMediaQuery } from "@chakra-ui/react";
+import { useState } from "react";
 
 interface Props {
     text: string;
     textColor: string;
+    backgroundColorOnClick: string;
+    visibility?: "visible" | "hidden";
     backgroundColor?: string;
-    variant?: string;
-    borderRadius?: string;
     type?: "submit" | "button";
-    isLoading?: boolean;
-    fullWidth?: boolean;
-    fontSize?: string | object;
-    fontWeight?: string;
     buttonAction: () => void;
 }
 
-export function Button({ text, textColor, backgroundColor, variant = "outline", borderRadius = "full", type = "button", fontSize = "sm", isLoading = false, fullWidth = false, buttonAction, fontWeight = "medium" }: Props) {
+const mapColorToHex = (color: string) => {
+    switch (color) {
+        case "blue":
+            return "#2E3182"
+        case "white":
+            return "#EFEFEF"
+        case "orange":
+            return "#EF9D59"
+        case "blueOnClick":
+            return "#454782"
+        case "transparentOnClick":
+            return "#ebe7bb"
+        case "orangeOnClick":
+            return "#f2cfb3"
+        case "whiteOnClick":
+            return "#f3eeec"
+        default:
+            return "transparent"
+    }
+}
 
+export function Button({ text, textColor, backgroundColorOnClick, backgroundColor = "transparent", type = "button", visibility = "visible", buttonAction }: Props) {
+    const [isClicked, setIsClicked] = useState(false);
+    const [isSmallerThanLargeScreen] = useMediaQuery('(max-width: 1280px)');
+    const [isSmallerThanMediumScreen] = useMediaQuery('(max-width: 768px)');
+
+    const toggleMouseState = () => {
+        setIsClicked((prevState) => !prevState);
+    }
+
+    const calculateFontSize = () => {
+        if (isSmallerThanMediumScreen) {
+            return "16px";
+        }
+        if (isSmallerThanLargeScreen) {
+            return "20px";
+        }
+        return "24px";
+    }
+
+    const calculatePadding = () => {
+        if (isSmallerThanMediumScreen) {
+            return "8px 12px 8px 12px";
+        }
+        if (isSmallerThanLargeScreen) {
+            return "12px 24px 12px 24px";
+        }
+        return "16px 48px 16px 48px";
+    }
+
+    const style = {
+        padding: calculatePadding(),
+        color: mapColorToHex(textColor),
+        backgroundColor: mapColorToHex(isClicked ? backgroundColorOnClick : backgroundColor),
+        borderRadius: "50px",
+        border: "1px solid #000",
+        display: "inline-flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: calculateFontSize(),
+        fontWeight: "500",
+        fontFamily: "Poppins",
+        visibility: visibility,
+    }
     return (
-        <ChakraButton
-            rounded={borderRadius}
-            variant={variant}
-            color={textColor}
-            background={backgroundColor ?? "transparent"}
-            // borderColor={backgroundColor ?? "black"}
-            borderColor="black"
-            onClick={buttonAction}
-            fontSize={fontSize}
-            fontWeight={fontWeight}
-            type={type}
-            isLoading={isLoading}
-            w={fullWidth ? "full" : "inherit"}
-        >
+        <button style={style} onClick={buttonAction} onMouseDown={toggleMouseState} onMouseUp={toggleMouseState}>
             {text}
-        </ChakraButton>
+        </button>
     )
 }

@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="browserIcon.png" type="image/png"></link>
+        <link rel="icon" href="/browserIcon.png" type="image/png"></link>
       </head>
       <body>
         <Providers>
