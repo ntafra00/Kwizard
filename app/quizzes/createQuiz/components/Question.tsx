@@ -41,7 +41,7 @@ export function Question() {
                 <Flex direction={{ base: "column", md: "row" }} justifyContent="space-between" pb="45px" gap="28px" alignItems="center">
                     <Center w={{ base: "100%", lg: "60%" }} gap="28px" >
                         <Input placeholder="Question Title" backgroundColor="white" />
-                        <Image src={selectedImage ? selectedImage : "uploadImageGray.png"} alt="Upload image" w="36px" h="36px" onClick={selectedImage ? handleRemoveUploadedImage : handleUploadImageClick} _hover={{ cursor: "pointer" }} />
+                        <Image src={selectedImage ? selectedImage : "/uploadImageGray.png"} alt="Upload image" w="36px" h="36px" onClick={selectedImage ? handleRemoveUploadedImage : handleUploadImageClick} _hover={{ cursor: "pointer" }} />
                     </Center>
                     <Box w={{ base: "100%", lg: "40%" }}>
                         <Select onChangeValue={handleQuestionTypeChange} value={questionType} />

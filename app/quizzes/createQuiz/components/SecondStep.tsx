@@ -8,7 +8,7 @@ import { useQuizCreation } from "@/contexts"
 export function SecondStep() {
     const { questions, handleAddQuestion } = useQuizCreation();
     return (
-        <QuizSection imageDescription="Number six" imageUrl="numberSix.png" title="Do Your Magic!" isLast={true}>
+        <QuizSection imageDescription="Number six" imageUrl="/numberSix.png" title="Do Your Magic!" isLast={true}>
             {questions.map((question) => (
                 <Question />
             ))}

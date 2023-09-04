@@ -18,7 +18,7 @@ export function StoriesAndQuizCTA() {
     }
 
     const handleRedirectToQuizCreation = () => {
-        router.push("/createQuiz")
+        router.push("/quizzes/createQuiz")
     }
     return (
         <Box pt="16px" px={COMMON_PAGE_PADDING} pb="68px">

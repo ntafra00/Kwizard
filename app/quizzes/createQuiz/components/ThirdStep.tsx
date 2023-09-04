@@ -8,7 +8,7 @@ import { QuizPassword } from "./QuizPassword";
 export function ThirdStep() {
     return (
         <>
-            <QuizSection imageDescription="Number seven" imageUrl="numberSeven.png" title="Change Your Time Settings">
+            <QuizSection imageDescription="Number seven" imageUrl="/numberSeven.png" title="Change Your Time Settings">
                 <Flex alignItems="center" justifyContent="space-between" gap={{ base: "20px", lg: "58px" }} pb="28px" direction={{ base: "column", lg: "row" }}>
                     <Center width={{ base: "80%", lg: "30%" }}>
                         <Text color="blue" fontWeight="medium" fontSize="18px" textAlign="center">Quiz Available From</Text>
@@ -43,7 +43,7 @@ export function ThirdStep() {
                     </Center>
                 </Flex>
             </QuizSection >
-            <QuizSection imageDescription="Number eight" imageUrl="numberEight.png" title="Change Your Grading Settings">
+            <QuizSection imageDescription="Number eight" imageUrl="/numberEight.png" title="Change Your Grading Settings">
                 <Flex alignItems="center" justifyContent="space-between" gap={{ base: "20px", lg: "58px" }} pb="28px" direction={{ base: "column", lg: "row" }}>
                     <Center width={{ base: "80%", lg: "30%" }}>
                         <Text color="blue" fontWeight="medium" fontSize="18px" textAlign="center">Quiz Available From</Text>
@@ -73,7 +73,7 @@ export function ThirdStep() {
                     <Switch size="lg" colorScheme="blue" />
                 </Flex>
             </QuizSection >
-            <QuizSection imageDescription="Number nine" imageUrl="numberNine.png" title="Change Your Quiz Visibility Settings">
+            <QuizSection imageDescription="Number nine" imageUrl="/numberNine.png" title="Change Your Quiz Visibility Settings">
                 <Flex alignItems="center" gap={{ base: "20px", lg: "58px" }} pb="28px" direction={{ base: "column", lg: "row" }}>
                     <Center width={{ base: "80%", lg: "30%" }}>
                         <Text color="blue" fontWeight="medium" fontSize="18px" textAlign="center">Quiz Access Password</Text>
@@ -96,7 +96,7 @@ export function ThirdStep() {
                     <Switch size="lg" colorScheme="blue" />
                 </Flex>
             </QuizSection>
-            <QuizSection imageDescription="Number ten" imageUrl="numberTen.png" title="Ready to cast the finishing spell?" isLast>
+            <QuizSection imageDescription="Number ten" imageUrl="/numberTen.png" title="Ready to cast the finishing spell?" isLast>
                 <Center backgroundImage="">
                     <Button text="Finissimo!" textColor="white" backgroundColor="blue" buttonAction={() => { }} backgroundColorOnClick="blueOnClick" />
                 </Center>

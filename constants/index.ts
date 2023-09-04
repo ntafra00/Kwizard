@@ -92,31 +92,31 @@ export const COMMON_PAGE_PADDING = {
 export const QUIZ_CATEGORIES: QuizCategory[] = [{
     id: uuid(),
     name: "General Knowledge",
-    imageUrl: "generalKnowledge.png",
+    imageUrl: "/generalKnowledge.png",
     subcategories: []
 },
 {
     id: uuid(),
     name: "Arts and Music",
-    imageUrl: "artsAndMusic.png",
+    imageUrl: "/artsAndMusic.png",
     subcategories: []
 },
 {
     id: uuid(),
     name: "PC and Technology",
-    imageUrl: "pcAndTechnology.png",
+    imageUrl: "/pcAndTechnology.png",
     subcategories: []
 },
 {
     id: uuid(),
     name: "Biology and Chemistry",
-    imageUrl: "biologyAndChemistry.png",
+    imageUrl: "/biologyAndChemistry.png",
     subcategories: []
 },
 {
     id: uuid(),
     name: "Sports and Recreation",
-    imageUrl: "sportsAndRecreation.png",
+    imageUrl: "/sportsAndRecreation.png",
     subcategories: ["Basketball", "Football", "Tennis", "Swimming", "Chess", "Darts", "Hockey", "Volleyball", "Rugby", "Other"]
 }
 ]

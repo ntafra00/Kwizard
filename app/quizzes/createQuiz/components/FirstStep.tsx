@@ -27,7 +27,7 @@ export function FirstStep() {
 
     return (
         <>
-            <QuizSection imageDescription="Number one" imageUrl="numberOne.png" title="What's your Quiz's topic?">
+            <QuizSection imageDescription="Number one" imageUrl="/numberOne.png" title="What's your Quiz's topic?">
                 <Categories selectedCategory={selectedCategory} handleChangeSelectedCategory={handleChangeSelectedCategory} />
                 {selectedCategory && selectedCategory.subcategories.length > 0 &&
                     <>
@@ -38,7 +38,7 @@ export function FirstStep() {
                     </>
                 }
             </QuizSection>
-            <QuizSection imageDescription="Number two" imageUrl="numberTwo.png" title="Is this a Private or Public Quiz?">
+            <QuizSection imageDescription="Number two" imageUrl="/numberTwo.png" title="Is this a Private or Public Quiz?">
                 <Center>
                     <Center borderRadius="50px 0px 0px 50px" w="145px" h="37px" background={selectedQuizType === "private" ? "orange" : "rgba(239, 157, 89, 0.50)"} _hover={selectedQuizType === "private" ? {} : { background: "rgba(239, 157, 89, 0.50)", cursor: "pointer" }} onClick={selectedQuizType === "private" ? undefined : () => handleSelectedQuizTypeChange("private")}>
                         <Text textAlign="center" color={selectedQuizType === "private" ? "white" : "black"} fontSize="sm" fontWeight="medium">Private</Text>
@@ -48,21 +48,21 @@ export function FirstStep() {
                     </Center>
                 </Center>
             </QuizSection>
-            <QuizSection imageDescription="Number three" imageUrl="numberThree.png" title="Quiz Title">
+            <QuizSection imageDescription="Number three" imageUrl="/numberThree.png" title="Quiz Title">
                 <Center>
                     <Box w={{ base: "90%", lg: "80%" }}>
                         <Input />
                     </Box>
                 </Center>
             </QuizSection>
-            <QuizSection imageDescription="Number four" imageUrl="numberFour.png" title="Quiz Description">
+            <QuizSection imageDescription="Number four" imageUrl="/numberFour.png" title="Quiz Description">
                 <Center>
                     <Textarea w={{ base: "90%", lg: "80%" }} borderRadius="6px" border="1px solid #E2E8F0" placeholder="Placeholder" fontSize="18px" fontWeight="normal" _placeholder={{ color: "#A0AEC0" }} color="black" />
                 </Center>
             </QuizSection>
-            <QuizSection isLast={true} imageDescription="Number five" imageUrl="numberFive.png" title="Quiz Main Image">
+            <QuizSection isLast={true} imageDescription="Number five" imageUrl="/numberFive.png" title="Quiz Main Image">
                 <Center>
-                    <Image src={selectedImage ?? "uploadImage.png"} w="150px" h="150px" alt={selectedImage ? "User uploaded image" : "Upload image placeholder"} />
+                    <Image src={selectedImage ?? "/uploadImage.png"} w="150px" h="150px" alt={selectedImage ? "User uploaded image" : "Upload image placeholder"} />
                 </Center>
                 <Center pt="40px" gap="10px">
                     {!selectedImage && <Button buttonAction={handleUploadFileClick} text="Select Image to Upload" textColor="white" backgroundColor="blue" backgroundColorOnClick="blueOnClick" />}

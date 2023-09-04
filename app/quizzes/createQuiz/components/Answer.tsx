@@ -39,10 +39,10 @@ export function Answer({ answer: { id, isCorrect, text }, handleAnswerToggle }: 
             <Flex w="100%">
                 <Input placeholder="Answer" backgroundColor="white" />
                 <Center borderRadius="0px 6px 6px 0px" border="1px solid #E2E8F0" backgroundColor="#EDF2F7" px="8px" w="48px" h="48px" _hover={{ cursor: "pointer" }} onClick={() => handleAnswerToggle(id)}>
-                    <Image src={isCorrect ? "correctAnswer.png" : "wrongAnswer.png"} alt="Correct answer" background="transparent" />
+                    <Image src={isCorrect ? "/correctAnswer.png" : "/wrongAnswer.png"} alt="Correct answer" background="transparent" />
                 </Center>
             </Flex>
-            <Image src={selectedImage ? selectedImage : "uploadImageGray.png"} alt="Upload image" w="36px" h="36px" onClick={selectedImage ? handleRemoveUploadedImage : handleUploadImageClick} _hover={{ cursor: "pointer" }} />
+            <Image src={selectedImage ? selectedImage : "/uploadImageGray.png"} alt="Upload image" w="36px" h="36px" onClick={selectedImage ? handleRemoveUploadedImage : handleUploadImageClick} _hover={{ cursor: "pointer" }} />
             <input
                 style={{ display: 'none' }}
                 ref={answerImageRef}

@@ -20,17 +20,17 @@ const SELECT_OPTIONS: SelectOption[] = [
     {
         label: "Multiple Choice",
         value: QuestionType.MULTIPLE_CHOICE,
-        imageUrl: "multipleChoice.png"
+        imageUrl: "/multipleChoice.png"
     },
     {
         label: "Checkboxes",
         value: QuestionType.CHECKBOXES,
-        imageUrl: "checkbox.png"
+        imageUrl: "/checkbox.png"
     },
     {
         label: "True/False",
         value: QuestionType.TRUE_FALSE,
-        imageUrl: "trueFalse.png"
+        imageUrl: "/trueFalse.png"
     },
 ]
 
