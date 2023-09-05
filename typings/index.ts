@@ -29,12 +29,12 @@ export interface PostData {
         headings: string[];
         texts: string[];
     },
-}
-
-export interface FeaturedPostData extends PostData {
-    callToAction: string,
-    author: string,
-    date: string,
+    date: string;
+    author: {
+        name: string;
+        about: string;
+    }
+    callToAction?: string;
 }
 
 export interface QuizData {

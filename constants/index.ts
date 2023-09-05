@@ -1,4 +1,4 @@
-import { FeaturedPostData, FormErrorMessage, FormErrorMessageFunction, NavigationLink, PostData, QuizCategory, Answer, QuizData, QuizCreationStep, Topic } from "@/typings";
+import { FormErrorMessage, FormErrorMessageFunction, NavigationLink, PostData, QuizCategory, Answer, QuizData, QuizCreationStep, Topic } from "@/typings";
 import { v4 as uuid } from "uuid";
 
 const COMMON_LINKS: NavigationLink[] = [{ text: "Quizzes", path: "quizzes", id: uuid() }, { text: "Stories", path: "stories", id: uuid() }, { text: "About us", path: "aboutUs", id: uuid() }]
@@ -21,61 +21,132 @@ export const FORM_ERROR_MESSAGE_FUNCTIONS: FormErrorMessageFunction = {
 export const POSTS: PostData[] = [
     {
         id: "14eff715-2a5f-45e1-a557-c467cdb04fd1",
-        imageUrl: "storyCat.png",
+        imageUrl: "/storyCat.png",
         topic: "Quiz speak",
         description: "Online Quizzes vs. Traditional Tests: Which is Better for Learning?",
+        content: {
+            headings: ["#1 Captain Obvious Approach", "#2 Variety of Topics", "#3 Points Galore", "#4 Consistency is Key", "#5 Don't make promises you can't fulfill"],
+            texts: ["Think you know what's the color of a yellow banana? Well, guess what - I still have to ask you! Don't be afraid to ask the simple questions, sometimes the obviousness is so outrageous it circles back to being brilliant! Who knows if the water is really wet?", "Okay, so what if the Quiz Title says „Chemistry“? Does that mean I shouldn't ask about the importance of communication between USA and USSR during the Cold War? NO! Never allow them to let their guard down, that's how you make them adaptable to every surprise. Valueable life lesson.", "Welcome to QuizEducation, where the questions are made up and the points don't matter. Get it right - get a gazzillion points your way! Get it wrong? Well, let's just say someone's student debt isn't going away anytime soon... (Sponsored by Whose Line is it Anyway USA and Colin Mochrie)", "The key is to be consistenly inconsistent!", "Such as creating a blog post and saying there will be 6 rules. Good riddance, eh?"]
+        },
+        author: {
+            name: "Nikola Tafra",
+            about: "By day, a serious PHP developer. By night, also weird. Still struggles to accept defeat in Croatian TV show “Chase” last year."
+        },
+        date: "19/07/2023",
     },
     {
         id: "db4dd02b-9f75-421c-9469-724925fa2d92",
-        imageUrl: "storyCat.png",
+        imageUrl: "/storyCat.png",
         topic: "Quiz speak",
         description: "Gamification in Education: Using Quizzes to Make Learning Fun",
+        content: {
+            headings: ["#1 Captain Obvious Approach", "#2 Variety of Topics", "#3 Points Galore", "#4 Consistency is Key", "#5 Don't make promises you can't fulfill"],
+            texts: ["Think you know what's the color of a yellow banana? Well, guess what - I still have to ask you! Don't be afraid to ask the simple questions, sometimes the obviousness is so outrageous it circles back to being brilliant! Who knows if the water is really wet?", "Okay, so what if the Quiz Title says „Chemistry“? Does that mean I shouldn't ask about the importance of communication between USA and USSR during the Cold War? NO! Never allow them to let their guard down, that's how you make them adaptable to every surprise. Valueable life lesson.", "Welcome to QuizEducation, where the questions are made up and the points don't matter. Get it right - get a gazzillion points your way! Get it wrong? Well, let's just say someone's student debt isn't going away anytime soon... (Sponsored by Whose Line is it Anyway USA and Colin Mochrie)", "The key is to be consistenly inconsistent!", "Such as creating a blog post and saying there will be 6 rules. Good riddance, eh?"]
+        },
+        author: {
+            name: "Nikola Tafra",
+            about: "By day, a serious PHP developer. By night, also weird. Still struggles to accept defeat in Croatian TV show “Chase” last year."
+        },
+        date: "19/07/2023",
     },
     {
         id: "ca6c58d2-603d-48f5-bc64-210fa5c0ca27",
-        imageUrl: "storyCat.png",
+        imageUrl: "/storyCat.png",
         topic: "Quiz speak",
         description: "stvarno nemas pojma",
+        content: {
+            headings: ["#1 Captain Obvious Approach", "#2 Variety of Topics", "#3 Points Galore", "#4 Consistency is Key", "#5 Don't make promises you can't fulfill"],
+            texts: ["Think you know what's the color of a yellow banana? Well, guess what - I still have to ask you! Don't be afraid to ask the simple questions, sometimes the obviousness is so outrageous it circles back to being brilliant! Who knows if the water is really wet?", "Okay, so what if the Quiz Title says „Chemistry“? Does that mean I shouldn't ask about the importance of communication between USA and USSR during the Cold War? NO! Never allow them to let their guard down, that's how you make them adaptable to every surprise. Valueable life lesson.", "Welcome to QuizEducation, where the questions are made up and the points don't matter. Get it right - get a gazzillion points your way! Get it wrong? Well, let's just say someone's student debt isn't going away anytime soon... (Sponsored by Whose Line is it Anyway USA and Colin Mochrie)", "The key is to be consistenly inconsistent!", "Such as creating a blog post and saying there will be 6 rules. Good riddance, eh?"]
+        },
+        author: {
+            name: "Nikola Tafra",
+            about: "By day, a serious PHP developer. By night, also weird. Still struggles to accept defeat in Croatian TV show “Chase” last year."
+        },
+        date: "19/07/2023",
     },
     {
         id: "09f7d9a3-7969-4812-a9fa-cab719416a75",
-        imageUrl: "storyCat.png",
+        imageUrl: "/storyCat.png",
         topic: "Quiz speak",
         description: "Unlocking Learning Potential: The Quiz-Based Pedagogical Renaissance",
+        content: {
+            headings: ["#1 Captain Obvious Approach", "#2 Variety of Topics", "#3 Points Galore", "#4 Consistency is Key", "#5 Don't make promises you can't fulfill"],
+            texts: ["Think you know what's the color of a yellow banana? Well, guess what - I still have to ask you! Don't be afraid to ask the simple questions, sometimes the obviousness is so outrageous it circles back to being brilliant! Who knows if the water is really wet?", "Okay, so what if the Quiz Title says „Chemistry“? Does that mean I shouldn't ask about the importance of communication between USA and USSR during the Cold War? NO! Never allow them to let their guard down, that's how you make them adaptable to every surprise. Valueable life lesson.", "Welcome to QuizEducation, where the questions are made up and the points don't matter. Get it right - get a gazzillion points your way! Get it wrong? Well, let's just say someone's student debt isn't going away anytime soon... (Sponsored by Whose Line is it Anyway USA and Colin Mochrie)", "The key is to be consistenly inconsistent!", "Such as creating a blog post and saying there will be 6 rules. Good riddance, eh?"]
+        },
+        author: {
+            name: "Nikola Tafra",
+            about: "By day, a serious PHP developer. By night, also weird. Still struggles to accept defeat in Croatian TV show “Chase” last year."
+        },
+        date: "19/07/2023",
     },
     {
         id: "d4645c4b-efa4-4e78-864f-5750764fb971",
-        imageUrl: "storyCat.png",
+        imageUrl: "/storyCat.png",
         topic: "Quiz speak",
         description: "6 Must Follow Rules for Perfect Quiz Making",
         content: {
             headings: ["#1 Captain Obvious Approach", "#2 Variety of Topics", "#3 Points Galore", "#4 Consistency is Key", "#5 Don't make promises you can't fulfill"],
-            texts: ["Think you know what's the color of a yellow banana? Well, guess what - I still have to ask you! Don't be afraid to ask the simple questions, sometimes the obviousness is so outrageous it circles back to being brilliant! Who knows if the water is really wet?", "Okay, so what if the Quiz Title says „Chemistry“? Does that mean I shouldn't ask about the importance of communication between USA and USSR during the Cold War? NO! Never allow them to let their guard down, that's how you make them adaptable to every surprise. Valueable life lesson.", "Welcome to QuizEducation, where the questions are made up and the points don't matter. Get it right – get a gazzillion points your way! Get it wrong? Well, let's just say someone's student debt isn't going away anytime soon... (Sponsored by Whose Line is it Anyway USA and Colin Mochrie)", "The key is to be consistenly inconsistent!", "#5 Don't make promises you can't fulfill"]
-        }
+            texts: ["Think you know what's the color of a yellow banana? Well, guess what - I still have to ask you! Don't be afraid to ask the simple questions, sometimes the obviousness is so outrageous it circles back to being brilliant! Who knows if the water is really wet?", "Okay, so what if the Quiz Title says „Chemistry“? Does that mean I shouldn't ask about the importance of communication between USA and USSR during the Cold War? NO! Never allow them to let their guard down, that's how you make them adaptable to every surprise. Valueable life lesson.", "Welcome to QuizEducation, where the questions are made up and the points don't matter. Get it right - get a gazzillion points your way! Get it wrong? Well, let's just say someone's student debt isn't going away anytime soon... (Sponsored by Whose Line is it Anyway USA and Colin Mochrie)", "The key is to be consistenly inconsistent!", "Such as creating a blog post and saying there will be 6 rules. Good riddance, eh?"]
+        },
+        author: {
+            name: "Nikola Tafra",
+            about: "By day, a serious PHP developer. By night, also weird. Still struggles to accept defeat in Croatian TV show “Chase” last year."
+        },
+        date: "19/07/2023",
     },
     {
         id: "d755b76d-967f-4617-bb24-1f5068b94909",
-        imageUrl: "storyCat.png",
+        imageUrl: "/storyCat.png",
         topic: "Quiz speak",
         description: "stvarno nemas pojma",
+        content: {
+            headings: ["#1 Captain Obvious Approach", "#2 Variety of Topics", "#3 Points Galore", "#4 Consistency is Key", "#5 Don't make promises you can't fulfill"],
+            texts: ["Think you know what's the color of a yellow banana? Well, guess what - I still have to ask you! Don't be afraid to ask the simple questions, sometimes the obviousness is so outrageous it circles back to being brilliant! Who knows if the water is really wet?", "Okay, so what if the Quiz Title says „Chemistry“? Does that mean I shouldn't ask about the importance of communication between USA and USSR during the Cold War? NO! Never allow them to let their guard down, that's how you make them adaptable to every surprise. Valueable life lesson.", "Welcome to QuizEducation, where the questions are made up and the points don't matter. Get it right - get a gazzillion points your way! Get it wrong? Well, let's just say someone's student debt isn't going away anytime soon... (Sponsored by Whose Line is it Anyway USA and Colin Mochrie)", "The key is to be consistenly inconsistent!", "Such as creating a blog post and saying there will be 6 rules. Good riddance, eh?"]
+        },
+        author: {
+            name: "Nikola Tafra",
+            about: "By day, a serious PHP developer. By night, also weird. Still struggles to accept defeat in Croatian TV show “Chase” last year."
+        },
+        date: "19/07/2023",
     },
     {
         id: "a1ffc46a-139e-4e5c-8355-da58a8cd7454",
-        imageUrl: "storyCat.png",
+        imageUrl: "/storyCat.png",
         topic: "Quiz speak",
         description: "stvarno nemas pojma",
+        content: {
+            headings: ["#1 Captain Obvious Approach", "#2 Variety of Topics", "#3 Points Galore", "#4 Consistency is Key", "#5 Don't make promises you can't fulfill"],
+            texts: ["Think you know what's the color of a yellow banana? Well, guess what - I still have to ask you! Don't be afraid to ask the simple questions, sometimes the obviousness is so outrageous it circles back to being brilliant! Who knows if the water is really wet?", "Okay, so what if the Quiz Title says „Chemistry“? Does that mean I shouldn't ask about the importance of communication between USA and USSR during the Cold War? NO! Never allow them to let their guard down, that's how you make them adaptable to every surprise. Valueable life lesson.", "Welcome to QuizEducation, where the questions are made up and the points don't matter. Get it right - get a gazzillion points your way! Get it wrong? Well, let's just say someone's student debt isn't going away anytime soon... (Sponsored by Whose Line is it Anyway USA and Colin Mochrie)", "The key is to be consistenly inconsistent!", "Such as creating a blog post and saying there will be 6 rules. Good riddance, eh?"]
+        },
+        author: {
+            name: "Nikola Tafra",
+            about: "By day, a serious PHP developer. By night, also weird. Still struggles to accept defeat in Croatian TV show “Chase” last year."
+        },
+        date: "19/07/2023",
     },
     {
         id: "bcf0df0f-9268-4862-bf1c-1c9cf34d20b9",
-        imageUrl: "storyCat.png",
+        imageUrl: "/storyCat.png",
         topic: "Quiz speak",
         description: "stvarno nemas pojma",
+        content: {
+            headings: ["#1 Captain Obvious Approach", "#2 Variety of Topics", "#3 Points Galore", "#4 Consistency is Key", "#5 Don't make promises you can't fulfill"],
+            texts: ["Think you know what's the color of a yellow banana? Well, guess what - I still have to ask you! Don't be afraid to ask the simple questions, sometimes the obviousness is so outrageous it circles back to being brilliant! Who knows if the water is really wet?", "Okay, so what if the Quiz Title says „Chemistry“? Does that mean I shouldn't ask about the importance of communication between USA and USSR during the Cold War? NO! Never allow them to let their guard down, that's how you make them adaptable to every surprise. Valueable life lesson.", "Welcome to QuizEducation, where the questions are made up and the points don't matter. Get it right - get a gazzillion points your way! Get it wrong? Well, let's just say someone's student debt isn't going away anytime soon... (Sponsored by Whose Line is it Anyway USA and Colin Mochrie)", "The key is to be consistenly inconsistent!", "Such as creating a blog post and saying there will be 6 rules. Good riddance, eh?"]
+        },
+        author: {
+            name: "Nikola Tafra",
+            about: "By day, a serious PHP developer. By night, also weird. Still struggles to accept defeat in Croatian TV show “Chase” last year."
+        },
+        date: "19/07/2023",
     },
 ]
 
-export const FEATURED_POST: FeaturedPostData = {
-    id: uuid(),
-    author: "Nikola Tafra",
+export const FEATURED_POST: PostData = {
+    id: "bcf0df0f-9268-4862-bf1c-1c9cf34d20b9",
+    author: {
+        name: "Nikola Tafra",
+        about: "By day, a serious PHP developer. By night, also weird. Still struggles to accept defeat in Croatian TV show “Chase” last year."
+    },
     callToAction: "Check out the nearest Pub Quiz Locations Near You!",
     date: "19/07/2023",
     description: "Quizzes are back, and they don't intend to go away anytime soon!",

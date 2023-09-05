@@ -1,6 +1,6 @@
 "use client"
 
-import { Text, Center, Box, FormLabel, Input } from "@/components/chakra"
+import { Text, Center, Box, FormLabel, Input, Link } from "@/components/chakra"
 import { FormField } from "../commons/forms";
 
 import { useForm } from "react-hook-form";
@@ -8,7 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useAuth } from "@/contexts/AuthContext";
 import { FORM_ERROR_MESSAGES } from "@/constants";
-import { Button } from "../commons/buttons";
+import { AuthButton } from "../commons/buttons";
 import { validatePassword } from "@/utils";
 import { registrationSchema } from "@/constants/schemas/loginSchema";
 import { ModalScene } from "@/enums";
@@ -49,13 +49,17 @@ export function RegistrationForm({ handleModalSceneChange }: Props) {
         }
     };
 
+    const handleLoginClick = () => {
+        handleModalSceneChange(ModalScene.LOGIN);
+    }
+
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            {/* <Center pb="10px">
+            <Center pb="10px">
                 <Text fontSize="sm" fontWeight="medium" color="gray" textAlign="center">
-                    Enter your email and a strong password!
+                    Alternatively, enter your email and a strong password!
                 </Text>
-            </Center> */}
+            </Center>
             <FormField errorMessage={errors.email?.message} hasError={!!errors.email} id="email" key="email">
                 <FormLabel {...labelProps}>Email</FormLabel>
                 <Input {...register("email")} {...inputProps} type="text" />
@@ -72,18 +76,15 @@ export function RegistrationForm({ handleModalSceneChange }: Props) {
                     <Input {...register("repeatedPassword")} {...inputProps} type="password" />
                 </FormField>
             </Box>
-            <Button
-                backgroundColor="blue"
-                backgroundColorOnClick="blueOnClick"
-                text="Register"
-                buttonAction={() => { }}
-                textColor="white"
-                type="submit"
-            />
-            {/* <Center gap={2} pt="10px">
+            <Center>
+                <AuthButton
+                    text="Sign up"
+                />
+            </Center>
+            <Center gap={2} pt="40px">
                 <Text color="gray" fontWeight="medium" fontSize="sm">Already a wizard?</Text>
-                <Button buttonAction={() => handleModalSceneChange(ModalScene.LOGIN)} text="Log in" textColor="blue" variant="link" key="Create account" />
-            </Center> */}
+                <Link color="blue" fontSize="sm" fontWeight="medium" onClick={handleLoginClick}>Log in</Link>
+            </Center>
         </form >
     )
 }

@@ -1,21 +1,39 @@
-import { Button, Text } from "@/components/chakra";
+import { useMediaQuery } from "@chakra-ui/react";
+import { useState } from "react";
 
 interface Props {
-    icon: JSX.Element;
-    text: string
+    text: string;
+    leftIcon: React.JSX.Element;
+    buttonAction: () => void;
 }
 
-export function CompanyButton({ icon, text }: Props) {
+export function CompanyButton({ text, leftIcon, buttonAction }: Props) {
+    const [isClicked, setIsClicked] = useState(false);
+    const [isSmallerThanSmallScreen] = useMediaQuery('(max-width: 480px)')
+
+    const toggleMouseState = () => {
+        setIsClicked((prevState) => !prevState);
+    }
+
+    const style = {
+        padding: isSmallerThanSmallScreen ? "8px 70px 8px 70px" : "8px 96px 8px 96px",
+        color: "#3F3D3D",
+        backgroundColor: isClicked ? "#E4E4E4" : "transparent",
+        borderRadius: "8px",
+        border: `1px solid #3F3D3D`,
+        display: "inline-flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "12px",
+        fontSize: isSmallerThanSmallScreen ? "12px" : "16px",
+        fontWeight: "400",
+        fontFamily: "Poppins",
+        textWrap: "nowrap",
+    }
     return (
-        <Button
-            variant="outline"
-            borderRadius="10px"
-            borderColor="black"
-            py="20px"
-            px="55px"
-            leftIcon={icon}
-        >
-            <Text color="black" fontSize="md" fontWeight="medium">{text}</Text>
-        </Button>
-    );
+        <button style={style} onClick={buttonAction} onMouseDown={toggleMouseState} onMouseUp={toggleMouseState}>
+            {leftIcon}
+            {text}
+        </button>
+    )
 }

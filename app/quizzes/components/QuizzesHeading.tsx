@@ -21,7 +21,7 @@ export function QuizzesHeading() {
     return (
         <Flex pb={{ base: "20px", lg: "72px" }} px={COMMON_PAGE_PADDING} pt={{ base: "30px", lg: "64px" }} direction={{ base: "column", lg: "row" }}>
             <Flex w={{ base: "100%", lg: "50%" }} justify={{ base: "center", lg: "flex-start" }}>
-                <Image src="/owl.png" alt="Owl" width={getImageSizeProperty()} height={getImageSizeProperty()} />
+                <Image src="/owl.png" alt="Owl" width={getImageSizeProperty()} height={getImageSizeProperty()} priority />
             </Flex>
             <Flex direction="column" w={{ base: "100%", lg: "50%" }} justify="center" alignItems={{ base: "none", lg: "flex-start" }} pt={{ base: "20px", lg: "none" }}>
                 <Box>

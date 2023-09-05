@@ -8,6 +8,7 @@ const theme = extendTheme({
     colors: {
         yellow: "#E5E0AC",
         white: "#EFEFEF",
+        whiteOnClick: "#f3eeec",
         blue: "#2E3182",
         blueOnClick: "#454782",
         gray: "#3F3D3D",

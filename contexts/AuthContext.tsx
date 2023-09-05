@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useContext, useState, useEffect, createContext, useMemo, useCallback } from "react"
-import { signInWithEmailAndPassword, onAuthStateChanged, signOut, getAuth, User, UserCredential, createUserWithEmailAndPassword } from "firebase/auth"
+import { signInWithEmailAndPassword, onAuthStateChanged, signOut, getAuth, User, UserCredential, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth"
 
 import firebase_app from "@/firebase/config";
 import { LoginCredentials } from "@/typings";
@@ -19,6 +19,8 @@ interface Context {
     loginUser(loginCredentials: LoginCredentials): Promise<UserCredential>,
     logout(): Promise<void>,
     registerUser(loginCredentials: LoginCredentials): Promise<UserCredential>,
+    signInUserWithGmail: () => Promise<UserCredential>,
+    signInUserWithGithub: () => Promise<UserCredential>
 }
 
 const AuthContext = createContext<Context | undefined>(undefined)
@@ -58,6 +60,14 @@ export function AuthProvider({ children }: { children: React.ReactNode; }) {
         setModalScene(modalScene);
     }, [])
 
+    const signInUserWithGmail = useCallback(() => {
+        return signInWithPopup(auth, new GoogleAuthProvider);
+    }, [])
+
+    const signInUserWithGithub = useCallback(() => {
+        return signInWithPopup(auth, new GithubAuthProvider);
+    }, [])
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, user => {
             setCurrentUser(user)
@@ -76,7 +86,9 @@ export function AuthProvider({ children }: { children: React.ReactNode; }) {
         loginUser,
         logout,
         registerUser,
-    }), [currentUser, isModalOpen, modalScene, toggleModal, loginUser, logout, registerUser, handleModalSceneChange])
+        signInUserWithGithub,
+        signInUserWithGmail
+    }), [currentUser, isModalOpen, modalScene, toggleModal, loginUser, logout, registerUser, handleModalSceneChange, signInUserWithGithub, signInUserWithGmail])
 
     return (
         <AuthContext.Provider value={value}>

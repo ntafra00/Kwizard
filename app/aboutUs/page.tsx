@@ -24,7 +24,7 @@ export default function AboutUs() {
                         </Stack>
                     </Center>
                     <Flex width={{ base: "100%", md: "50%" }} justify={{ base: "center", md: "flex-end" }}>
-                        <Image src="/student.png" alt="Student image" width={450} height={550} />
+                        <Image src="/student.png" alt="Student image" width={450} height={550} priority />
                     </Flex>
                 </Flex>
             </WhiteLayout>

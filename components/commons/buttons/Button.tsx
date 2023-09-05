@@ -5,10 +5,12 @@ interface Props {
     text: string;
     textColor: string;
     backgroundColorOnClick: string;
+    buttonAction: () => void;
+    borderColor?: string;
     visibility?: "visible" | "hidden";
     backgroundColor?: string;
     type?: "submit" | "button";
-    buttonAction: () => void;
+    leftIcon?: React.JSX.Element;
 }
 
 const mapColorToHex = (color: string) => {
@@ -32,7 +34,7 @@ const mapColorToHex = (color: string) => {
     }
 }
 
-export function Button({ text, textColor, backgroundColorOnClick, backgroundColor = "transparent", type = "button", visibility = "visible", buttonAction }: Props) {
+export function Button({ text, textColor, backgroundColorOnClick, borderColor = "#000", backgroundColor = "transparent", type = "button", visibility = "visible", leftIcon, buttonAction }: Props) {
     const [isClicked, setIsClicked] = useState(false);
     const [isSmallerThanLargeScreen] = useMediaQuery('(max-width: 1280px)');
     const [isSmallerThanMediumScreen] = useMediaQuery('(max-width: 768px)');
@@ -66,10 +68,11 @@ export function Button({ text, textColor, backgroundColorOnClick, backgroundColo
         color: mapColorToHex(textColor),
         backgroundColor: mapColorToHex(isClicked ? backgroundColorOnClick : backgroundColor),
         borderRadius: "50px",
-        border: "1px solid #000",
+        border: `1px solid ${borderColor}`,
         display: "inline-flex",
         justifyContent: "center",
         alignItems: "center",
+        gap: "8px",
         fontSize: calculateFontSize(),
         fontWeight: "500",
         fontFamily: "Poppins",
@@ -77,6 +80,7 @@ export function Button({ text, textColor, backgroundColorOnClick, backgroundColo
     }
     return (
         <button style={style} onClick={buttonAction} onMouseDown={toggleMouseState} onMouseUp={toggleMouseState}>
+            {leftIcon}
             {text}
         </button>
     )

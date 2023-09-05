@@ -5,8 +5,10 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { personalInfoSchema } from "@/constants/schemas";
-import { Button } from "@/components/commons/buttons/Button";
 import { FormField } from "@/components/commons/forms";
+import { Button } from "@/components/commons/buttons";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const inputProps = {
     borderRadius: "8px",
@@ -24,6 +26,13 @@ const labelProps = {
 }
 
 export function PersonalInfoForm() {
+
+    const router = useRouter();
+
+    const handleSaveClick = () => {
+        router.push("/");
+    }
+
     const {
         register,
         handleSubmit,
@@ -45,7 +54,7 @@ export function PersonalInfoForm() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <Flex direction={{ base: "column", md: "row" }} gap="22px">
+            <Flex direction={{ base: "column", md: "row" }} gap="22px" pt="30px">
                 <FormField errorMessage={errors.firstName?.message} hasError={!!errors.firstName} id="firstName" key="firstName">
                     <FormLabel {...labelProps}>First Name</FormLabel>
                     <Input {...register("firstName")} {...inputProps} type="text" placeholder="John" color="black" _placeholder={{ color: "#A0AEC0" }} />
@@ -78,11 +87,11 @@ export function PersonalInfoForm() {
             <Box pt="36px">
                 <FormField errorMessage={errors.country?.message} hasError={!!errors.country} id="country" key="country">
                     <FormLabel {...labelProps}>Description</FormLabel>
-                    <Textarea {...register("description")} w="100%" borderRadius="6px" border="1px solid #E2E8F0" fontSize="18px" fontWeight="normal" color="black" _placeholder={{ color: "#A0AEC0" }} />
+                    <Textarea {...register("description")} w="100%" h="150px" borderRadius="6px" border="1px solid #E2E8F0" fontSize="18px" fontWeight="normal" color="black" _placeholder={{ color: "#A0AEC0" }} />
                 </FormField>
             </Box>
-            <Center pt="24px">
-                <Button buttonAction={() => { }} type="submit" text="Save" textColor="white" backgroundColor="blue" backgroundColorOnClick="blueOnClick" />
+            <Center pt="24px" pb={{ base: "24px", lg: "0px" }}>
+                <Button backgroundColorOnClick="blueOnClick" text="Save" textColor="white" backgroundColor="blue" buttonAction={handleSaveClick} leftIcon={<Image src="/saveIcon.png" alt="Save icon" width={16} height={16} />} />
             </Center>
         </form>
     )

@@ -1,6 +1,6 @@
 "use client"
 
-import { Text, Flex, Center, Box, FormLabel, Input } from "@/components/chakra"
+import { Flex, Box, FormLabel, Input, Link, Center, Text } from "@/components/chakra"
 import { FormField } from "../commons/forms";
 
 import { useForm } from "react-hook-form";
@@ -9,7 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "@/constants/schemas";
 import { useAuth } from "@/contexts/AuthContext";
 import { FORM_ERROR_MESSAGES } from "@/constants";
-import { Button } from "../commons/buttons";
+import { AuthButton } from "../commons/buttons";
 import { ModalScene } from "@/enums";
 import { inputProps, labelProps } from "./constants";
 
@@ -45,6 +45,10 @@ export function LoginForm({ handleModalSceneChange }: Props) {
         }
     };
 
+    const handleCreateAccountClick = () => {
+        handleModalSceneChange(ModalScene.REGISTER);
+    }
+
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <FormField errorMessage={errors.email?.message} hasError={!!errors.email} id="email" key="email">
@@ -57,21 +61,18 @@ export function LoginForm({ handleModalSceneChange }: Props) {
                     <Input {...register("password")} {...inputProps} type="password" />
                 </FormField>
             </Box>
-            {/* <Flex justifyContent={"flex-end"} py="16px">
-                <Button buttonAction={() => { }} text="Forgot password?" textColor="blue" key="Forgot password" />
-            </Flex> */}
-            <Button
-                backgroundColor="blue"
-                backgroundColorOnClick="blueOnClick"
-                text="Login"
-                buttonAction={() => { }}
-                textColor="white"
-                type="submit"
-            />
-            {/* <Flex gap={2} pt="40px" justifyContent="center" alignItems="center" direction={{ base: "column", md: "row" }}>
+            <Flex justifyContent={"flex-end"} pt="16px" pb="40px">
+                <Link color="blue" fontSize="sm" fontWeight="medium" >Forgot password?</Link>
+            </Flex>
+            <Center>
+                <AuthButton
+                    text="Login"
+                />
+            </Center>
+            <Center gap={2} pt="40px">
                 <Text color="gray" fontWeight="medium" fontSize="sm">Not a wizard yet?</Text>
-                <Button buttonAction={() => handleModalSceneChange(ModalScene.REGISTER)} text="Create account" textColor="blue" variant="link" key="Create account" />
-            </Flex> */}
+                <Link color="blue" fontSize="sm" fontWeight="medium" onClick={handleCreateAccountClick}>Create account</Link>
+            </Center>
         </form>
     )
 }

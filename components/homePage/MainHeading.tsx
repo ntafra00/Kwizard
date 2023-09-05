@@ -22,7 +22,7 @@ export function MainHeading() {
                 <Button text="Join the Qwizards now!" buttonAction={handleRedirectToQuizzes} textColor="white" backgroundColor="blue" backgroundColorOnClick="blueOnClick" />
             </Flex>
             <Flex justifyContent={{ base: "center", md: "flex-end" }} w={{ base: "100%", md: "50%" }}>
-                <Image src='/wizard.png' alt="Wizard with fire" width={isSmallerThanMediumScreen ? 350 : 570} height={isSmallerThanMediumScreen ? 450 : 700} />
+                <Image src='/wizard.png' alt="Wizard with fire" width={isSmallerThanMediumScreen ? 350 : 570} height={isSmallerThanMediumScreen ? 450 : 700} priority />
             </Flex>
         </Flex >
     )

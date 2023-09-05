@@ -12,7 +12,7 @@ export function NotAuthorized() {
     }
 
     return (
-        <Stack pt={{ base: "50px", lg: "80px" }} pb="50px">
+        <Stack pt="50px" pb="50px" minH="100vh" justifyContent="center">
             <Center>
                 <Heading color="black" fontWeight="extrabold" fontStyle="italic" fontSize={{ base: "l", md: "xl", lg: "3rem" }} textAlign="center">You Shall Not Pass!</Heading>
             </Center>

@@ -1,7 +1,8 @@
-import { Flex, Center, Avatar, AvatarBadge, Heading, Stack, Image, Text } from "@/components/chakra";
-import { COMMON_PAGE_PADDING } from "@/constants";
+import { Flex, Center, Avatar, AvatarBadge, Heading, Stack, Text } from "@/components/chakra";
 import { AuthorizedRoute } from "@/components/auth";
-import { PersonalInfoForm } from "./components";
+import { Buttons, PersonalInfoForm } from "./components";
+import Image from "next/image";
+import { COMMON_PAGE_PADDING } from "@/constants";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,12 +13,12 @@ export const metadata: Metadata = {
 export default function Profile() {
     return (
         <AuthorizedRoute>
-            <Flex direction={{ base: 'column', lg: 'row' }} px={COMMON_PAGE_PADDING} pt={{ base: "20px" }} pb="80px" gap="24px">
+            <Flex direction={{ base: 'column', lg: 'row' }} px={COMMON_PAGE_PADDING} pt={{ base: "20px" }} pb="80px" gap="24px" minH="100vh">
                 <Stack w={{ base: "100%", lg: "35%" }} pt="20px" pb="46px" backgroundColor="white" borderRadius="8px">
                     <Center pb="20px">
                         <Avatar size="2xl" src="CTO.png" border="1px solid #2E3182">
                             <AvatarBadge w="40px" h="40px" bg='blue' borderColor="blue" _hover={{ cursor: "pointer" }}>
-                                <Image src="camera.png" alt="Camera" />
+                                <Image src="/camera.png" alt="Camera" width={24} height={24} />
                             </AvatarBadge>
                         </Avatar>
                     </Center>
@@ -39,8 +40,9 @@ export default function Profile() {
                         <Text color="gray" fontSize="md" fontWeight="regular">Stories Posted</Text>
                         <Text color="black" fontSize="md" fontWeight="medium">7</Text>
                     </Flex>
+                    <Buttons />
                 </Stack>
-                <Flex w={{ base: "100%", lg: "65%" }} backgroundColor="white" borderRadius="8px" p="32px" direction="column" gap="50px">
+                <Flex w={{ base: "100%", lg: "65%" }} backgroundColor="white" borderRadius="8px" px="32px" pt="16px" direction="column" gap="50px">
                     <Heading color="black" fontSize="md" fontWeight="semibold" >Profile Settings</Heading>
                     <PersonalInfoForm />
                 </Flex>
