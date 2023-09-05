@@ -1,16 +1,20 @@
+"use client"
+
 import { QuizData } from "@/typings"
-import { Flex, Text, Heading, Image, HStack, Stack } from "@/components/chakra"
+import { Flex, Text, Heading, HStack, Stack, useMediaQuery } from "@/components/chakra"
+import Image from "next/image"
 
 interface Props {
     quizData: QuizData
 }
 
 export function QuizCard({ quizData: { author, category, imageUrl, subtitle, title, imageDescription = "Quiz card" } }: Props) {
+    const [isSmallerThanMediumScreen] = useMediaQuery('(max-width: 768px)');
     return (
-        <Flex borderRadius="20px" backgroundColor="white" px="24px" py="24px" maxH="300px">
-            <Flex direction="column" justify="space-between" w="50%">
+        <Flex borderRadius="20px" backgroundColor="white" px="24px" py="24px" maxH="300px" maxW="600px">
+            <Flex direction="column" justify="space-between" w="100%">
                 <Stack spacing="16px">
-                    <Heading color="black" fontSize={{ base: "l", lg: "xxl" }} fontWeight="bold">{title}</Heading>
+                    <Heading color="black" fontSize={{ base: "md", md: "xl", lg: "xl", xl: "xxl" }} fontWeight="bold">{title}</Heading>
                     <Heading color="black" fontSize={{ base: "sm", md: "md" }} fontWeight="medium">{subtitle}</Heading>
                 </Stack>
                 <HStack spacing="10px">
@@ -18,8 +22,8 @@ export function QuizCard({ quizData: { author, category, imageUrl, subtitle, tit
                     <Text color="black" fontSize={{ base: "xs", lg: "sm" }} fontWeight="medium">{author}</Text>
                 </HStack>
             </Flex>
-            <Flex w="50%" justify="flex-end">
-                <Image src={imageUrl} alt={imageDescription} />
+            <Flex justify="flex-end">
+                <Image src={imageUrl} alt={imageDescription} width={isSmallerThanMediumScreen ? 300 : 400} height={isSmallerThanMediumScreen ? 300 : 400} />
             </Flex>
         </Flex>
     )

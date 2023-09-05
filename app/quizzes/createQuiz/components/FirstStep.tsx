@@ -1,10 +1,11 @@
 "use client"
 
-import { Center, Heading, Textarea, Text, Image, Box } from "@/components/chakra";
+import { Center, Heading, Textarea, Text, Box } from "@/components/chakra";
 import { QuizSection, Categories, Subcategories, Input } from "./index";
 import { Button } from "@/components/commons/buttons";
 import { useQuizCreation } from "@/contexts";
 import { useRef } from "react";
+import Image from "next/image";
 
 export function FirstStep() {
     const { selectedCategory, handleChangeSelectedCategory, selectedQuizType, selectedSubcategory, handleChangeSelectedSubcategory, selectedImage, handleRemoveUploadedImage, handleSetUploadedImage, handleSelectedQuizTypeChange } = useQuizCreation();
@@ -62,7 +63,7 @@ export function FirstStep() {
             </QuizSection>
             <QuizSection isLast={true} imageDescription="Number five" imageUrl="/numberFive.png" title="Quiz Main Image">
                 <Center>
-                    <Image src={selectedImage ?? "/uploadImage.png"} w="150px" h="150px" alt={selectedImage ? "User uploaded image" : "Upload image placeholder"} />
+                    <Image src={selectedImage ?? "/uploadImage.png"} width={128} height={128} alt={selectedImage ? "User uploaded image" : "Upload image placeholder"} />
                 </Center>
                 <Center pt="40px" gap="10px">
                     {!selectedImage && <Button buttonAction={handleUploadFileClick} text="Select Image to Upload" textColor="white" backgroundColor="blue" backgroundColorOnClick="blueOnClick" />}

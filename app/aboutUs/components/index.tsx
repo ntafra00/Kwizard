@@ -1,1 +1,2 @@
-export { Section } from "./Section"; 
+export { Section } from "./Section";
+export { PaperFree } from "./PaperFree";

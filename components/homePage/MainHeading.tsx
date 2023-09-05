@@ -1,12 +1,13 @@
 "use client"
 
-import { Flex, Heading, Text, Image } from "@/components/chakra";
+import { Flex, Heading, Text, useMediaQuery } from "@/components/chakra";
 import { Button } from "../commons/buttons";
 import { COMMON_PAGE_PADDING } from "@/constants";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export function MainHeading() {
-
+    const [isSmallerThanMediumScreen] = useMediaQuery('(max-width: 768px)')
     const router = useRouter();
 
     const handleRedirectToQuizzes = () => {
@@ -21,7 +22,7 @@ export function MainHeading() {
                 <Button text="Join the Qwizards now!" buttonAction={handleRedirectToQuizzes} textColor="white" backgroundColor="blue" backgroundColorOnClick="blueOnClick" />
             </Flex>
             <Flex justifyContent={{ base: "center", md: "flex-end" }} w={{ base: "100%", md: "50%" }}>
-                <Image src='wizard.png' alt="Wizard with fire" w={{ base: "50%", md: "75%", lg: "100%" }} />
+                <Image src='/wizard.png' alt="Wizard with fire" width={isSmallerThanMediumScreen ? 350 : 570} height={isSmallerThanMediumScreen ? 450 : 700} />
             </Flex>
         </Flex >
     )

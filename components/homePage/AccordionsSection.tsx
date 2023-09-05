@@ -1,8 +1,9 @@
 "use client"
 
 import WhiteLayout from "@/layouts/WhiteLayout"
-import { Box, Heading, Flex, Image, Accordion, AccordionButton, AccordionItem, AccordionPanel, AccordionIcon, Center } from "@/components/chakra";
+import { Box, Heading, Flex, Accordion, AccordionButton, AccordionItem, AccordionPanel, AccordionIcon } from "@/components/chakra";
 import { COMMON_PAGE_PADDING, HOME_PAGE_TOPICS } from "@/constants";
+import Image from "next/image";
 
 export function AccordionsSection() {
     return (
@@ -14,7 +15,7 @@ export function AccordionsSection() {
                 </Box>
                 <Flex direction={{ base: 'column', md: 'row' }} pb='60px'>
                     <Flex w={{ base: '100%', md: '50%' }} pb={{ base: "40px", md: "none" }}>
-                        <Image src='videoWizardEditor.png' alt="Video editor with text about wizards" w='100%' />
+                        <Image src='/videoWizardEditor.png' alt="Video editor with text about wizards" width={600} height={445} />
                     </Flex>
                     <Flex w={{ base: '100%', md: '50%' }} justifyContent="flex-end" alignItems="center">
                         <Accordion allowToggle w={{ base: "100%", md: "80%" }}>

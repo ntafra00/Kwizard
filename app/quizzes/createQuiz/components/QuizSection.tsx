@@ -1,4 +1,5 @@
-import { Box, Center, Image, Heading } from "@/components/chakra";
+import { Box, Center, Heading } from "@/components/chakra";
+import Image from "next/image";
 
 interface Props {
     children: React.ReactNode;
@@ -13,7 +14,7 @@ export function QuizSection({ children, imageUrl, imageDescription, title, isLas
         <>
             <Box borderRadius="50px" border="1px solid #2E3182" background="white" pt="38px" pb="65px" px={{ base: "10px", lg: "94px" }}>
                 <Center pb="40px" gap="5px">
-                    <Image src={imageUrl} alt={imageDescription} />
+                    <Image src={imageUrl} alt={imageDescription} width={36} height={36} />
                     <Heading color="blue" fontSize={{ base: "sm", lg: "md" }} fontWeight="medium" textAlign="center">{title}</Heading>
                 </Center>
                 {children}
