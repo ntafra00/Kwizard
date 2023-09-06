@@ -12,16 +12,13 @@ interface Context {
     selectedCategory: QuizCategory | undefined;
     selectedSubcategory: string | undefined;
     selectedQuizType: QuizType;
-    selectedImage: string | undefined;
     handleChangeSelectedCategory: (category: QuizCategory) => void;
     handleChangeSelectedSubcategory: (subcategory: string) => void;
-    handleRemoveUploadedImage: () => void;
     handleIncreaseCurrentStep: () => void;
     handleDecreaseCurrentStep: () => void
     handleSelectedQuizTypeChange: (quizType: QuizType) => void;
     handleStepClick: (step: number) => void;
     scrollToProgressBar: () => void;
-    handleSetUploadedImage: (imageUrl: string) => void;
     handleQuestionsChange: (editedQuestion: CreatedQuestion) => void;
     handleAddQuestion: () => void;
 }
@@ -50,7 +47,6 @@ export function QuizCreationProvider({ children }: { children: React.ReactNode; 
     const [selectedCategory, setSelectedCategory] = useState<QuizCategory>();
     const [selectedSubcategory, setSelectedSubcategory] = useState<string>();
     const [selectedQuizType, setSelectedQuizType] = useState<QuizType>("public");
-    const [selectedImage, setSelectedImage] = useState<string>();
 
 
     const handleChangeSelectedCategory = useCallback((category: QuizCategory) => {
@@ -64,14 +60,6 @@ export function QuizCreationProvider({ children }: { children: React.ReactNode; 
 
     const handleSelectedQuizTypeChange = useCallback((quizType: QuizType) => {
         setSelectedQuizType(quizType);
-    }, [])
-
-    const handleRemoveUploadedImage = useCallback(() => {
-        setSelectedImage(undefined);
-    }, [])
-
-    const handleSetUploadedImage = useCallback((imageUrl: string) => {
-        setSelectedImage(imageUrl);
     }, [])
 
     const handleIncreaseCurrentStep = useCallback(() => {
@@ -106,8 +94,8 @@ export function QuizCreationProvider({ children }: { children: React.ReactNode; 
     }, [])
 
     const value = useMemo<Context>(() => ({
-        currentStep, selectedCategory, questions, selectedSubcategory, selectedImage, selectedQuizType, handleChangeSelectedCategory, handleChangeSelectedSubcategory, handleIncreaseCurrentStep, handleDecreaseCurrentStep, handleRemoveUploadedImage, handleStepClick, handleSelectedQuizTypeChange, handleSetUploadedImage, handleQuestionsChange, handleAddQuestion, scrollToProgressBar
-    }), [currentStep, selectedCategory, questions, selectedSubcategory, selectedImage, selectedQuizType, handleChangeSelectedCategory, handleChangeSelectedSubcategory, handleIncreaseCurrentStep, handleDecreaseCurrentStep, handleRemoveUploadedImage, handleStepClick, handleSelectedQuizTypeChange, handleSetUploadedImage, handleQuestionsChange, handleAddQuestion, scrollToProgressBar])
+        currentStep, selectedCategory, questions, selectedSubcategory, selectedQuizType, handleChangeSelectedCategory, handleChangeSelectedSubcategory, handleIncreaseCurrentStep, handleDecreaseCurrentStep, handleStepClick, handleSelectedQuizTypeChange, handleQuestionsChange, handleAddQuestion, scrollToProgressBar
+    }), [currentStep, selectedCategory, questions, selectedSubcategory, selectedQuizType, handleChangeSelectedCategory, handleChangeSelectedSubcategory, handleIncreaseCurrentStep, handleDecreaseCurrentStep, handleStepClick, handleSelectedQuizTypeChange, handleQuestionsChange, handleAddQuestion, scrollToProgressBar])
 
     return (
         <QuizCreationContext.Provider value={value}>

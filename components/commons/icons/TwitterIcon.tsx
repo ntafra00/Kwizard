@@ -10,6 +10,7 @@ export function TwitterIcon() {
             as={FiTwitter}
             boxSize={10}
             color='blue'
+            _hover={{ cursor: "pointer" }}
         />
     )
 }

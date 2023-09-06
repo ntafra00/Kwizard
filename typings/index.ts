@@ -45,6 +45,7 @@ export interface QuizData {
     author: string;
     imageUrl: string;
     imageDescription?: string;
+    date: string;
 }
 
 export interface QuizCategory {

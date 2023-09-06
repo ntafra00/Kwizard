@@ -28,7 +28,7 @@ const mapColorToHex = (color: string) => {
         case "orangeOnClick":
             return "#f2cfb3"
         case "whiteOnClick":
-            return "#f3eeec"
+            return "#E4E4E4"
         default:
             return "transparent"
     }

@@ -171,19 +171,19 @@ export const QUIZ_CATEGORIES: QuizCategory[] = [{
     id: uuid(),
     name: "Arts and Music",
     imageUrl: "/artsAndMusic.png",
-    subcategories: ["Pop", "Jazz", "Hip-hop", "Classicism", "Modern art", "Blues", "80s", "Renaissance"]
+    subcategories: ["Pop", "Jazz", "Hip-hop", "Classicism", "Modern art", "Blues", "80s", "Renaissance", "Other"]
 },
 {
     id: uuid(),
     name: "PC and Technology",
     imageUrl: "/pcAndTechnology.png",
-    subcategories: ["Video games", "Programming", "Graphic design", "Electronics"]
+    subcategories: ["Video games", "Programming", "Graphic design", "Electronics", "Other"]
 },
 {
     id: uuid(),
     name: "Biology and Chemistry",
     imageUrl: "/biologyAndChemistry.png",
-    subcategories: ["Chemical elements", "Genetics", "Botany", "Ornithology"]
+    subcategories: ["Chemical elements", "Genetics", "Botany", "Ornithology", "Other"]
 },
 {
     id: uuid(),
@@ -229,6 +229,7 @@ export const BIOLOGY_QUIZZES: QuizData[] = [
         imageDescription: "Biology and chemistry",
         title: "Chemical elements",
         subtitle: "Have you ever heard of Einsteinium?",
+        date: "01/02/2023"
     },
     {
         id: "6f96fc10-6b81-4e34-9e64-43134bbab089",
@@ -238,6 +239,7 @@ export const BIOLOGY_QUIZZES: QuizData[] = [
         imageDescription: "Biology and chemistry",
         title: "Birds",
         subtitle: "Birds are magnificent. Test your knowledge",
+        date: "02/03/2023",
     },
     {
         id: "9f93d054-6b2f-47e2-87c8-e2eccbef7106",
@@ -247,6 +249,7 @@ export const BIOLOGY_QUIZZES: QuizData[] = [
         imageDescription: "Biology and chemistry",
         title: "Genetics",
         subtitle: "All that you ever wanted to know about genetics",
+        date: "03/04/2023",
     },
     {
         id: "3b1c5148-071a-4a5b-b310-f79c08d1792b",
@@ -256,6 +259,7 @@ export const BIOLOGY_QUIZZES: QuizData[] = [
         imageDescription: "Biology and chemistry",
         title: "Viruses and bacteria",
         subtitle: "Better have your antibiotics ready. Or maybe not?",
+        date: "04/05/2023",
     }
 ]
 
@@ -268,6 +272,7 @@ export const ART_QUIZZES: QuizData[] = [
         imageDescription: "Arts and music",
         title: "JazzQuizz",
         subtitle: "All about jazz",
+        date: "05/06/2023",
     },
     {
         id: "a151ab18-53a3-4dae-9f4f-f0f68ea4dbcf",
@@ -277,6 +282,7 @@ export const ART_QUIZZES: QuizData[] = [
         imageDescription: "Arts and music",
         title: "Renaissance",
         subtitle: "Test your knowledge if you know who painted Mona Lisa",
+        date: "06/07/2023",
     },
     {
         id: "8e049639-87de-4041-96dc-70e0bdd4c536",
@@ -286,6 +292,7 @@ export const ART_QUIZZES: QuizData[] = [
         imageDescription: "Arts and music",
         title: "80s",
         subtitle: "If you were part of the greatest music era, then this quiz is for you",
+        date: "07/08/2023",
     },
     {
         id: "46ee1757-41f0-416f-8892-9645a9974071",
@@ -295,6 +302,7 @@ export const ART_QUIZZES: QuizData[] = [
         imageDescription: "Arts and music",
         title: "Modern art",
         subtitle: "Test your knowledge if you know that urinal can also be called fountain",
+        date: "01/09/2023",
     }
 ]
 
@@ -307,6 +315,7 @@ export const TECHNOLOGY_QUIZZES: QuizData[] = [
         imageDescription: "PC and technology",
         title: "Tech titans challenge",
         subtitle: "This quiz should cover everything that you ever wanted to know about tech titans",
+        date: "08/08/2023",
     },
     {
         id: "83f739c5-b3de-4f5e-879f-d7fe4acc1fa9",
@@ -316,6 +325,7 @@ export const TECHNOLOGY_QUIZZES: QuizData[] = [
         imageDescription: "PC and technology",
         title: "Programming languages",
         subtitle: "Python is not only a snake? Java is not short for Javascript?",
+        date: "01/01/2023",
     },
     {
         id: "11f7f499-89c1-43c4-b09c-f5af8bb75036",
@@ -325,6 +335,7 @@ export const TECHNOLOGY_QUIZZES: QuizData[] = [
         imageDescription: "PC and technology",
         title: "Spaceships",
         subtitle: "Test if you're ready to visit Mars",
+        date: "05/05/2023",
     },
     {
         id: "2b8e94c2-db12-4f83-ac02-5bc86d4c0085",
@@ -334,6 +345,7 @@ export const TECHNOLOGY_QUIZZES: QuizData[] = [
         imageDescription: "PC and technology",
         title: "Electronics",
         subtitle: "How many legs does transistor have? Why is band from Australia called AC/DC?",
+        date: "05/01/2023",
     },
 ]
 
@@ -346,6 +358,7 @@ export const SPORT_QUIZZES: QuizData[] = [
         imageDescription: "Sports and recreation",
         title: "Swimming is amazing",
         subtitle: "Test your knowledge about swimming related stuff",
+        date: "05/10/2022",
     },
     {
         id: "ef38e6be-e6b4-43f6-a91d-0eee94cd7481",
@@ -355,6 +368,7 @@ export const SPORT_QUIZZES: QuizData[] = [
         imageDescription: "Sports and recreation",
         title: "NBA teams logo quiz",
         subtitle: "Which team has leprechaun in it's logo? Sounds familiar? Let's see how good you are",
+        date: "10/10/2022",
     },
     {
         id: "8f99a1ce-4c75-4f90-825a-06bce170130a",
@@ -364,6 +378,7 @@ export const SPORT_QUIZZES: QuizData[] = [
         imageDescription: "Sports and recreation",
         title: "Premier League trivia",
         subtitle: "Test your knowledge about the greatest soccer league in the world",
+        date: "12/12/2022",
     },
     {
         id: "cd22fc68-ab63-4510-9231-d3a38977aa10",
@@ -373,6 +388,7 @@ export const SPORT_QUIZZES: QuizData[] = [
         imageDescription: "Sports and recreation",
         title: "Olympics",
         subtitle: "Be ready cause this quiz will test everything you know about both summer and winter Olympics",
+        date: "03/10/2022",
     },
 ]
 
@@ -385,6 +401,7 @@ export const GENERAL_QUIZZES: QuizData[] = [
         imageDescription: "General knowledge",
         title: "WWII chronicles",
         subtitle: "If you had A in History, don't be afraid to take this quiz",
+        date: "08/06/2022",
     },
     {
         id: "038f6458-ca48-4f14-9319-72d93d70b6f8",
@@ -394,6 +411,7 @@ export const GENERAL_QUIZZES: QuizData[] = [
         imageDescription: "General knowledge",
         title: "Buzzfeed Buzzfeed quiz",
         subtitle: "Best Buzzfeed quiz about Buzzfeed - what else could you possibly need?!",
+        date: "01/10/2022",
     },
     {
         id: "88f3d4fe-f3ff-49f2-856a-be68d2be8898",
@@ -403,7 +421,7 @@ export const GENERAL_QUIZZES: QuizData[] = [
         imageDescription: "General knowledge",
         title: "Everyday trivia",
         subtitle: "Test your knowledge about everyday stuff with a quiz that's suitable for all ages",
-
+        date: "12/12/2022",
     },
     {
         id: "bb0d2b52-afe0-42d3-a937-c53a225c6ec0",
@@ -413,6 +431,7 @@ export const GENERAL_QUIZZES: QuizData[] = [
         imageDescription: "General knowledge",
         title: "Famous persons",
         subtitle: "Quiz with plenty of images, quotes and affairs",
+        date: "11/11/2022",
     },
 ]
 

@@ -18,6 +18,7 @@ export function FacebookIcon({ type, color }: Props) {
             as={type === FacebookIconType.OUTLINE ? BsFacebook : FaFacebookF}
             boxSize={{ base: "6", md: "8", lg: "10" }}
             color={color}
+            _hover={{ cursor: "pointer" }}
         />
     )
 }

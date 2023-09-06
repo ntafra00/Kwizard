@@ -10,6 +10,7 @@ export function MailIcon() {
             as={FiMail}
             boxSize={10}
             color="blue"
+            _hover={{ cursor: "pointer" }}
         />
     )
 }

@@ -20,18 +20,18 @@ export default function Footer() {
                     </Flex>
                     <Spacer />
                     <Flex justifyContent="flex-end" alignItems="center">
-                        <Box pr={4}>
+                        <Box pr={4} _hover={{ cursor: "pointer" }} _active={{ backgroundColor: "whiteOnClick" }}>
                             <InstagramIcon />
                         </Box>
-                        <Box pr={4}>
+                        <Box pr={4} _hover={{ cursor: "pointer" }} _active={{ backgroundColor: "whiteOnClick" }}>
                             <FacebookIcon color="black" type="outline" />
                         </Box>
-                        <Box>
+                        <Box _hover={{ cursor: "pointer" }} _active={{ backgroundColor: "whiteOnClick" }}>
                             <GithubIcon />
                         </Box>
                     </Flex>
                 </Flex>
             </Flex>
-        </Box>
+        </Box >
     )
 }

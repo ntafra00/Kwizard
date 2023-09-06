@@ -20,7 +20,7 @@ export function QuizCard({ quizData: { id, author, category, imageUrl, subtitle,
     }
 
     return (
-        <Flex borderRadius="20px" backgroundColor="white" px="24px" py="24px" maxH="300px" maxW="600px">
+        <Flex borderRadius="20px" backgroundColor="white" px="24px" py="24px" maxH="300px" maxW="600px" onClick={handleRedirectToQuiz} _hover={{ cursor: "pointer" }} _active={{ backgroundColor: "whiteOnClick" }}>
             <Flex direction="column" justify="space-between" w="100%">
                 <Stack spacing="16px">
                     <Heading color="black" fontSize={{ base: "md", md: "l", lg: "l", xl: "xl" }} fontWeight="bold">{title}</Heading>
