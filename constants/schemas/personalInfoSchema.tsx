@@ -7,8 +7,6 @@ export const personalInfoSchema = yup.object().shape({
     lastName: yup.string(),
     phoneNumber: yup
         .string()
-        .required(FORM_ERROR_MESSAGES.required)
-        .matches(/^(\+)?[0-9]+$/, FORM_ERROR_MESSAGES.invalidPhoneNumber as string)
         .max(15, FORM_ERROR_MESSAGE_FUNCTIONS.maxLength("15")),
     city: yup.string(),
     country: yup.string(),

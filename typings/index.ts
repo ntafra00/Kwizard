@@ -81,3 +81,13 @@ export interface CreatedQuestion {
     type: QuestionType;
     answers: Answer[]
 }
+
+export interface PersonalInfo {
+    firstName: string;
+    lastName: string;
+    phoneNumber: string;
+    email: string;
+    description: string;
+    city: string;
+    country: string;
+}
