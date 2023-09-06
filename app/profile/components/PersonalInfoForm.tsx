@@ -88,7 +88,9 @@ export function PersonalInfoForm() {
     useEffect(() => {
         const getUserDetails = async () => {
             const { result, error } = await getUserData(currentUser?.uid ?? '');
-            setUserData(result as PersonalInfo);
+            if (!error) {
+                setUserData(result as PersonalInfo);
+            }
         }
         getUserDetails();
     }, [currentUser])

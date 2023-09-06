@@ -7,6 +7,7 @@ import { useQuizzes } from "@/contexts";
 
 export function QuizzesGrid() {
     const { filteredQuizzes, currentPage } = useQuizzes();
+    console.log(filteredQuizzes);
     const lastIndex = currentPage * ITEMS_PER_PAGE;
     const firstIndex = lastIndex - ITEMS_PER_PAGE;
     return (

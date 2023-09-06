@@ -37,7 +37,7 @@ export function QuizzesProvider({ children }: { children: React.ReactNode; }) {
             return;
         }
         setSelectedCategory(category);
-        setFilteredQuizzes((prevState) => prevState.filter((quiz) => quiz.category === selectedCategory?.name))
+        setFilteredQuizzes(QUIZZES.filter((quiz) => quiz.category === category?.name))
     }, [selectedCategory])
 
     const handlePageIncrease = useCallback(() => {
