@@ -1,3 +1,4 @@
+import { QuizCategory as QuizCategoryEnum } from "@/enums";
 import { FormErrorMessage, FormErrorMessageFunction, NavigationLink, PostData, QuizCategory, Answer, QuizData, QuizCreationStep, Topic } from "@/typings";
 import { v4 as uuid } from "uuid";
 
@@ -170,19 +171,19 @@ export const QUIZ_CATEGORIES: QuizCategory[] = [{
     id: uuid(),
     name: "Arts and Music",
     imageUrl: "/artsAndMusic.png",
-    subcategories: []
+    subcategories: ["Pop", "Jazz", "Hip-hop", "Classicism", "Modern art", "Blues", "80s", "Renaissance"]
 },
 {
     id: uuid(),
     name: "PC and Technology",
     imageUrl: "/pcAndTechnology.png",
-    subcategories: []
+    subcategories: ["Video games", "Programming", "Graphic design", "Electronics"]
 },
 {
     id: uuid(),
     name: "Biology and Chemistry",
     imageUrl: "/biologyAndChemistry.png",
-    subcategories: []
+    subcategories: ["Chemical elements", "Genetics", "Botany", "Ornithology"]
 },
 {
     id: uuid(),
@@ -222,27 +223,30 @@ export const DEFAULT_ANSWERS: Answer[] = [
 export const QUIZZES: QuizData[] = [
     {
         id: uuid(),
-        author: "Author",
-        category: "Category",
+        author: "Malcolm Comfort",
+        category: QuizCategoryEnum.ARTS_AND_MUSIC,
         imageUrl: "/wizard.png",
-        title: "TitleText",
-        subtitle: "SubtitleText",
+        imageDescription: "Trumpet",
+        title: "JazzQuizz",
+        subtitle: "All about jazz",
     },
     {
         id: uuid(),
-        author: "Author",
-        category: "Category",
+        author: "Nathan Antill",
+        category: QuizCategoryEnum.ARTS_AND_MUSIC,
         imageUrl: "/wizard.png",
-        title: "TitleText",
-        subtitle: "SubtitleText",
+        imageDescription: "Mona Lisa",
+        title: "Renaissance",
+        subtitle: "Test your knowledge if you know who painted Mona Lisa",
     },
     {
         id: uuid(),
-        author: "Author",
-        category: "Category",
-        imageUrl: "/wizard.png",
-        title: "TitleText",
-        subtitle: "SubtitleText",
+        author: "Louise Kirby",
+        category: QuizCategoryEnum.BIOLOGY_AND_CHEMISTRY,
+        imageUrl: "/birds.webp",
+        imageDescription: "Birds flying",
+        title: "Birds",
+        subtitle: "Birds are such magnificent creatures. Do you anything about it?",
     },
     {
         id: uuid(),
@@ -328,3 +332,5 @@ export const HOME_PAGE_TOPICS: Topic[] = [
         text: "Expand Your Magical Horizons! Immerse Yourself in a Treasure Trove of Knowledge as You Explore Captivating Quizzes. Delve into an enchanted library of knowledge, where each quiz question is a doorway to discovery.",
     }
 ]
+
+export const ITEMS_PER_PAGE = 4;

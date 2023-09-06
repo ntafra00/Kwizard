@@ -1,11 +1,9 @@
 import WhiteLayout from "@/layouts/WhiteLayout";
 import { Box, Flex, Center, Heading, Text } from "@/components/chakra";
 import { CategoryBar, QuizzesGrid, Pagination, QuizzesHeading } from "./components";
-import { COMMON_PAGE_PADDING } from "@/constants";
 import { QuizzesProvider } from "@/contexts";
 import { StoriesAndQuizCTA } from "./components";
 import { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "Qwizard | Quizzes",
@@ -28,7 +26,7 @@ export default function Quizzes() {
                 </Center>
                 <CategoryBar />
                 <QuizzesGrid />
-                <Pagination numberOfPages={5} />
+                <Pagination />
             </Box>
         </QuizzesProvider>
     )

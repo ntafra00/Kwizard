@@ -14,8 +14,8 @@ export function QuizCard({ quizData: { author, category, imageUrl, subtitle, tit
         <Flex borderRadius="20px" backgroundColor="white" px="24px" py="24px" maxH="300px" maxW="600px">
             <Flex direction="column" justify="space-between" w="100%">
                 <Stack spacing="16px">
-                    <Heading color="black" fontSize={{ base: "md", md: "xl", lg: "xl", xl: "xxl" }} fontWeight="bold">{title}</Heading>
-                    <Heading color="black" fontSize={{ base: "sm", md: "md" }} fontWeight="medium">{subtitle}</Heading>
+                    <Heading color="black" fontSize={{ base: "md", md: "l", lg: "l", xl: "xl" }} fontWeight="bold">{title}</Heading>
+                    <Heading color="black" fontSize="sm" fontWeight="medium">{subtitle}</Heading>
                 </Stack>
                 <HStack spacing="10px">
                     <Text color="black" fontSize={{ base: "xs", lg: "sm" }} fontWeight="medium">{category}</Text>
