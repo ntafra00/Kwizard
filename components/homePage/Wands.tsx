@@ -35,7 +35,7 @@ export function Wands() {
             <Heading
               color="black"
               size={{ base: "sm", md: "md", l: "xxl" }}
-              pt={20}
+              pt={10}
               textAlign="center"
             >
               Are you ready?
