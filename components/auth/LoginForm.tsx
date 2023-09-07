@@ -61,10 +61,7 @@ export function LoginForm({ handleModalSceneChange }: Props) {
                     <Input {...register("password")} {...inputProps} type="password" />
                 </FormField>
             </Box>
-            <Flex justifyContent={"flex-end"} pt="16px" pb="40px">
-                <Link color="blue" fontSize="sm" fontWeight="medium" >Forgot password?</Link>
-            </Flex>
-            <Center>
+            <Center pt="30px">
                 <AuthButton
                     text="Login"
                 />

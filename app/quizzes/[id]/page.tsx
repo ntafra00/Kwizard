@@ -3,8 +3,7 @@ import { ChevronLeftIcon } from "@/components/chakra-icons";
 import { COMMON_PAGE_PADDING, QUIZZES } from "@/constants";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
-import { QuizSubtitle } from "./components";
+import { QuizSubtitle, QuizImage } from "./components";
 
 export const metadata: Metadata = {
     title: "Qwizard | Selected Quiz",
@@ -52,9 +51,7 @@ export default function SelectedQuiz({
                             <Text color="smoke" fontSize="sm" fontWeight="medium">{foundQuiz.date}</Text>
                         </Stack>
                     </Flex>
-                    <Center mt={{ base: "20px", lg: "0px" }}>
-                        <Image src={foundQuiz.imageUrl} alt={foundQuiz.imageDescription ?? 'Quiz image'} height={300} width={500} priority />
-                    </Center>
+                    <QuizImage imageDescription={foundQuiz.imageDescription ?? "Quiz image"} imageUrl={foundQuiz.imageUrl} />
                 </Flex>
                 <Flex pt="24px" gap="24px" pb="80px" direction={{ base: "column", lg: "row" }}>
                     <Flex backgroundColor="white" borderRadius="8px" border="1px solid rgba(63, 61, 61, 0.25)" direction="column" w={{ base: "100%", lg: "30%" }}>

@@ -20,15 +20,20 @@ export interface LoginCredentials {
     password: string,
 }
 
+export type StoryElementType = "heading" | "text" | "ordered" | "unordered"
+
+export interface PostElement {
+    type: StoryElementType;
+    text: string | string[];
+    fontStyle?: "italic",
+}
+
 export interface PostData {
     id: string,
     imageUrl: string,
     topic: string,
     description: string,
-    content?: {
-        headings: string[];
-        texts: string[];
-    },
+    content: PostElement[]
     date: string;
     author: {
         name: string;

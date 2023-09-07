@@ -16,7 +16,7 @@ export function CompanyButton({ text, leftIcon, buttonAction }: Props) {
     }
 
     const style = {
-        padding: isSmallerThanSmallScreen ? "8px 70px 8px 70px" : "8px 96px 8px 96px",
+        padding: isSmallerThanSmallScreen ? "8px 40px 8px 40px" : "8px 60px 8px 60px",
         color: "#3F3D3D",
         backgroundColor: isClicked ? "#E4E4E4" : "transparent",
         borderRadius: "8px",

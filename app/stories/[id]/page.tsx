@@ -1,6 +1,6 @@
-import { Flex, Heading, Link, Text, Center, Box } from "@/components/chakra";
+import { Flex, Heading, Link, Text, Center, Box, UnorderedList, OrderedList, ListItem } from "@/components/chakra";
 import { ChevronLeftIcon } from "@/components/chakra-icons";
-import { COMMON_PAGE_PADDING } from "@/constants";
+import { COMMON_PAGE_PADDING, FEATURED_POST } from "@/constants";
 import WhiteLayout from "@/layouts/WhiteLayout";
 import { Metadata } from "next";
 import { POSTS } from "@/constants";
@@ -19,7 +19,8 @@ export default function SelectedStory({
     params: { id: string }
 }) {
     const { id } = params;
-    const foundPost = POSTS.find((post) => post.id === id);
+    const isSelectedFeaturedPost = FEATURED_POST.id === id;
+    const foundPost = isSelectedFeaturedPost ? FEATURED_POST : POSTS.find((post) => post.id === id);
     if (!foundPost) {
         return notFound();
     }
@@ -45,14 +46,48 @@ export default function SelectedStory({
                 <WhiteLayout>
                     <Center px={COMMON_PAGE_PADDING} pt={{ base: "30px", lg: "50px" }} pb={{ base: "20px", lg: "30px" }}>
                         <Flex w="70%" direction="column">
-                            {foundPost.content?.headings.map((heading, index) => (
-                                <Flex direction="column">
-                                    <Heading color="black" fontWeight="semibold" fontSize={{ base: "md", lg: "l" }}>{heading}</Heading>
-                                    <br></br>
-                                    <Text color="black" fontWeight="regular" fontSize="sm">{foundPost.content?.texts[index]}</Text>
-                                    <br></br>
-                                </Flex>
-                            ))}
+                            {foundPost.content.map((item) => {
+                                switch (item.type) {
+                                    case "heading":
+                                        return (
+                                            <>
+                                                <Heading color="black" fontWeight="semibold" fontSize={{ base: "md", lg: "l" }}>{item.text}</Heading>
+                                                <br></br>
+                                            </>
+                                        )
+                                    case "text":
+                                        return (
+                                            <>
+                                                <Text color="black" fontWeight="regular" fontSize="sm" fontStyle={item.fontStyle}>{item.text}</Text>
+                                                <br></br>
+                                            </>
+                                        )
+                                    case "ordered":
+                                        return (
+                                            <>
+                                                <OrderedList pl="10px" spacing={2}>
+                                                    {(item.text as string[]).map((listItem) => (
+                                                        <ListItem color="black" fontWeight="regular" fontSize="sm">{listItem}</ListItem>
+                                                    ))}
+                                                </OrderedList>
+                                                <br></br>
+                                            </>
+                                        )
+                                    case "unordered":
+                                        return (
+                                            <>
+                                                <UnorderedList pl="10px" spacing={2}>
+                                                    {(item.text as string[]).map((listItem) => (
+                                                        <ListItem color="black" fontWeight="regular" fontSize="sm">{listItem}</ListItem>
+                                                    ))}
+                                                </UnorderedList>
+                                                <br></br>
+                                            </>
+                                        )
+                                    default:
+                                        return <></>;
+                                }
+                            })}
                             <Box px="24px" pt="24px" pb="50px" borderRadius="8px" backgroundColor="blue" mt="24px" w="100%">
                                 <Text color="orange" fontSize="20px" fontWeight="bold" pb="16px">{foundPost.author.name}</Text>
                                 <Text color="white" fontSize="20px" fontWeight="regular">{foundPost.author.about}</Text>

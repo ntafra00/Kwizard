@@ -50,7 +50,10 @@ export function Modal() {
                 </ModalHeader>
                 {!!modalScene &&
                     <>
-                        <Flex direction="column" pt="20px">
+                        <Flex direction="column" pt="20px" px="70px">
+                            <Center pb="20px">
+                                <Image src="/browserIcon.png" alt="Q letter styled" width={150} height={150} />
+                            </Center>
                             <Center>
                                 <Heading color="gray" fontSize="md" fontWeight="semibold" textAlign="center">{modalScene === ModalScene.LOGIN ? "Welcome back!" : "Ah, so you want to be a wizard?"}</Heading>
                             </Center>
@@ -58,7 +61,7 @@ export function Modal() {
                                 <Text color="smoke" fontSize="sm" fontWeight="medium" textAlign="center">{modalScene === ModalScene.LOGIN ? "Please use the options below to log in." : "Use magic and apps below to get started!"}</Text>
                             </Center>
                         </Flex>
-                        <Flex gap="8px" direction="column" px="24px">
+                        <Flex gap="8px" direction="column" px="70px">
                             <CompanyButton leftIcon={<Image src="/googleLogo.png" alt="Google logo" width={32} height={32} />} text="Continue with Google" buttonAction={handleLoginWithGmail} />
                             <CompanyButton leftIcon={<Image src="/githubLogo.png" alt="Github logo" width={32} height={32} />} text="Continue with Github" buttonAction={handleLoginWithGithub} />
                         </Flex>
@@ -68,7 +71,7 @@ export function Modal() {
                                 or
                             </AbsoluteCenter>
                         </Box>
-                        <ModalBody justifyContent={{ base: "center", sm: "inherit" }} alignItems={{ base: "center", sm: "inherit" }}>
+                        <ModalBody justifyContent={{ base: "center", sm: "inherit" }} alignItems={{ base: "center", sm: "inherit" }} px="80px">
                             {!!modalScene && (modalScene === ModalScene.LOGIN ? <LoginForm handleModalSceneChange={handleModalSceneChange} /> : <RegistrationForm handleModalSceneChange={handleModalSceneChange} />)}
                         </ModalBody>
                     </>

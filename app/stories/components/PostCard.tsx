@@ -18,7 +18,7 @@ export function PostCard({ post: { description, imageUrl, topic, id } }: Props) 
         <Flex borderRadius="3px" pb="32px" direction="column" key={id} onClick={handleRedirect} _hover={{ cursor: "pointer" }}>
             <Image src={imageUrl} alt="Post card image" />
             <Box py="8px" >
-                <Text color="smoke" fontWeight="medium" fontSize="xs">{topic}</Text>
+                <Text color="smoke" fontWeight="medium" fontSize="xs" textTransform="uppercase">{topic}</Text>
             </Box >
             <Box>
                 <Text color="black" fontWeight="medium" fontSize="sm">{description}</Text>

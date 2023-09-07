@@ -5,6 +5,7 @@ import { SimpleGrid, Center } from "@/components/chakra";
 import { Button } from "@/components/commons/buttons";
 import { PostCard } from "./PostCard";
 import { COMMON_PAGE_PADDING } from "@/constants";
+import { useState } from "react";
 
 interface Props {
     posts: PostData[];
@@ -13,13 +14,20 @@ interface Props {
 }
 
 export function PostCardsGrid({ posts, isButtonVisible = true, applyPadding = false }: Props) {
+
+    const [allPosts, setAllPosts] = useState(posts);
+
+    const handleLoadMoreClick = () => {
+        setAllPosts((prevState) => [...prevState, ...posts]);
+    }
+
     return (
         <>
             <SimpleGrid px={applyPadding ? COMMON_PAGE_PADDING : "0px"} pt="40px" rowGap={{ base: "5px", md: "48px" }} columnGap={{ base: "none", md: "28px" }} columns={{ base: 1, md: 2, lg: 2, xl: 4 }}>
                 {
-                    posts.map((post) => {
+                    allPosts.map((post) => {
                         return (
-                            <PostCard post={post} key={post.id} />
+                            <PostCard post={post} key={`${post.id + Date.UTC}`} />
                         )
                     })
                 }
@@ -27,7 +35,7 @@ export function PostCardsGrid({ posts, isButtonVisible = true, applyPadding = fa
 
             {isButtonVisible &&
                 <Center pb="64px" pt="32px">
-                    <Button textColor="blue" text="Load more posts" buttonAction={() => { }} backgroundColor="transparent" backgroundColorOnClick="transparentOnClick" />
+                    <Button textColor="blue" text="Load more posts" buttonAction={handleLoadMoreClick} backgroundColor="transparent" backgroundColorOnClick="transparentOnClick" />
                 </Center>
             }
         </>
