@@ -914,7 +914,7 @@ export const BIOLOGY_QUIZZES: QuizData[] = [
         imageUrl: "/biologyAndChemistry.png",
         imageDescription: "Biology and chemistry",
         title: "Chemical elements",
-        subtitle: "Have you ever heard of Einsteinium?",
+        subtitle: "I forget, can we create gold from lead?",
         date: "01/02/2023"
     },
     {
@@ -923,8 +923,8 @@ export const BIOLOGY_QUIZZES: QuizData[] = [
         category: QuizCategoryEnum.BIOLOGY_AND_CHEMISTRY,
         imageUrl: "/biologyAndChemistry.png",
         imageDescription: "Biology and chemistry",
-        title: "Birds",
-        subtitle: "Birds are magnificent. Test your knowledge",
+        title: "Birds and insects",
+        subtitle: "Look up in the sky, it's a bird, it's a plane... it's a quiz about birds and insects!",
         date: "02/03/2023",
     },
     {
@@ -933,8 +933,8 @@ export const BIOLOGY_QUIZZES: QuizData[] = [
         category: QuizCategoryEnum.BIOLOGY_AND_CHEMISTRY,
         imageUrl: "/biologyAndChemistry.png",
         imageDescription: "Biology and chemistry",
-        title: "Genetics",
-        subtitle: "All that you ever wanted to know about genetics",
+        title: "Genetic Manipulation",
+        subtitle: "Which came first, the chicken or the dinosaur?",
         date: "03/04/2023",
     },
     {
@@ -944,7 +944,7 @@ export const BIOLOGY_QUIZZES: QuizData[] = [
         imageUrl: "/biologyAndChemistry.png",
         imageDescription: "Biology and chemistry",
         title: "Viruses and bacteria",
-        subtitle: "Better have your antibiotics ready. Or maybe not?",
+        subtitle: "Better have your antibiotics ready. Or maybe antivirals?",
         date: "04/05/2023",
     }
 ]
@@ -957,7 +957,7 @@ export const ART_QUIZZES: QuizData[] = [
         imageUrl: "/artsAndMusic.png",
         imageDescription: "Arts and music",
         title: "JazzQuizz",
-        subtitle: "All about jazz",
+        subtitle: "I see trees of green, red roses too...",
         date: "05/06/2023",
     },
     {
@@ -966,8 +966,8 @@ export const ART_QUIZZES: QuizData[] = [
         category: QuizCategoryEnum.ARTS_AND_MUSIC,
         imageUrl: "/artsAndMusic.png",
         imageDescription: "Arts and music",
-        title: "Renaissance",
-        subtitle: "Test your knowledge if you know who painted Mona Lisa",
+        title: "Famous artists and musicians",
+        subtitle: "Claude Mona and Lisa Simpson are two of the most famous artists in the world, right?",
         date: "06/07/2023",
     },
     {
@@ -976,8 +976,8 @@ export const ART_QUIZZES: QuizData[] = [
         category: QuizCategoryEnum.ARTS_AND_MUSIC,
         imageUrl: "/artsAndMusic.png",
         imageDescription: "Arts and music",
-        title: "80s",
-        subtitle: "If you were part of the greatest music era, then this quiz is for you",
+        title: "Croatian 80s music",
+        subtitle: "Is Jacques born yet, my friend?",
         date: "07/08/2023",
     },
     {
@@ -987,7 +987,7 @@ export const ART_QUIZZES: QuizData[] = [
         imageUrl: "/artsAndMusic.png",
         imageDescription: "Arts and music",
         title: "Modern art",
-        subtitle: "Test your knowledge if you know that urinal can also be called fountain",
+        subtitle: "Who taped that banana to the wall?",
         date: "01/09/2023",
     }
 ]
@@ -1000,7 +1000,7 @@ export const TECHNOLOGY_QUIZZES: QuizData[] = [
         imageUrl: "/pcAndTechnology.png",
         imageDescription: "PC and technology",
         title: "Tech titans challenge",
-        subtitle: "This quiz should cover everything that you ever wanted to know about tech titans",
+        subtitle: "Alphabet, B, C, D, Elon, Facebook, G...",
         date: "08/08/2023",
     },
     {
@@ -1010,7 +1010,7 @@ export const TECHNOLOGY_QUIZZES: QuizData[] = [
         imageUrl: "/pcAndTechnology.png",
         imageDescription: "PC and technology",
         title: "Programming languages",
-        subtitle: "Python is not only a snake? Java is not short for Javascript?",
+        subtitle: "Why don't we have just one programming language? Wouldn't that be easier?",
         date: "01/01/2023",
     },
     {
@@ -1020,7 +1020,7 @@ export const TECHNOLOGY_QUIZZES: QuizData[] = [
         imageUrl: "/pcAndTechnology.png",
         imageDescription: "PC and technology",
         title: "Spaceships",
-        subtitle: "Test if you're ready to visit Mars",
+        subtitle: "I think we can land on the Sun, but only at night so we don't burn.",
         date: "05/05/2023",
     },
     {
@@ -1030,7 +1030,7 @@ export const TECHNOLOGY_QUIZZES: QuizData[] = [
         imageUrl: "/pcAndTechnology.png",
         imageDescription: "PC and technology",
         title: "Electronics",
-        subtitle: "How many legs does transistor have? Why is band from Australia called AC/DC?",
+        subtitle: "What's the difference between a transistor and a resistor?",
         date: "05/01/2023",
     },
 ]
@@ -1043,7 +1043,7 @@ export const SPORT_QUIZZES: QuizData[] = [
         imageUrl: "/sportsAndRecreation.png",
         imageDescription: "Sports and recreation",
         title: "Swimming is amazing",
-        subtitle: "Test your knowledge about swimming related stuff",
+        subtitle: "I'm not biased, I swear!",
         date: "05/10/2022",
     },
     {
@@ -1053,7 +1053,7 @@ export const SPORT_QUIZZES: QuizData[] = [
         imageUrl: "/sportsAndRecreation.png",
         imageDescription: "Sports and recreation",
         title: "NBA teams logo quiz",
-        subtitle: "Which team has leprechaun in it's logo? Sounds familiar? Let's see how good you are",
+        subtitle: "Can you recognize all 30 NBA teams by their logo?",
         date: "10/10/2022",
     },
     {
@@ -1063,7 +1063,7 @@ export const SPORT_QUIZZES: QuizData[] = [
         imageUrl: "/sportsAndRecreation.png",
         imageDescription: "Sports and recreation",
         title: "Premier League trivia",
-        subtitle: "Test your knowledge about the greatest soccer league in the world",
+        subtitle: "Why is it called Premier League if it's not the best league in the world? Are others Secondier Leagues?",
         date: "12/12/2022",
     },
     {
@@ -1073,7 +1073,7 @@ export const SPORT_QUIZZES: QuizData[] = [
         imageUrl: "/sportsAndRecreation.png",
         imageDescription: "Sports and recreation",
         title: "Olympics",
-        subtitle: "Be ready cause this quiz will test everything you know about both summer and winter Olympics",
+        subtitle: "The only quiz where you can win a gold medal!",
         date: "03/10/2022",
     },
 ]
@@ -1086,7 +1086,7 @@ export const GENERAL_QUIZZES: QuizData[] = [
         imageUrl: "/generalKnowledge.png",
         imageDescription: "General knowledge",
         title: "WWII chronicles",
-        subtitle: "If you had A in History, don't be afraid to take this quiz",
+        subtitle: "Winston Churchill who?",
         date: "08/06/2022",
     },
     {
@@ -1106,7 +1106,7 @@ export const GENERAL_QUIZZES: QuizData[] = [
         imageUrl: "/generalKnowledge.png",
         imageDescription: "General knowledge",
         title: "Everyday trivia",
-        subtitle: "Test your knowledge about everyday stuff with a quiz that's suitable for all ages",
+        subtitle: "Finally, you can use that knowledge about the number of teeth in a shark's mouth!",
         date: "12/12/2022",
     },
     {
@@ -1115,8 +1115,8 @@ export const GENERAL_QUIZZES: QuizData[] = [
         category: QuizCategoryEnum.GENERAL_KNOWLEDGE,
         imageUrl: "/generalKnowledge.png",
         imageDescription: "General knowledge",
-        title: "Famous persons",
-        subtitle: "Quiz with plenty of images, quotes and affairs",
+        title: "Famous people",
+        subtitle: "Hey, I know that guy!",
         date: "11/11/2022",
     },
 ]
